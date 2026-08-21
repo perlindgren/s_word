@@ -67,8 +67,13 @@ func attempt_drop() -> void:
 			
 			snap_to_slot(target_slot)
 	else:
+		print("drop at arbitrary position, current slot", current_slot)
+		if current_slot:
+			current_slot.current_item = null
+		current_slot = null
+		rotation = old_rotation
 		# Dropped in empty space, slide back home
-		return_to_position(starting_position)
+		# return_to_position(starting_position)
 
 func snap_to_slot(slot: Area2D) -> void:
 	print("snap_to_slot")

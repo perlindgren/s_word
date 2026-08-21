@@ -7,6 +7,7 @@
 size = Vector2(64, 64)
 
 [node name="Slot" type="Area2D" unique_id=2057994543 groups=["slots"]]
+z_index = -1
 script = ExtResource("1_ic0fu")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1138344678]
