@@ -30,6 +30,7 @@ window/stretch/aspect="expand"
 [global_group]
 
 slots=""
+bricks_and_borders=""
 
 [physics]
 

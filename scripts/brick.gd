@@ -1,5 +1,8 @@
 extends Area2D
 
+@export var move_speed: Vector2 = Vector2(10.0, 5)
+@export var rotation_speed: float = 0.01
+
 var is_dragging: bool = false
 var old_rotation: float 
 var click_offset: Vector2 = Vector2.ZERO
@@ -8,10 +11,21 @@ var click_offset: Vector2 = Vector2.ZERO
 # Keeps track of the slot this item currently lives in
 var current_slot: Area2D = null
 
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
 	if is_dragging:
 		global_position = get_global_mouse_position() - click_offset
-
+	else:
+		if current_slot == null:
+			var overlapping_areas = get_overlapping_areas()
+			for area in overlapping_areas:
+				if area.is_in_group("bricks_and_borders"):
+					print("collision with", area)
+					break
+			position += move_speed * delta
+			rotation += rotation_speed * delta
+		else:
+			rotation = 0.0
+			
 func _input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed:
 		match event.button_index:
