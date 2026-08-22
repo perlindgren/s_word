@@ -56,10 +56,10 @@ func _input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int) -> vo
 				z_index = 10 
 			MOUSE_BUTTON_RIGHT:
 				print("flip")
-				var sprite = get_child(0)
+				var label = get_node("Label")
 				var tween = create_tween()
 				await tween.tween_property(self, "scale", Vector2(0.0, -1.0), 0.25).finished
-				sprite.visible = not get_child(0).visible
+				label.visible = not label.visible
 				tween = create_tween()
 				tween.tween_property(self, "scale", Vector2.ONE, 0.25)
 

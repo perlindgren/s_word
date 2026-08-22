@@ -10,7 +10,7 @@ size = Vector2(64, 64)
 [node name="Brick" type="Area2D" unique_id=273881986 groups=["bricks_and_borders"]]
 script = ExtResource("1_0w5h4")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2009699247]
+[node name="Sprite" type="Sprite2D" parent="." unique_id=2009699247]
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("3_7mekc")
 

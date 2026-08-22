@@ -46,6 +46,7 @@ func _ready() :
 		brick_instance.rotation = randf() * TAU
 		brick_instance.old_rotation = brick_instance.rotation
 		brick_instance.get_node("Label").text = String.chr(65 + randi() % n_char)
+		brick_instance.get_node("Label").visible = false # start folded
 		brick_instance.move_speed = Vector2(rng.randf_range(-brick_speed, brick_speed), rng.randf_range(-brick_speed, brick_speed))
 		brick_instance.rotation_speed = rng.randf_range(-brick_rotation_speed, brick_rotation_speed) 
 		brick_instance.z_index = i
