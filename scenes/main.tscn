@@ -34,7 +34,8 @@ scale_max = 8.0
 
 [node name="Main" type="Node2D" unique_id=943896723]
 script = ExtResource("1_sugp2")
-slots_space = 150.0
+brick_rotation_speed = 1.0
+slots_nr = 10
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=394326658]
 layer = -10
@@ -85,7 +86,7 @@ lifetime = 2.0
 randomness = 0.1
 process_material = SubResource("ParticleProcessMaterial_srqkv")
 
-[node name="Label" type="Label" parent="Hourglass" unique_id=1868858888]
+[node name="TimeIsKey" type="Label" parent="Hourglass" unique_id=1868858888]
 offset_left = -210.0
 offset_top = -514.0
 offset_right = 212.0
@@ -104,28 +105,36 @@ theme_override_fonts/font = ExtResource("8_tipki")
 theme_override_font_sizes/font_size = 64
 text = "60.0"
 
-[node name="Walls" type="Node2D" parent="." unique_id=482203113 groups=["bricks_and_borders"]]
+[node name="SLEFT" type="Label" parent="Hourglass" unique_id=306796353]
+offset_top = 456.0
+offset_right = 319.0
+offset_bottom = 544.0
+theme_override_fonts/font = ExtResource("8_tipki")
+theme_override_font_sizes/font_size = 64
+text = "S LEFT "
+
+[node name="Walls" type="Node2D" parent="." unique_id=482203113]
 position = Vector2(695, 836)
 
-[node name="Top" type="StaticBody2D" parent="Walls" unique_id=1935853392]
+[node name="Top" type="Area2D" parent="Walls" unique_id=1289642757 groups=["bricks_and_borders"]]
 position = Vector2(-7, -824)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Top" unique_id=48677673]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Top" unique_id=261139423]
 shape = ExtResource("9_choun")
 
-[node name="Right" type="StaticBody2D" parent="Walls" unique_id=1129950700]
+[node name="Right" type="Area2D" parent="Walls" unique_id=2022173624 groups=["bricks_and_borders"]]
 position = Vector2(681, -413)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Right" unique_id=261860743]
 shape = ExtResource("10_ya4ey")
 
-[node name="Left" type="StaticBody2D" parent="Walls" unique_id=1308583155]
+[node name="Left" type="Area2D" parent="Walls" unique_id=1753534481 groups=["bricks_and_borders"]]
 position = Vector2(-687, -410)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Left" unique_id=416461170]
 shape = ExtResource("10_ya4ey")
 
-[node name="Bottom" type="StaticBody2D" parent="Walls" unique_id=362291498]
+[node name="Bottom" type="Area2D" parent="Walls" unique_id=641987870 groups=["bricks_and_borders"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Bottom" unique_id=911688766]
 shape = ExtResource("9_choun")

@@ -1,4 +1,4 @@
-extends Area2D
+class_name Brick extends Area2D
 
 @export var move_speed: Vector2 = Vector2(10.0, 5)
 @export var rotation_speed: float = 0.01
@@ -7,20 +7,39 @@ var is_dragging: bool = false
 var old_rotation: float 
 var click_offset: Vector2 = Vector2.ZERO
 
+@onready var main : Main = get_node("..")
+@onready var walls_top: Area2D = get_node("../Walls/Top")
+@onready var walls_left: Area2D = get_node("../Walls/Left")
+@onready var walls_right: Area2D = get_node("../Walls/Left")
+@onready var walls_bottom: Area2D = get_node("../Walls/Left")
+
 @onready var starting_position: Vector2 = global_position
 # Keeps track of the slot this item currently lives in
 var current_slot: Area2D = null
 
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	if is_dragging:
 		global_position = get_global_mouse_position() - click_offset
 	else:
+		#print("self ", self)
 		if current_slot == null:
+			#await get_tree().process_frame
 			var overlapping_areas = get_overlapping_areas()
 			for area in overlapping_areas:
 				if area.is_in_group("bricks_and_borders"):
-					print("collision with", area)
-					break
+					# print(self, "collision with ", area)
+					match area:
+						[walls_top, walls_bottom]:
+							move_speed.y = -move_speed.y
+						[walls_left, walls_right]:
+							move_speed.x = -move_speed.x
+						_: 
+							move_speed = -move_speed
+					rotation_speed = clampf(-rotation_speed * 1.1, -main.brick_max_rotation_speed, main.brick_max_rotation_speed) 
+					position += 2 * move_speed * delta
+					
+					break # only collide in one direction
+			# print("collision resolved for ", self)
 			position += move_speed * delta
 			rotation += rotation_speed * delta
 		else:
@@ -64,18 +83,18 @@ func attempt_drop() -> void:
 			
 	if target_slot:
 		if target_slot.current_item == null:
-			# Case A: Slot is empty. Clear old slot, occupy new slot.
+			# Clear old slot, occupy new slot.
 			if current_slot:
 				current_slot.current_item = null
 			
 			snap_to_slot(target_slot)
 		
 		elif target_slot.current_item == self:
-			# Case B: Dropped back into its own slot. Just snap back.
+			# Dropped back into its own slot. Just snap back.
 			snap_to_slot(target_slot)
 			
 		else:
-			# Case C: Slot is occupied. Trigger the swap!
+			# Slot is occupied. Trigger the swap!
 			var existing_item = target_slot.current_item
 			
 			if current_slot:
@@ -90,13 +109,19 @@ func attempt_drop() -> void:
 			
 			snap_to_slot(target_slot)
 	else:
-		print("drop at arbitrary position, current slot", current_slot)
-		if current_slot:
-			current_slot.current_item = null
-		current_slot = null
-		rotation = old_rotation
-		# Dropped in empty space, slide back home
-		# return_to_position(starting_position)
+		print("drop at arbitrary position, current slot", current_slot, ", position ", position)
+		var rect = Rect2(main.brick_area_pos, main.brick_area_size)
+		print("rect ", rect)
+		
+		if rect.has_point(position):
+			print(" has point")
+			if current_slot:
+				current_slot.current_item = null
+			current_slot = null
+			rotation = old_rotation
+		else:
+			# Dropped in empty space, slide back home
+			return_to_position(starting_position)
 
 func snap_to_slot(slot: Area2D) -> void:
 	print("snap_to_slot")

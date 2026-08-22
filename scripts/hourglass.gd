@@ -10,11 +10,15 @@ func _ready() -> void:
 	
 func _process(delta) -> void:
 	curr_time -= delta
+	if curr_time < 0:
+		curr_time = time;
+		print("you loose")
+		
 	material.set_shader_parameter("ratio", 0.5 - curr_time/(2 * time))
-	seconds.text = str("%.2f" % curr_time + "S LEFT") 
-	if curr_time < 10.0:
-		seconds.modulate = Color.DARK_RED
+	seconds.text = str("%*.*f" % [5, 2,curr_time]) 
+	if curr_time < 10.0 and 10 / curr_time - int(10/curr_time)> 0.5 :
+		modulate = Color.RED# Color(1 - curr_time * 0.1, 0, 0, 1)
 	else:
-		seconds.modulate = Color.WHITE
+		modulate = Color.WHITE
 	if curr_time < 0:
 		curr_time = time;
