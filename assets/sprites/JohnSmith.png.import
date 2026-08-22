@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8xdk4vr7l4r5"
-path="res://.godot/imported/event_cat.png-f76a1e82101bd41e65e8e81e036e7603.ctex"
+uid="uid://6vbpx7srdwqu"
+path="res://.godot/imported/JohnSmith.png-84ab1af701af696580f6dc7b6cbb7662.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/event_cat.png"
-dest_files=["res://.godot/imported/event_cat.png-f76a1e82101bd41e65e8e81e036e7603.ctex"]
+source_file="res://assets/sprites/JohnSmith.png"
+dest_files=["res://.godot/imported/JohnSmith.png-84ab1af701af696580f6dc7b6cbb7662.ctex"]
 
 [params]
 

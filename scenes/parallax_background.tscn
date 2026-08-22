@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dnjco0b34ec1h"]
+
+[ext_resource type="Texture2D" uid="uid://dgbnmrok7vcl0" path="res://assets/sprites/sWORD.png" id="1_m10ct"]
+
+[node name="Parallax2D" type="Parallax2D" unique_id=599452884]
+z_index = -1
+repeat_size = Vector2(2450, 800)
+autoscroll = Vector2(30, 20)
+repeat_times = 3
+ignore_camera_scroll = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=541610415]
+scale = Vector2(10, 10)
+texture = ExtResource("1_m10ct")
+centered = false

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://uj1uaukpnjsl"
-path="res://.godot/imported/event_plillowman.png-6bd4df13111865e721cc7419a7fc3258.ctex"
+path="res://.godot/imported/Plillowman.png-41a9873d79e0c1221499f3275a81b635.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/event_plillowman.png"
-dest_files=["res://.godot/imported/event_plillowman.png-6bd4df13111865e721cc7419a7fc3258.ctex"]
+source_file="res://assets/sprites/Plillowman.png"
+dest_files=["res://.godot/imported/Plillowman.png-41a9873d79e0c1221499f3275a81b635.ctex"]
 
 [params]
 

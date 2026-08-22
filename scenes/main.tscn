@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://c08ajglgtevpi"]
 
 [ext_resource type="Script" uid="uid://o1jndp3aecxy" path="res://scripts/main.gd" id="1_sugp2"]
-[ext_resource type="Texture2D" uid="uid://uj1uaukpnjsl" path="res://assets/sprites/event_plillowman.png" id="2_0wfyh"]
-[ext_resource type="Texture2D" uid="uid://dgbnmrok7vcl0" path="res://assets/sprites/sWORD.png" id="4_tbgi4"]
+[ext_resource type="Texture2D" uid="uid://uj1uaukpnjsl" path="res://assets/sprites/Plillowman.png" id="2_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://dnjco0b34ec1h" path="res://scenes/parallax_background.tscn" id="3_choun"]
 [ext_resource type="Shader" uid="uid://drx10xq2ldktx" path="res://scripts/hourglass.gdshader" id="4_tefeu"]
 [ext_resource type="Texture2D" uid="uid://dpb7w6nji4ba4" path="res://assets/sprites/hourglass.png" id="5_o6xl0"]
 [ext_resource type="Script" uid="uid://c3tku83g2yeiy" path="res://scripts/hourglass.gd" id="6_o6xl0"]
@@ -50,6 +50,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_filter = 2
 color = Color(0, 0.99607843, 0.99607843, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="EventPlillowman" type="Sprite2D" parent="." unique_id=90555800]
 texture_filter = 1
@@ -57,17 +58,7 @@ position = Vector2(1678, 251.00002)
 scale = Vector2(10, 10)
 texture = ExtResource("2_0wfyh")
 
-[node name="Parallax2D" type="Parallax2D" parent="." unique_id=957808005]
-z_index = -1
-repeat_size = Vector2(2450, 800)
-autoscroll = Vector2(30, 20)
-repeat_times = 3
-ignore_camera_scroll = true
-
-[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=585113408]
-scale = Vector2(10, 10)
-texture = ExtResource("4_tbgi4")
-centered = false
+[node name="Parallax2D" parent="." unique_id=599452884 instance=ExtResource("3_choun")]
 
 [node name="Hourglass" type="Sprite2D" parent="." unique_id=722604717]
 material = SubResource("ShaderMaterial_srqkv")

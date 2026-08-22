@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dow7qn4tpfldv"
-path="res://.godot/imported/event_seagul.png-dd82b7d6beee8c95f9b410e0f845e27b.ctex"
+uid="uid://cfem77mgm4tku"
+path="res://.godot/imported/Cake.png-07da86df0907e55231114559901ccc15.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/event_seagul.png"
-dest_files=["res://.godot/imported/event_seagul.png-dd82b7d6beee8c95f9b410e0f845e27b.ctex"]
+source_file="res://assets/sprites/Cake.png"
+dest_files=["res://.godot/imported/Cake.png-07da86df0907e55231114559901ccc15.ctex"]
 
 [params]
 

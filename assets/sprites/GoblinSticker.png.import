@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1pdx7531wx2h"
-path="res://.godot/imported/event_dog.png-75ed988fcc914c155744fc16abd61493.ctex"
+uid="uid://dwqr2qdwgysm0"
+path="res://.godot/imported/GoblinSticker.png-f63e3e64bb68c813455e4f4cb1161d9f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/event_dog.png"
-dest_files=["res://.godot/imported/event_dog.png-75ed988fcc914c155744fc16abd61493.ctex"]
+source_file="res://assets/sprites/GoblinSticker.png"
+dest_files=["res://.godot/imported/GoblinSticker.png-f63e3e64bb68c813455e4f4cb1161d9f.ctex"]
 
 [params]
 

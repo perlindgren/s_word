@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgvkrbfcd2rfn"
-path="res://.godot/imported/event_goblin.png-6e79b52b237fe61da3ffd97412ec9c28.ctex"
+uid="uid://txbpkdew53k6"
+path="res://.godot/imported/Seconds.png-a48f99686f3315f17e7183143c021cf0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/event_goblin.png"
-dest_files=["res://.godot/imported/event_goblin.png-6e79b52b237fe61da3ffd97412ec9c28.ctex"]
+source_file="res://assets/sprites/Seconds.png"
+dest_files=["res://.godot/imported/Seconds.png-a48f99686f3315f17e7183143c021cf0.ctex"]
 
 [params]
 
