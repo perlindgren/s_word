@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c08ajglgtevpi"]
 
-[ext_resource type="Script" uid="uid://o1jndp3aecxy" path="res://scenes/main.gd" id="1_sugp2"]
+[ext_resource type="Script" uid="uid://o1jndp3aecxy" path="res://scripts/main.gd" id="1_sugp2"]
 [ext_resource type="Texture2D" uid="uid://uj1uaukpnjsl" path="res://assets/sprites/event_plillowman.png" id="2_0wfyh"]
 [ext_resource type="Texture2D" uid="uid://dgbnmrok7vcl0" path="res://assets/sprites/sWORD.png" id="4_tbgi4"]
 [ext_resource type="Shader" uid="uid://drx10xq2ldktx" path="res://scripts/hourglass.gdshader" id="4_tefeu"]
@@ -8,6 +8,8 @@
 [ext_resource type="Script" uid="uid://c3tku83g2yeiy" path="res://scripts/hourglass.gd" id="6_o6xl0"]
 [ext_resource type="Texture2D" uid="uid://d3i7y4cwcia12" path="res://assets/sprites/dot.png" id="6_tefeu"]
 [ext_resource type="FontFile" uid="uid://n74onkhokknh" path="res://assets/fonts/JameGem08_2026-Regular.ttf" id="8_tipki"]
+[ext_resource type="Shape2D" uid="uid://k471w1mbvy4t" path="res://resources/horizontal_wall.tres" id="9_choun"]
+[ext_resource type="Shape2D" uid="uid://bq4u3nylthe40" path="res://resources/vertical_wall.tres" id="10_ya4ey"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_srqkv"]
 shader = ExtResource("4_tefeu")
@@ -101,3 +103,29 @@ offset_bottom = 522.0
 theme_override_fonts/font = ExtResource("8_tipki")
 theme_override_font_sizes/font_size = 64
 text = "60.0"
+
+[node name="Walls" type="Node2D" parent="." unique_id=482203113]
+position = Vector2(695, 836)
+
+[node name="Top" type="StaticBody2D" parent="Walls" unique_id=1935853392]
+position = Vector2(-7, -824)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Top" unique_id=48677673]
+shape = ExtResource("9_choun")
+
+[node name="Right" type="StaticBody2D" parent="Walls" unique_id=1129950700]
+position = Vector2(681, -413)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Right" unique_id=261860743]
+shape = ExtResource("10_ya4ey")
+
+[node name="Left" type="StaticBody2D" parent="Walls" unique_id=1308583155]
+position = Vector2(-687, -410)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Left" unique_id=416461170]
+shape = ExtResource("10_ya4ey")
+
+[node name="Bottom" type="StaticBody2D" parent="Walls" unique_id=362291498]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Bottom" unique_id=911688766]
+shape = ExtResource("9_choun")

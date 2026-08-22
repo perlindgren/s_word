@@ -13,13 +13,22 @@ func _process(_delta: float) -> void:
 		global_position = get_global_mouse_position() - click_offset
 
 func _input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int) -> void:
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
-		if event.pressed:
-			is_dragging = true
-			click_offset = get_global_mouse_position() - global_position
-			starting_position = global_position
-			# Temporarily lift item layer so it renders above other slots/items
-			z_index = 10 
+	if event is InputEventMouseButton and event.pressed:
+		match event.button_index:
+			MOUSE_BUTTON_LEFT: 
+				is_dragging = true
+				click_offset = get_global_mouse_position() - global_position
+				starting_position = global_position
+				# Temporarily lift item layer so it renders above other slots/items
+				z_index = 10 
+			MOUSE_BUTTON_RIGHT:
+				print("flip")
+				var sprite = get_child(0)
+				var tween = create_tween()
+				await tween.tween_property(self, "scale", Vector2(0.0, -1.0), 0.25).finished
+				sprite.visible = not get_child(0).visible
+				tween = create_tween()
+				tween.tween_property(self, "scale", Vector2.ONE, 0.25)
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
