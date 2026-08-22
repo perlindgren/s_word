@@ -8,5 +8,3 @@ script = ExtResource("1_puyj0")
 
 [node name="Clock" parent="." unique_id=2000448681 instance=ExtResource("1_mvd5b")]
 position = Vector2(710, 613)
-m = 1.0
-h = 2.0
