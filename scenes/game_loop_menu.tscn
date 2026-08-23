@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://sa1ucatvxkd8" path="res://assets/sprites/events/Fish.png" id="16_jx68v"]
 [ext_resource type="Texture2D" uid="uid://cjuuvw8wdi3j1" path="res://assets/sprites/events/Pizza.png" id="17_weq0d"]
 [ext_resource type="Texture2D" uid="uid://8xdk4vr7l4r5" path="res://assets/sprites/events/Cat.png" id="18_qlxap"]
+[ext_resource type="Texture2D" uid="uid://bhoq65j3rfasw" path="res://assets/sprites/stickers/YourDidGoodSticker.png" id="20_yq88f"]
 
 [sub_resource type="FontVariation" id="FontVariation_0xkhp"]
 base_font = ExtResource("3_cu3jl")
@@ -244,7 +245,7 @@ scale = Vector2(6.5, 6.5)
 texture = ExtResource("8_0xkhp")
 
 [node name="Dwarf" type="Sprite2D" parent="Cleared" unique_id=1311489813]
-position = Vector2(1374, 348)
+position = Vector2(1372, 349)
 scale = Vector2(8, 8)
 texture = ExtResource("10_qngwn")
 
@@ -302,6 +303,11 @@ texture = ExtResource("11_2uy04")
 position = Vector2(928.00006, 171)
 scale = Vector2(6, 6)
 texture = ExtResource("12_u16os")
+
+[node name="YourDidGoodSticker" type="Sprite2D" parent="Cleared" unique_id=1787600163]
+position = Vector2(158.99997, 706.00006)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("20_yq88f")
 
 [node name="NextEvent" type="Label" parent="." unique_id=2001141733]
 modulate = Color(0, 0, 0, 1)
