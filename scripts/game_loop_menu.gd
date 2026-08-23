@@ -37,11 +37,11 @@ func _process(_delta) -> void:
 	var seconds: int = fmod(s, 60)
 	var minutes: int = fmod(s/60, 60)
 	var hours: int = fmod(s/(60 * 60), 12)
-	GameState.event_nr = hours
+	GameState.event_nr = hours - 1
 	
 	if minutes == 0 && seconds == 0:
 		print("new challenge ", hours)
 		Signals.to_game_loop.emit()
 	
-	next_event.text = "MINUTES UNTILL NEXT EVENT " + str(60 - minutes) 
+	next_event.text = "MINUTES UNTIL\nNEXT EVENT " + str(60 - minutes) 
 	current_event.text = "EVENT # " + str(GameState.event_nr + 1) 

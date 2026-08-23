@@ -310,15 +310,15 @@ anchor_left = 0.81567425
 anchor_top = 8.915384
 anchor_right = 0.81567425
 anchor_bottom = 8.915384
-offset_left = 655.0
-offset_top = 965.0
-offset_right = 1276.0
-offset_bottom = 1061.0
+offset_left = 1372.0
+offset_top = 934.0
+offset_right = 1993.0
+offset_bottom = 1030.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = SubResource("FontVariation_0xkhp")
 theme_override_font_sizes/font_size = 64
-text = "Some text"
+text = "MINUTES UNTIL"
 
 [node name="CurrentEvent" type="Label" parent="." unique_id=697777678]
 modulate = Color(0, 0, 0, 1)
