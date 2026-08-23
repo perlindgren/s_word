@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c08ajglgtevpi"]
 
 [ext_resource type="Script" uid="uid://o1jndp3aecxy" path="res://scripts/main.gd" id="1_fa7up"]
-[ext_resource type="Texture2D" uid="uid://uj1uaukpnjsl" path="res://assets/sprites/Plillowman.png" id="2_jmvj6"]
+[ext_resource type="Texture2D" uid="uid://uj1uaukpnjsl" path="res://assets/sprites/events/Plillowman.png" id="2_jmvj6"]
 [ext_resource type="PackedScene" uid="uid://dnjco0b34ec1h" path="res://scenes/parallax_background.tscn" id="3_4dxum"]
 [ext_resource type="Shader" uid="uid://drx10xq2ldktx" path="res://scripts/hourglass.gdshader" id="4_vo7sv"]
 [ext_resource type="Texture2D" uid="uid://dqrywkvelj5tr" path="res://assets/sprites/HourGlass2.png" id="5_m2jv5"]

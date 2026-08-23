@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8xdk4vr7l4r5"
-path="res://.godot/imported/Cat.png-736dbd782805f705559b9d0aaeb43292.ctex"
+uid="uid://b0cf8qy7fpidk"
+path="res://.godot/imported/FishSticker.png-030ba2005a7e7adef10c4a6d2a42b08f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Cat.png"
-dest_files=["res://.godot/imported/Cat.png-736dbd782805f705559b9d0aaeb43292.ctex"]
+source_file="res://assets/sprites/stickers/FishSticker.png"
+dest_files=["res://.godot/imported/FishSticker.png-030ba2005a7e7adef10c4a6d2a42b08f.ctex"]
 
 [params]
 

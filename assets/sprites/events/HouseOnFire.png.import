@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6cddmx3ghcof"
-path="res://.godot/imported/DwarfSticker.png-cfb8ea7d565fa0977fdc720b747785ca.ctex"
+uid="uid://b2vmh4xlqpkst"
+path="res://.godot/imported/HouseOnFire.png-cec11b473e6128d8c07b5c6ef707bd59.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/DwarfSticker.png"
-dest_files=["res://.godot/imported/DwarfSticker.png-cfb8ea7d565fa0977fdc720b747785ca.ctex"]
+source_file="res://assets/sprites/events/HouseOnFire.png"
+dest_files=["res://.godot/imported/HouseOnFire.png-cec11b473e6128d8c07b5c6ef707bd59.ctex"]
 
 [params]
 

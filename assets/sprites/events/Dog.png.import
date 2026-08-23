@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0ey1mljld6nf"
-path="res://.godot/imported/RobotSticker.png-8e52b9188495942ef5f4686ef5ada4f5.ctex"
+uid="uid://c1pdx7531wx2h"
+path="res://.godot/imported/Dog.png-f6fa9d1e3cf910f245fa4d09bc8c4a8f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/RobotSticker.png"
-dest_files=["res://.godot/imported/RobotSticker.png-8e52b9188495942ef5f4686ef5ada4f5.ctex"]
+source_file="res://assets/sprites/events/Dog.png"
+dest_files=["res://.godot/imported/Dog.png-f6fa9d1e3cf910f245fa4d09bc8c4a8f.ctex"]
 
 [params]
 

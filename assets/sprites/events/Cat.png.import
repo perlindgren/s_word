@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2vmh4xlqpkst"
-path="res://.godot/imported/HouseOnFire.png-ee847a215acbe2b4300b5d727f429fa7.ctex"
+uid="uid://8xdk4vr7l4r5"
+path="res://.godot/imported/Cat.png-ce34d8f4deccc9364a480e20d7a3a0c6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/HouseOnFire.png"
-dest_files=["res://.godot/imported/HouseOnFire.png-ee847a215acbe2b4300b5d727f429fa7.ctex"]
+source_file="res://assets/sprites/events/Cat.png"
+dest_files=["res://.godot/imported/Cat.png-ce34d8f4deccc9364a480e20d7a3a0c6.ctex"]
 
 [params]
 

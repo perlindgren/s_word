@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dp6dlbspgxho1"
-path="res://.godot/imported/PillowManSticker.png-f7c6b1159543d27b74cba6ac6efeedb7.ctex"
+uid="uid://rn7rm01cx7i5"
+path="res://.godot/imported/CakeSticker.png-d8fea53175efd9537fcdb656a7f1443f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/PillowManSticker.png"
-dest_files=["res://.godot/imported/PillowManSticker.png-f7c6b1159543d27b74cba6ac6efeedb7.ctex"]
+source_file="res://assets/sprites/stickers/CakeSticker.png"
+dest_files=["res://.godot/imported/CakeSticker.png-d8fea53175efd9537fcdb656a7f1443f.ctex"]
 
 [params]
 

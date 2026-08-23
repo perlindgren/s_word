@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfem77mgm4tku"
-path="res://.godot/imported/Cake.png-07da86df0907e55231114559901ccc15.ctex"
+uid="uid://41tqgv6pr46o"
+path="res://.godot/imported/Robot.png-37b869dd204644a9cdd8efe79db89453.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Cake.png"
-dest_files=["res://.godot/imported/Cake.png-07da86df0907e55231114559901ccc15.ctex"]
+source_file="res://assets/sprites/events/Robot.png"
+dest_files=["res://.godot/imported/Robot.png-37b869dd204644a9cdd8efe79db89453.ctex"]
 
 [params]
 

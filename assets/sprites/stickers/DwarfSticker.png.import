@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dow7qn4tpfldv"
-path="res://.godot/imported/Seagul.png-1ce76f94ac8a8a02ac58c14a442704df.ctex"
+uid="uid://6cddmx3ghcof"
+path="res://.godot/imported/DwarfSticker.png-e1bb271c9fd82d63750a0ff0abfcedd2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Seagul.png"
-dest_files=["res://.godot/imported/Seagul.png-1ce76f94ac8a8a02ac58c14a442704df.ctex"]
+source_file="res://assets/sprites/stickers/DwarfSticker.png"
+dest_files=["res://.godot/imported/DwarfSticker.png-e1bb271c9fd82d63750a0ff0abfcedd2.ctex"]
 
 [params]
 

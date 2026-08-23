@@ -2,17 +2,33 @@ extends Node2D
 
 @onready var start_menu = preload("res://scenes/start_menu.tscn")
 @onready var game_loop_menu = preload("res://scenes/game_loop_menu.tscn")
+@onready var game_loop = preload("res://scenes/game_loop.tscn")
 
-var current_scene
+var current_child_scene : Node = null
 
 func _ready() -> void:
 	# Connect signals
-	Signals.main_menu_start.connect(_on_main_menu_start)
+	Signals.main_menu_start.connect(to_game_loop_menu)
+	Signals.to_start_menu.connect(to_start_menu)
+	Signals.to_game_loop.connect(to_game_loop)
 	
-	var scene = start_menu.instantiate()
-	current_scene = scene
-	add_child(scene)
+	change_scene(start_menu)
 
-func _on_main_menu_start() -> void: 
-	print("start here")
-	get_tree().change_scene_to_packed(game_loop_menu)
+func change_scene(to) -> void:
+	if current_child_scene:
+		current_child_scene.queue_free()
+		
+	current_child_scene = to.instantiate()
+	add_child(current_child_scene)
+
+func to_game_loop_menu() -> void: 
+	print("to_game_loop_menu")
+	change_scene(game_loop_menu)
+	
+func to_start_menu() -> void: 
+	print("to_start_menu")
+	change_scene(start_menu)
+	
+func to_game_loop() -> void: 
+	print("to_game_menu")
+	change_scene(game_loop)

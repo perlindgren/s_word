@@ -1,13 +1,27 @@
 [gd_scene format=3 uid="uid://qyex2uex1ufn"]
 
 [ext_resource type="PackedScene" uid="uid://dnjco0b34ec1h" path="res://scenes/parallax_background.tscn" id="1_0uxlg"]
+[ext_resource type="Script" uid="uid://ca1573dqhefr7" path="res://scripts/game_loop_menu.gd" id="1_0xkhp"]
 [ext_resource type="Texture2D" uid="uid://b27qwpg5gjul6" path="res://assets/sprites/Button.png" id="2_ci31j"]
 [ext_resource type="Script" uid="uid://chj548bfgda1r" path="res://scenes/hover.gd" id="3_0uxlg"]
 [ext_resource type="FontFile" uid="uid://n74onkhokknh" path="res://assets/fonts/JameGem08_2026-Regular.ttf" id="3_cu3jl"]
 [ext_resource type="Texture2D" uid="uid://dfn6rnas4njwt" path="res://assets/sprites/N65.png" id="5_rvywj"]
 [ext_resource type="PackedScene" uid="uid://cbclmpycumvqq" path="res://scenes/clock.tscn" id="6_icjmd"]
+[ext_resource type="Texture2D" uid="uid://b2vmh4xlqpkst" path="res://assets/sprites/events/HouseOnFire.png" id="7_18kbl"]
+[ext_resource type="Texture2D" uid="uid://cgvkrbfcd2rfn" path="res://assets/sprites/events/Goblin.png" id="8_0xkhp"]
+[ext_resource type="Texture2D" uid="uid://c1pdx7531wx2h" path="res://assets/sprites/events/Dog.png" id="9_yq88f"]
+[ext_resource type="Texture2D" uid="uid://c8cwetmpllo4m" path="res://assets/sprites/events/Dwarf.png" id="10_qngwn"]
+[ext_resource type="Texture2D" uid="uid://cfem77mgm4tku" path="res://assets/sprites/events/Cake.png" id="11_2uy04"]
+[ext_resource type="Texture2D" uid="uid://6vbpx7srdwqu" path="res://assets/sprites/events/JohnSmith.png" id="12_u16os"]
+[ext_resource type="Texture2D" uid="uid://dow7qn4tpfldv" path="res://assets/sprites/events/Seagul.png" id="13_iyxtv"]
+[ext_resource type="Texture2D" uid="uid://41tqgv6pr46o" path="res://assets/sprites/events/Robot.png" id="14_v1b1m"]
+[ext_resource type="Texture2D" uid="uid://uj1uaukpnjsl" path="res://assets/sprites/events/Plillowman.png" id="15_35wn2"]
+[ext_resource type="Texture2D" uid="uid://sa1ucatvxkd8" path="res://assets/sprites/events/Fish.png" id="16_jx68v"]
+[ext_resource type="Texture2D" uid="uid://cjuuvw8wdi3j1" path="res://assets/sprites/events/Pizza.png" id="17_weq0d"]
+[ext_resource type="Texture2D" uid="uid://8xdk4vr7l4r5" path="res://assets/sprites/events/Cat.png" id="18_qlxap"]
 
 [node name="GameLoopMenu" type="Node2D" unique_id=1352290525]
+script = ExtResource("1_0xkhp")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1015791264]
 layer = -10
@@ -29,7 +43,7 @@ metadata/_edit_use_anchors_ = true
 [node name="ExitButton" type="Node2D" parent="." unique_id=1596989962]
 position = Vector2(1635, 119)
 
-[node name="TextureButton" type="TextureButton" parent="ExitButton" unique_id=7733219]
+[node name="ExitButton" type="TextureButton" parent="ExitButton" unique_id=7733219]
 anchors_preset = -1
 anchor_left = 0.12784588
 anchor_top = 6.0076923
@@ -79,7 +93,7 @@ text = "XIT"
 [node name="StartButton" type="Node2D" parent="." unique_id=1389960908]
 position = Vector2(104, 121)
 
-[node name="TextureButton" type="TextureButton" parent="StartButton" unique_id=1074217539]
+[node name="StartButton" type="TextureButton" parent="StartButton" unique_id=1074217539]
 anchors_preset = -1
 anchor_left = 0.12784588
 anchor_top = 6.0076923
@@ -127,6 +141,7 @@ theme_override_font_sizes/font_size = 96
 text = "TART"
 
 [node name="ThePen" type="Label" parent="." unique_id=724192611]
+visible = false
 self_modulate = Color(0, 0, 0, 1)
 anchors_preset = 8
 anchor_left = 0.5
@@ -210,13 +225,77 @@ position = Vector2(175, 922)
 scale = Vector2(0.08, 0.08)
 texture = ExtResource("5_rvywj")
 
-[node name="Clock" parent="." unique_id=2000448681 instance=ExtResource("6_icjmd")]
-position = Vector2(1635.0001, 790)
+[node name="ClockWheel" type="Node2D" parent="." unique_id=719897109]
+position = Vector2(966.0001, 563)
 scale = Vector2(0.75, 0.75)
 
-[connection signal="mouse_entered" from="ExitButton/TextureButton" to="ExitButton/TextureButton" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="ExitButton/TextureButton" to="ExitButton/TextureButton" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="StartButton/TextureButton" to="StartButton/TextureButton" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="StartButton/TextureButton" to="StartButton/TextureButton" method="_on_mouse_exited"]
+[node name="Clock" parent="ClockWheel" unique_id=2000448681 instance=ExtResource("6_icjmd")]
+
+[node name="HouseOnFire" type="Sprite2D" parent="." unique_id=295369755]
+position = Vector2(1200, 722)
+scale = Vector2(2, 2)
+texture = ExtResource("7_18kbl")
+
+[node name="Goblin" type="Sprite2D" parent="." unique_id=981812064]
+position = Vector2(1106, 323)
+scale = Vector2(2, 2)
+texture = ExtResource("8_0xkhp")
+
+[node name="Dog" type="Sprite2D" parent="." unique_id=1639704929]
+position = Vector2(1093, 803)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("9_yq88f")
+
+[node name="Dwarf" type="Sprite2D" parent="." unique_id=1311489813]
+position = Vector2(1205, 404)
+scale = Vector2(2.25, 2.25)
+texture = ExtResource("10_qngwn")
+
+[node name="Cake" type="Sprite2D" parent="." unique_id=679579692]
+position = Vector2(803, 324)
+scale = Vector2(2, 2)
+texture = ExtResource("11_2uy04")
+
+[node name="JohnSmith" type="Sprite2D" parent="." unique_id=1793670422]
+position = Vector2(964, 264)
+scale = Vector2(2, 2)
+texture = ExtResource("12_u16os")
+
+[node name="Seagul" type="Sprite2D" parent="." unique_id=1676229114]
+position = Vector2(837, 815)
+scale = Vector2(2, 2)
+texture = ExtResource("13_iyxtv")
+
+[node name="Robot" type="Sprite2D" parent="." unique_id=854933758]
+position = Vector2(1231, 571)
+scale = Vector2(2, 2)
+texture = ExtResource("14_v1b1m")
+
+[node name="Plillowman" type="Sprite2D" parent="." unique_id=298825804]
+position = Vector2(962, 846)
+scale = Vector2(2, 2)
+texture = ExtResource("15_35wn2")
+
+[node name="Fish" type="Sprite2D" parent="." unique_id=495400481]
+position = Vector2(716, 442)
+scale = Vector2(2, 2)
+texture = ExtResource("16_jx68v")
+
+[node name="Pizza" type="Sprite2D" parent="." unique_id=970042875]
+position = Vector2(693, 579)
+scale = Vector2(2, 2)
+texture = ExtResource("17_weq0d")
+
+[node name="Cat" type="Sprite2D" parent="." unique_id=924985852]
+position = Vector2(746, 699.00006)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("18_qlxap")
+
+[connection signal="mouse_entered" from="ExitButton/ExitButton" to="ExitButton/ExitButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="ExitButton/ExitButton" to="ExitButton/ExitButton" method="_on_mouse_exited"]
+[connection signal="pressed" from="ExitButton/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="mouse_entered" from="StartButton/StartButton" to="StartButton/StartButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="StartButton/StartButton" to="StartButton/StartButton" method="_on_mouse_exited"]
+[connection signal="pressed" from="StartButton/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="mouse_entered" from="ThePen/TextureButton" to="ThePen/TextureButton" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="ThePen/TextureButton" to="ThePen/TextureButton" method="_on_mouse_exited"]

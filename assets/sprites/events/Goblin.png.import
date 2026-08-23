@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cn8u1p5vr24fv"
-path="res://.godot/imported/HouseOnFireSticker.png-4a5b8c9e550e5ee19a153e46ba8aa117.ctex"
+uid="uid://cgvkrbfcd2rfn"
+path="res://.godot/imported/Goblin.png-3c428af18373a69d4b9c133f84d170d2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/HouseOnFireSticker.png"
-dest_files=["res://.godot/imported/HouseOnFireSticker.png-4a5b8c9e550e5ee19a153e46ba8aa117.ctex"]
+source_file="res://assets/sprites/events/Goblin.png"
+dest_files=["res://.godot/imported/Goblin.png-3c428af18373a69d4b9c133f84d170d2.ctex"]
 
 [params]
 

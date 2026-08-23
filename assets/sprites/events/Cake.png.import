@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgvkrbfcd2rfn"
-path="res://.godot/imported/Goblin.png-15c6b7533e6d7842c5f625f34e1944fb.ctex"
+uid="uid://cfem77mgm4tku"
+path="res://.godot/imported/Cake.png-1c566cbdaf3ac6a8aa5f5cfc55ad88d9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Goblin.png"
-dest_files=["res://.godot/imported/Goblin.png-15c6b7533e6d7842c5f625f34e1944fb.ctex"]
+source_file="res://assets/sprites/events/Cake.png"
+dest_files=["res://.godot/imported/Cake.png-1c566cbdaf3ac6a8aa5f5cfc55ad88d9.ctex"]
 
 [params]
 

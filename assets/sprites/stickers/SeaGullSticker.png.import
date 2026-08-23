@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://41tqgv6pr46o"
-path="res://.godot/imported/Robot.png-9fcfb7043203c76c0c5362a5a5fbaf7c.ctex"
+uid="uid://63q1i0w270wc"
+path="res://.godot/imported/SeaGullSticker.png-fe046639184dd45a67b15d129a770e59.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Robot.png"
-dest_files=["res://.godot/imported/Robot.png-9fcfb7043203c76c0c5362a5a5fbaf7c.ctex"]
+source_file="res://assets/sprites/stickers/SeaGullSticker.png"
+dest_files=["res://.godot/imported/SeaGullSticker.png-fe046639184dd45a67b15d129a770e59.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://63q1i0w270wc"
-path="res://.godot/imported/SeaGullSticker.png-72bc4e35b80d688242d629357d201091.ctex"
+uid="uid://cjuuvw8wdi3j1"
+path="res://.godot/imported/Pizza.png-11d142efc185f0f89d4c4c84cfd2d9a8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/SeaGullSticker.png"
-dest_files=["res://.godot/imported/SeaGullSticker.png-72bc4e35b80d688242d629357d201091.ctex"]
+source_file="res://assets/sprites/events/Pizza.png"
+dest_files=["res://.godot/imported/Pizza.png-11d142efc185f0f89d4c4c84cfd2d9a8.ctex"]
 
 [params]
 

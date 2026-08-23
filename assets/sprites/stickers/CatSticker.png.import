@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rn7rm01cx7i5"
-path="res://.godot/imported/CakeSticker.png-8b0b9e457a1fed95c94041542bb8723f.ctex"
+uid="uid://mi4786iqpc16"
+path="res://.godot/imported/CatSticker.png-aa3ae1bcd7ff037d9e80727a2c5ddd26.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/CakeSticker.png"
-dest_files=["res://.godot/imported/CakeSticker.png-8b0b9e457a1fed95c94041542bb8723f.ctex"]
+source_file="res://assets/sprites/stickers/CatSticker.png"
+dest_files=["res://.godot/imported/CatSticker.png-aa3ae1bcd7ff037d9e80727a2c5ddd26.ctex"]
 
 [params]
 

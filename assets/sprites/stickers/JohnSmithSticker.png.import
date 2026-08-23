@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://mi4786iqpc16"
-path="res://.godot/imported/CatSticker.png-3266d3272fc0cf635d032c40614ee53d.ctex"
+uid="uid://mqagia3nh2ao"
+path="res://.godot/imported/JohnSmithSticker.png-6b4a1a45d18ac40ceab2997c51c3ffd7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/CatSticker.png"
-dest_files=["res://.godot/imported/CatSticker.png-3266d3272fc0cf635d032c40614ee53d.ctex"]
+source_file="res://assets/sprites/stickers/JohnSmithSticker.png"
+dest_files=["res://.godot/imported/JohnSmithSticker.png-6b4a1a45d18ac40ceab2997c51c3ffd7.ctex"]
 
 [params]
 

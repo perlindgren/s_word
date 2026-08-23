@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://uj1uaukpnjsl"
-path="res://.godot/imported/Plillowman.png-41a9873d79e0c1221499f3275a81b635.ctex"
+uid="uid://dow7qn4tpfldv"
+path="res://.godot/imported/Seagul.png-97aafd7da89fc3cbaea26628efbd86e4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Plillowman.png"
-dest_files=["res://.godot/imported/Plillowman.png-41a9873d79e0c1221499f3275a81b635.ctex"]
+source_file="res://assets/sprites/events/Seagul.png"
+dest_files=["res://.godot/imported/Seagul.png-97aafd7da89fc3cbaea26628efbd86e4.ctex"]
 
 [params]
 

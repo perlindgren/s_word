@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwqr2qdwgysm0"
-path="res://.godot/imported/GoblinSticker.png-f63e3e64bb68c813455e4f4cb1161d9f.ctex"
+uid="uid://sa1ucatvxkd8"
+path="res://.godot/imported/Fish.png-5a2a9eb4055084be8bb20b24fc0f4bc2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/GoblinSticker.png"
-dest_files=["res://.godot/imported/GoblinSticker.png-f63e3e64bb68c813455e4f4cb1161d9f.ctex"]
+source_file="res://assets/sprites/events/Fish.png"
+dest_files=["res://.godot/imported/Fish.png-5a2a9eb4055084be8bb20b24fc0f4bc2.ctex"]
 
 [params]
 

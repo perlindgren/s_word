@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://6vbpx7srdwqu"
-path="res://.godot/imported/JohnSmith.png-84ab1af701af696580f6dc7b6cbb7662.ctex"
+path="res://.godot/imported/JohnSmith.png-84346dd15e714d2e9a77a584e045d920.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/JohnSmith.png"
-dest_files=["res://.godot/imported/JohnSmith.png-84ab1af701af696580f6dc7b6cbb7662.ctex"]
+source_file="res://assets/sprites/events/JohnSmith.png"
+dest_files=["res://.godot/imported/JohnSmith.png-84346dd15e714d2e9a77a584e045d920.ctex"]
 
 [params]
 

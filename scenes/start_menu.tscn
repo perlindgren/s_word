@@ -257,5 +257,6 @@ scale = Vector2(0.75, 0.75)
 [connection signal="mouse_entered" from="ExitButton/TextureButton" to="." method="_on_exit_button_mouse_entered"]
 [connection signal="mouse_exited" from="ExitButton/TextureButton" to="." method="_on_exit_button_mouse_exited"]
 [connection signal="pressed" from="ExitButton/TextureButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="StartButton/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="Master/MasterButton" to="." method="_on_master_button_pressed"]
 [connection signal="pressed" from="Quick/QuickButton" to="." method="_on_quick_button_pressed"]

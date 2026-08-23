@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0cf8qy7fpidk"
-path="res://.godot/imported/FishSticker.png-c0289d56cf26495860007985634cfa0d.ctex"
+uid="uid://uj1uaukpnjsl"
+path="res://.godot/imported/Plillowman.png-100505a1c0aa03d79ec9132536b00443.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/FishSticker.png"
-dest_files=["res://.godot/imported/FishSticker.png-c0289d56cf26495860007985634cfa0d.ctex"]
+source_file="res://assets/sprites/events/Plillowman.png"
+dest_files=["res://.godot/imported/Plillowman.png-100505a1c0aa03d79ec9132536b00443.ctex"]
 
 [params]
 

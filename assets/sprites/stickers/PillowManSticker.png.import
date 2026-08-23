@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://mqagia3nh2ao"
-path="res://.godot/imported/JohnSmithSticker.png-8578e801cd5943d90c36eecc6f4bd609.ctex"
+uid="uid://dp6dlbspgxho1"
+path="res://.godot/imported/PillowManSticker.png-a5896e788c7c645d200aa7e587d01229.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/JohnSmithSticker.png"
-dest_files=["res://.godot/imported/JohnSmithSticker.png-8578e801cd5943d90c36eecc6f4bd609.ctex"]
+source_file="res://assets/sprites/stickers/PillowManSticker.png"
+dest_files=["res://.godot/imported/PillowManSticker.png-a5896e788c7c645d200aa7e587d01229.ctex"]
 
 [params]
 
