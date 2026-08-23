@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var clock = $Clock
+@onready var clock : Clock = $Clock
 
 var sec: int = 0
 

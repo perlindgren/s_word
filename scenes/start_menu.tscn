@@ -1,11 +1,12 @@
 [gd_scene format=3 uid="uid://bypnq043dd0e8"]
 
-[ext_resource type="Script" uid="uid://c6phdrts5e4lp" path="res://scenes/start_menu.gd" id="1_fcv5n"]
+[ext_resource type="Script" uid="uid://c6phdrts5e4lp" path="res://scripts/start_menu.gd" id="1_fcv5n"]
 [ext_resource type="PackedScene" uid="uid://dnjco0b34ec1h" path="res://scenes/parallax_background.tscn" id="1_ouf4f"]
 [ext_resource type="Texture2D" uid="uid://b27qwpg5gjul6" path="res://assets/sprites/Button.png" id="3_4v6gu"]
 [ext_resource type="FontFile" uid="uid://n74onkhokknh" path="res://assets/fonts/JameGem08_2026-Regular.ttf" id="4_nxjfj"]
 [ext_resource type="Texture2D" uid="uid://cck8ngoc2ae6e" path="res://assets/sprites/ButtonPressed.png" id="5_u4qax"]
 [ext_resource type="Texture2D" uid="uid://dfn6rnas4njwt" path="res://assets/sprites/N65.png" id="6_4v6gu"]
+[ext_resource type="PackedScene" uid="uid://cbclmpycumvqq" path="res://scenes/clock.tscn" id="7_nxjfj"]
 
 [node name="StartMenu" type="Node2D" unique_id=849056485]
 script = ExtResource("1_fcv5n")
@@ -209,6 +210,10 @@ texture_filter = 2
 position = Vector2(175, 922)
 scale = Vector2(0.08, 0.08)
 texture = ExtResource("6_4v6gu")
+
+[node name="Clock" parent="." unique_id=2000448681 instance=ExtResource("7_nxjfj")]
+position = Vector2(1635.0001, 790)
+scale = Vector2(0.75, 0.75)
 
 [connection signal="mouse_entered" from="ExitButton/TextureButton" to="." method="_on_exit_button_mouse_entered"]
 [connection signal="mouse_exited" from="ExitButton/TextureButton" to="." method="_on_exit_button_mouse_exited"]

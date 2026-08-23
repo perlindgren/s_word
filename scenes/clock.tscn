@@ -10,7 +10,7 @@
 script = ExtResource("1_er1xc")
 s = 5434.0
 
-[node name="Clock" type="Sprite2D" parent="." unique_id=293208724]
+[node name="ClockSprite" type="Sprite2D" parent="." unique_id=293208724]
 position = Vector2(-5, -37)
 texture = ExtResource("2_r7ruc")
 
