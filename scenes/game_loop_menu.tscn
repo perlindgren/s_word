@@ -225,12 +225,6 @@ position = Vector2(928.00006, 171)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("20_yq88f")
 
-[node name="YourDidGoodSticker" type="Sprite2D" parent="Failed" unique_id=1256584921]
-visible = false
-position = Vector2(171, 604.00006)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("20_yq88f")
-
 [node name="Cleared" type="Node2D" parent="." unique_id=2106577349]
 position = Vector2(0, -48)
 
@@ -299,12 +293,6 @@ texture = ExtResource("18_7epo8")
 position = Vector2(926.00006, 172)
 scale = Vector2(6, 6)
 texture = ExtResource("19_2v0mc")
-
-[node name="YourDidGoodSticker" type="Sprite2D" parent="Cleared" unique_id=1787600163]
-visible = false
-position = Vector2(171, 604.00006)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("20_yq88f")
 
 [node name="NextEvent" type="Label" parent="." unique_id=2001141733]
 modulate = Color(0, 0, 0, 1)
