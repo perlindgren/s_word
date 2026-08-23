@@ -15,6 +15,7 @@ const brick_resource : Resource = preload("res://scenes/brick.tscn")
 const slot_resource : Resource = preload("res://scenes/slot.tscn")
 var rng = RandomNumberGenerator.new()
 var input : String
+var word : String
 
 @onready var event_type = $EventType
 @onready var event_name = $EventName
@@ -25,9 +26,10 @@ func _ready() :
 	Signals.dropped.connect(dropped)
 	
 	var event = GameState.events[GameState.event_nr]
+	word = event.word
 	var n_char = event.word.length()
 	var bricks_nr = n_char + event.extra_chars
-	print("event: ", event.name, " ", event.event, " ", event.word, " ", n_char)
+	print("event: ", event.name, " ", event.event, " ", word, " ", n_char)
 	event_type.text = event.event
 	event_name.text = event.name
 	
@@ -67,7 +69,7 @@ func _ready() :
 		brick_instance.old_rotation = brick_instance.rotation
 		var char 
 		if i < n_char:
-			char =  event.word[i]
+			char =  word[i]
 		else:
 			char = String.chr(65 + randi() % 26)
 		brick_instance.get_node("Label").text = char
@@ -89,5 +91,11 @@ func _ready() :
 	# print(str("%*.*f" % [5, 2, 60.23]))
 	# print(str("%*.*f" % [5, 2, 3.2]))
 
-func dropped(p: int, s: String) -> void: 
-	print("received drop ", p, " ", s)
+func dropped(p: int, char: String) -> void: 
+	print("received drop ", p, " ", char)
+	input[p] = char
+	if input == word:
+		print("success")
+		GameState.cleared.push_back(GameState.event_nr)
+		
+		Signals.to_game_loop_menu.emit()

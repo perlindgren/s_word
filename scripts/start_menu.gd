@@ -16,7 +16,7 @@ func _on_exit_button_pressed() -> void:
 	get_tree().quit()
 
 func _on_start_button_pressed() -> void:
-	Signals.main_menu_start.emit()
+	Signals.to_game_loop_menu.emit()
 
 func _on_master_button_pressed() -> void:
 	print("master")

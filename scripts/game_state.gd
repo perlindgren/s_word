@@ -34,3 +34,11 @@ var events : Array[Data] = [
 	Data.new("Cake", "Needs", "BIRTHDAY", 8, 1.0),
 	Data.new("John Smith", "Wants", "SMARTPHONE", 8, 1.0)
 ]
+
+func save() -> void:
+	print("save")
+	pass
+
+func load() -> void:
+	print("load")
+	pass
