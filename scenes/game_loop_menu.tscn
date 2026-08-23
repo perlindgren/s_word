@@ -7,18 +7,18 @@
 [ext_resource type="FontFile" uid="uid://n74onkhokknh" path="res://assets/fonts/JameGem08_2026-Regular.ttf" id="3_cu3jl"]
 [ext_resource type="Texture2D" uid="uid://dfn6rnas4njwt" path="res://assets/sprites/N65.png" id="5_rvywj"]
 [ext_resource type="PackedScene" uid="uid://cbclmpycumvqq" path="res://scenes/clock.tscn" id="6_icjmd"]
-[ext_resource type="Texture2D" uid="uid://b2vmh4xlqpkst" path="res://assets/sprites/events/HouseOnFire.png" id="7_18kbl"]
-[ext_resource type="Texture2D" uid="uid://cgvkrbfcd2rfn" path="res://assets/sprites/events/Goblin.png" id="8_0xkhp"]
-[ext_resource type="Texture2D" uid="uid://c1pdx7531wx2h" path="res://assets/sprites/events/Dog.png" id="9_yq88f"]
-[ext_resource type="Texture2D" uid="uid://c8cwetmpllo4m" path="res://assets/sprites/events/Dwarf.png" id="10_qngwn"]
-[ext_resource type="Texture2D" uid="uid://cfem77mgm4tku" path="res://assets/sprites/events/Cake.png" id="11_2uy04"]
-[ext_resource type="Texture2D" uid="uid://6vbpx7srdwqu" path="res://assets/sprites/events/JohnSmith.png" id="12_u16os"]
-[ext_resource type="Texture2D" uid="uid://dow7qn4tpfldv" path="res://assets/sprites/events/Seagul.png" id="13_iyxtv"]
-[ext_resource type="Texture2D" uid="uid://41tqgv6pr46o" path="res://assets/sprites/events/Robot.png" id="14_v1b1m"]
-[ext_resource type="Texture2D" uid="uid://uj1uaukpnjsl" path="res://assets/sprites/events/Plillowman.png" id="15_35wn2"]
-[ext_resource type="Texture2D" uid="uid://sa1ucatvxkd8" path="res://assets/sprites/events/Fish.png" id="16_jx68v"]
-[ext_resource type="Texture2D" uid="uid://cjuuvw8wdi3j1" path="res://assets/sprites/events/Pizza.png" id="17_weq0d"]
-[ext_resource type="Texture2D" uid="uid://8xdk4vr7l4r5" path="res://assets/sprites/events/Cat.png" id="18_qlxap"]
+[ext_resource type="Texture2D" uid="uid://b1f6g44rnipa5" path="res://assets/sprites/stickers/StickerOutline/GoblinSticker.png" id="8_yq88f"]
+[ext_resource type="Texture2D" uid="uid://dffe4n6hdjnp0" path="res://assets/sprites/stickers/StickerOutline/DwarfSticker.png" id="9_qngwn"]
+[ext_resource type="Texture2D" uid="uid://dq4rw7uehqbxi" path="res://assets/sprites/stickers/StickerOutline/RobotSticker.png" id="10_2uy04"]
+[ext_resource type="Texture2D" uid="uid://ddft27tto3nyy" path="res://assets/sprites/stickers/StickerOutline/HouseOnFireSticker.png" id="11_u16os"]
+[ext_resource type="Texture2D" uid="uid://dr315cnfwcgku" path="res://assets/sprites/stickers/StickerOutline/DogSticker.png" id="12_iyxtv"]
+[ext_resource type="Texture2D" uid="uid://bukw2yfml0spy" path="res://assets/sprites/stickers/StickerOutline/PillowmanSticker.png" id="13_v1b1m"]
+[ext_resource type="Texture2D" uid="uid://p8gx6jme30ex" path="res://assets/sprites/stickers/StickerOutline/SeagullSticker.png" id="14_35wn2"]
+[ext_resource type="Texture2D" uid="uid://d3ew6x6rywegj" path="res://assets/sprites/stickers/StickerOutline/CatSticker.png" id="15_jx68v"]
+[ext_resource type="Texture2D" uid="uid://crs2ls1t0fwuf" path="res://assets/sprites/stickers/StickerOutline/PizzaSticker.png" id="16_weq0d"]
+[ext_resource type="Texture2D" uid="uid://ex4w1ek8tcei" path="res://assets/sprites/stickers/StickerOutline/FishSticker.png" id="17_qlxap"]
+[ext_resource type="Texture2D" uid="uid://ohtqsd5ggym3" path="res://assets/sprites/stickers/StickerOutline/CakeSticker.png" id="18_7epo8"]
+[ext_resource type="Texture2D" uid="uid://dlpbj7w4o7y08" path="res://assets/sprites/stickers/StickerOutline/JohnSticker.png" id="19_2v0mc"]
 [ext_resource type="Texture2D" uid="uid://bhoq65j3rfasw" path="res://assets/sprites/stickers/YourDidGoodSticker.png" id="20_yq88f"]
 
 [sub_resource type="FontVariation" id="FontVariation_0xkhp"]
@@ -33,6 +33,7 @@ script = ExtResource("1_0xkhp")
 layer = -10
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=80293969]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -242,70 +243,71 @@ position = Vector2(0, -48)
 position = Vector2(1217, 202.00003)
 rotation = 0.8150688
 scale = Vector2(6.5, 6.5)
-texture = ExtResource("8_0xkhp")
+texture = ExtResource("8_yq88f")
 
 [node name="Dwarf" type="Sprite2D" parent="Cleared" unique_id=1311489813]
 position = Vector2(1372, 349)
 scale = Vector2(8, 8)
-texture = ExtResource("10_qngwn")
+texture = ExtResource("9_qngwn")
 
 [node name="Robot" type="Sprite2D" parent="Cleared" unique_id=854933758]
 position = Vector2(1446, 593.99994)
 rotation = -0.58119464
 scale = Vector2(8, 8)
-texture = ExtResource("14_v1b1m")
+texture = ExtResource("10_2uy04")
 
 [node name="HouseOnFire" type="Sprite2D" parent="Cleared" unique_id=295369755]
 position = Vector2(1396.0001, 805.00006)
 scale = Vector2(6, 6)
-texture = ExtResource("7_18kbl")
+texture = ExtResource("11_u16os")
 
 [node name="Dog" type="Sprite2D" parent="Cleared" unique_id=1639704929]
 position = Vector2(1244, 928)
 scale = Vector2(8, 8)
-texture = ExtResource("9_yq88f")
+texture = ExtResource("12_iyxtv")
 
 [node name="Plillowman" type="Sprite2D" parent="Cleared" unique_id=298825804]
 position = Vector2(1013.00006, 1008)
 rotation = 1.1623893
 scale = Vector2(5, 5)
-texture = ExtResource("15_35wn2")
+texture = ExtResource("13_v1b1m")
 
 [node name="Seagul" type="Sprite2D" parent="Cleared" unique_id=1676229114]
 position = Vector2(786.00006, 1002.99994)
 scale = Vector2(5, 5)
-texture = ExtResource("13_iyxtv")
+texture = ExtResource("14_35wn2")
 
 [node name="Cat" type="Sprite2D" parent="Cleared" unique_id=924985852]
 position = Vector2(626.00006, 878)
 rotation = 0.58119464
 scale = Vector2(9, 9)
-texture = ExtResource("18_qlxap")
+texture = ExtResource("15_jx68v")
 
 [node name="Pizza" type="Sprite2D" parent="Cleared" unique_id=970042875]
 position = Vector2(506.99997, 655)
 scale = Vector2(7, 7)
-texture = ExtResource("17_weq0d")
+texture = ExtResource("16_weq0d")
 
 [node name="Fish" type="Sprite2D" parent="Cleared" unique_id=495400481]
 position = Vector2(506.99997, 405)
 rotation = 0.4660029
 scale = Vector2(6.5, 6.5)
-texture = ExtResource("16_jx68v")
+texture = ExtResource("17_qlxap")
 
 [node name="Cake" type="Sprite2D" parent="Cleared" unique_id=679579692]
 position = Vector2(708.99994, 185.00002)
 rotation = 0.58119464
 scale = Vector2(6, 6)
-texture = ExtResource("11_2uy04")
+texture = ExtResource("18_7epo8")
 
 [node name="JohnSmith" type="Sprite2D" parent="Cleared" unique_id=1793670422]
 position = Vector2(928.00006, 171)
 scale = Vector2(6, 6)
-texture = ExtResource("12_u16os")
+texture = ExtResource("19_2v0mc")
 
 [node name="YourDidGoodSticker" type="Sprite2D" parent="Cleared" unique_id=1787600163]
-position = Vector2(158.99997, 706.00006)
+visible = false
+position = Vector2(171, 604.00006)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("20_yq88f")
 
@@ -342,6 +344,82 @@ grow_vertical = 2
 theme_override_fonts/font = SubResource("FontVariation_0xkhp")
 theme_override_font_sizes/font_size = 64
 text = "EVENT #7"
+
+[node name="Failed" type="Node2D" parent="." unique_id=502168101]
+visible = false
+position = Vector2(0, -48)
+
+[node name="Goblin" type="Sprite2D" parent="Failed" unique_id=766008302]
+position = Vector2(1217, 202.00003)
+rotation = 0.8150688
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("20_yq88f")
+
+[node name="Dwarf" type="Sprite2D" parent="Failed" unique_id=1835668565]
+position = Vector2(1372, 349)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("20_yq88f")
+
+[node name="Robot" type="Sprite2D" parent="Failed" unique_id=2031735054]
+position = Vector2(1446, 593.99994)
+rotation = -0.58119464
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("20_yq88f")
+
+[node name="HouseOnFire" type="Sprite2D" parent="Failed" unique_id=1514328790]
+position = Vector2(1396.0001, 805.00006)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("20_yq88f")
+
+[node name="Dog" type="Sprite2D" parent="Failed" unique_id=1721695034]
+position = Vector2(1244, 928)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("20_yq88f")
+
+[node name="Plillowman" type="Sprite2D" parent="Failed" unique_id=779377216]
+position = Vector2(1013.00006, 1008)
+rotation = 1.1623893
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("20_yq88f")
+
+[node name="Seagul" type="Sprite2D" parent="Failed" unique_id=1276860484]
+position = Vector2(786.00006, 1002.99994)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("20_yq88f")
+
+[node name="Cat" type="Sprite2D" parent="Failed" unique_id=1007630068]
+position = Vector2(626.00006, 878)
+rotation = 0.58119464
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("20_yq88f")
+
+[node name="Pizza" type="Sprite2D" parent="Failed" unique_id=310707531]
+position = Vector2(506.99997, 655)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("20_yq88f")
+
+[node name="Fish" type="Sprite2D" parent="Failed" unique_id=504654120]
+position = Vector2(506.99997, 405)
+rotation = 0.4660029
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("20_yq88f")
+
+[node name="Cake" type="Sprite2D" parent="Failed" unique_id=1968293483]
+position = Vector2(708.99994, 185.00002)
+rotation = 0.58119464
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("20_yq88f")
+
+[node name="JohnSmith" type="Sprite2D" parent="Failed" unique_id=1925975200]
+position = Vector2(928.00006, 171)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("20_yq88f")
+
+[node name="YourDidGoodSticker" type="Sprite2D" parent="Failed" unique_id=1256584921]
+visible = false
+position = Vector2(171, 604.00006)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("20_yq88f")
 
 [connection signal="mouse_entered" from="ExitButton/ExitButton" to="ExitButton/ExitButton" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="ExitButton/ExitButton" to="ExitButton/ExitButton" method="_on_mouse_exited"]
