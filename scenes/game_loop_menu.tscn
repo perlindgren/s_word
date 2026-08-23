@@ -20,6 +20,11 @@
 [ext_resource type="Texture2D" uid="uid://cjuuvw8wdi3j1" path="res://assets/sprites/events/Pizza.png" id="17_weq0d"]
 [ext_resource type="Texture2D" uid="uid://8xdk4vr7l4r5" path="res://assets/sprites/events/Cat.png" id="18_qlxap"]
 
+[sub_resource type="FontVariation" id="FontVariation_0xkhp"]
+base_font = ExtResource("3_cu3jl")
+spacing_glyph = -4
+spacing_space = -1
+
 [node name="GameLoopMenu" type="Node2D" unique_id=1352290525]
 script = ExtResource("1_0xkhp")
 
@@ -225,71 +230,106 @@ position = Vector2(175, 922)
 scale = Vector2(0.08, 0.08)
 texture = ExtResource("5_rvywj")
 
-[node name="ClockWheel" type="Node2D" parent="." unique_id=719897109]
-position = Vector2(966.0001, 563)
+[node name="Clock" parent="." unique_id=2000448681 instance=ExtResource("6_icjmd")]
+position = Vector2(966.0001, 515)
 scale = Vector2(0.75, 0.75)
 
-[node name="Clock" parent="ClockWheel" unique_id=2000448681 instance=ExtResource("6_icjmd")]
+[node name="Cleared" type="Node2D" parent="." unique_id=2106577349]
+position = Vector2(0, -48)
 
-[node name="HouseOnFire" type="Sprite2D" parent="." unique_id=295369755]
-position = Vector2(1200, 722)
-scale = Vector2(2, 2)
-texture = ExtResource("7_18kbl")
-
-[node name="Goblin" type="Sprite2D" parent="." unique_id=981812064]
-position = Vector2(1106, 323)
-scale = Vector2(2, 2)
+[node name="Goblin" type="Sprite2D" parent="Cleared" unique_id=981812064]
+position = Vector2(1121, 279)
+scale = Vector2(3, 3)
 texture = ExtResource("8_0xkhp")
 
-[node name="Dog" type="Sprite2D" parent="." unique_id=1639704929]
-position = Vector2(1093, 803)
-scale = Vector2(2.5, 2.5)
-texture = ExtResource("9_yq88f")
-
-[node name="Dwarf" type="Sprite2D" parent="." unique_id=1311489813]
-position = Vector2(1205, 404)
-scale = Vector2(2.25, 2.25)
+[node name="Dwarf" type="Sprite2D" parent="Cleared" unique_id=1311489813]
+position = Vector2(1230.0001, 379)
+scale = Vector2(3.5, 3.5)
 texture = ExtResource("10_qngwn")
 
-[node name="Cake" type="Sprite2D" parent="." unique_id=679579692]
-position = Vector2(803, 324)
-scale = Vector2(2, 2)
-texture = ExtResource("11_2uy04")
-
-[node name="JohnSmith" type="Sprite2D" parent="." unique_id=1793670422]
-position = Vector2(964, 264)
-scale = Vector2(2, 2)
-texture = ExtResource("12_u16os")
-
-[node name="Seagul" type="Sprite2D" parent="." unique_id=1676229114]
-position = Vector2(837, 815)
-scale = Vector2(2, 2)
-texture = ExtResource("13_iyxtv")
-
-[node name="Robot" type="Sprite2D" parent="." unique_id=854933758]
-position = Vector2(1231, 571)
-scale = Vector2(2, 2)
+[node name="Robot" type="Sprite2D" parent="Cleared" unique_id=854933758]
+position = Vector2(1259, 568)
+scale = Vector2(3, 3)
 texture = ExtResource("14_v1b1m")
 
-[node name="Plillowman" type="Sprite2D" parent="." unique_id=298825804]
-position = Vector2(962, 846)
-scale = Vector2(2, 2)
+[node name="HouseOnFire" type="Sprite2D" parent="Cleared" unique_id=295369755]
+position = Vector2(1213.0001, 714.00006)
+scale = Vector2(2.3, 2.3)
+texture = ExtResource("7_18kbl")
+
+[node name="Dog" type="Sprite2D" parent="Cleared" unique_id=1639704929]
+position = Vector2(1110, 822)
+scale = Vector2(4, 4)
+texture = ExtResource("9_yq88f")
+
+[node name="Plillowman" type="Sprite2D" parent="Cleared" unique_id=298825804]
+position = Vector2(968.00006, 877)
+scale = Vector2(3, 3)
 texture = ExtResource("15_35wn2")
 
-[node name="Fish" type="Sprite2D" parent="." unique_id=495400481]
-position = Vector2(716, 442)
-scale = Vector2(2, 2)
-texture = ExtResource("16_jx68v")
+[node name="Seagul" type="Sprite2D" parent="Cleared" unique_id=1676229114]
+position = Vector2(815, 836.00006)
+scale = Vector2(3, 3)
+texture = ExtResource("13_iyxtv")
 
-[node name="Pizza" type="Sprite2D" parent="." unique_id=970042875]
-position = Vector2(693, 579)
-scale = Vector2(2, 2)
+[node name="Cat" type="Sprite2D" parent="Cleared" unique_id=924985852]
+position = Vector2(720, 697)
+scale = Vector2(4, 4)
+texture = ExtResource("18_qlxap")
+
+[node name="Pizza" type="Sprite2D" parent="Cleared" unique_id=970042875]
+position = Vector2(674, 578)
+scale = Vector2(3, 3)
 texture = ExtResource("17_weq0d")
 
-[node name="Cat" type="Sprite2D" parent="." unique_id=924985852]
-position = Vector2(746, 699.00006)
-scale = Vector2(2.5, 2.5)
-texture = ExtResource("18_qlxap")
+[node name="Fish" type="Sprite2D" parent="Cleared" unique_id=495400481]
+position = Vector2(699, 426.00003)
+scale = Vector2(3, 3)
+texture = ExtResource("16_jx68v")
+
+[node name="Cake" type="Sprite2D" parent="Cleared" unique_id=679579692]
+position = Vector2(807.00006, 283)
+scale = Vector2(3, 3)
+texture = ExtResource("11_2uy04")
+
+[node name="JohnSmith" type="Sprite2D" parent="Cleared" unique_id=1793670422]
+position = Vector2(962, 226)
+scale = Vector2(4, 4)
+texture = ExtResource("12_u16os")
+
+[node name="NextEvent" type="Label" parent="." unique_id=2001141733]
+modulate = Color(0, 0, 0, 1)
+anchors_preset = -1
+anchor_left = 0.81567425
+anchor_top = 8.915384
+anchor_right = 0.81567425
+anchor_bottom = 8.915384
+offset_left = 655.0
+offset_top = 965.0
+offset_right = 1276.0
+offset_bottom = 1061.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("FontVariation_0xkhp")
+theme_override_font_sizes/font_size = 64
+text = "Some text"
+
+[node name="CurrentEvent" type="Label" parent="." unique_id=697777678]
+modulate = Color(0, 0, 0, 1)
+anchors_preset = -1
+anchor_left = 0.81567425
+anchor_top = 8.915384
+anchor_right = 0.81567425
+anchor_bottom = 8.915384
+offset_left = 230.0
+offset_top = 174.0
+offset_right = 851.0
+offset_bottom = 270.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("FontVariation_0xkhp")
+theme_override_font_sizes/font_size = 64
+text = "EVENT #7"
 
 [connection signal="mouse_entered" from="ExitButton/ExitButton" to="ExitButton/ExitButton" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="ExitButton/ExitButton" to="ExitButton/ExitButton" method="_on_mouse_exited"]
