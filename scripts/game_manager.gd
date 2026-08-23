@@ -8,10 +8,9 @@ var current_child_scene : Node = null
 
 func _ready() -> void:
 	# Connect signals
-	Signals.main_menu_start.connect(to_game_loop_menu)
 	Signals.to_start_menu.connect(to_start_menu)
+	Signals.to_game_loop_menu.connect(to_game_loop_menu)
 	Signals.to_game_loop.connect(to_game_loop)
-
 	change_scene(start_menu)
 
 func change_scene(to) -> void:
@@ -21,18 +20,18 @@ func change_scene(to) -> void:
 	current_child_scene = to.instantiate()
 	add_child(current_child_scene)
 
-func to_game_loop_menu() -> void: 
-	print("to_game_loop_menu")
-	change_scene(game_loop_menu)
-	
 func to_start_menu() -> void: 
 	print("to_start_menu")
 	change_scene(start_menu)
+
+func to_game_loop_menu() -> void: 
+	print("to_game_loop_menu")
+	change_scene(game_loop_menu)
 	
 func to_game_loop() -> void: 
 	print("to_game_menu")
 	change_scene(game_loop)
 
-func new_event() -> void: 
-	print("new_event")
-	change_scene(game_loop)
+#func new_event() -> void: 
+	#print("new_event")
+	#change_scene(game_loop)
