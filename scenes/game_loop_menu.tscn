@@ -263,8 +263,9 @@ scale = Vector2(2, 2)
 texture = ExtResource("9_yq88f")
 
 [node name="Plillowman" type="Sprite2D" parent="ClockWheel/Node2D" unique_id=298825804]
-position = Vector2(-76.919624, 72.69866)
+position = Vector2(-74.12944, 64.04911)
 rotation = 0.6981317
+scale = Vector2(1.25, 1.25)
 texture = ExtResource("15_35wn2")
 
 [node name="Seagul" type="Sprite2D" parent="ClockWheel/Node2D" unique_id=1676229114]
