@@ -94,8 +94,9 @@ func _ready() :
 func dropped(p: int, char: String) -> void: 
 	print("received drop ", p, " ", char)
 	input[p] = char
+	print("input ", input, "word", word)
 	if input == word:
 		print("success")
 		GameState.cleared.push_back(GameState.event_nr)
-		
+		GameState.save()
 		Signals.to_game_loop_menu.emit()

@@ -3,9 +3,9 @@ extends Node
 @export var master_sword_mode = false
 
 # The cleared challenges
-@export var cleared : Array = [1, 2 ,3]
-@export var failed : Array = [2]
-@export var event_nr : int = 2
+@export var cleared : Array = []
+@export var failed : Array = []
+@export var event_nr : int = 0
 
 const file_name = "user://savegame.save"
 
@@ -32,7 +32,7 @@ var events : Array[Data] = [
 	Data.new("Pillow Man", "Wants", "BLANKET", 5, 0.6),
 	Data.new("Seagull with Gun", "Feed", "FRIES", 6, 0.7),
 	Data.new("Cat", "Feed", "CATNIP", 6, 0.8),
-	Data.new("Pizza Man", "Wants", "Tomatoe", 7, 0.9),
+	Data.new("Pizza Man", "Wants", "Tomato", 7, 0.9),
 	Data.new("Fish", "Wants", "AQUARIUM", 7, 1.0),
 	Data.new("Cake", "Needs", "BIRTHDAY", 8, 1.0),
 	Data.new("John Smith", "Wants", "SMARTPHONE", 8, 1.0)

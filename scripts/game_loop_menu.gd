@@ -6,6 +6,7 @@ extends Node2D
 @onready var current_event = $CurrentEvent
 
 func _ready() -> void:
+	GameState.load()
 	for c in cleared.get_children():
 		print("c ", c)
 		c.visible = false
