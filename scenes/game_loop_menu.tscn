@@ -286,9 +286,9 @@ scale = Vector2(7, 7)
 texture = ExtResource("17_weq0d")
 
 [node name="Fish" type="Sprite2D" parent="Cleared" unique_id=495400481]
-position = Vector2(511, 387)
+position = Vector2(506.99997, 405)
 rotation = 0.4660029
-scale = Vector2(7, 7)
+scale = Vector2(6.5, 6.5)
 texture = ExtResource("16_jx68v")
 
 [node name="Cake" type="Sprite2D" parent="Cleared" unique_id=679579692]
