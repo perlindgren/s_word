@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://ban8sxnp5rs0k"]
+
+[ext_resource type="Texture2D" uid="uid://b27qwpg5gjul6" path="res://assets/sprites/Button.png" id="1_0t0f4"]
+[ext_resource type="Script" uid="uid://chj548bfgda1r" path="res://scenes/hover.gd" id="2_adf77"]
+
+[node name="TextureButton" type="TextureButton" unique_id=1778397480]
+anchors_preset = -1
+anchor_left = 0.12784588
+anchor_top = 6.0076923
+anchor_right = 0.12784588
+anchor_bottom = 6.0076923
+offset_left = -61.0
+offset_top = -216.5
+offset_right = 103.0
+offset_bottom = -21.5
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("1_0t0f4")
+texture_pressed = ExtResource("1_0t0f4")
+texture_hover = ExtResource("1_0t0f4")
+texture_disabled = ExtResource("1_0t0f4")
+texture_focused = ExtResource("1_0t0f4")
+script = ExtResource("2_adf77")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

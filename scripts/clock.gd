@@ -10,6 +10,6 @@ func _ready() -> void:
 	print("clock _ready")
 
 func _process(_delta) -> void:
-	seconds.rotation = fmod(TAU * s/60, TAU)
+	seconds.rotation = fmod(TAU * s/60 + 0.06, TAU)
 	minutes.rotation = fmod(TAU * s/3600, TAU)
 	hours.rotation = fmod(TAU * s/(12 * 3600), TAU)

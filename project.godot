@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="sWord"
-run/main_scene="uid://c08ajglgtevpi"
+run/main_scene="uid://0kfg1urxwuet"
 config/features=PackedStringArray("4.7", "Forward Plus")
 run/max_fps=60
 

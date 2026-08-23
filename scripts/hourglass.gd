@@ -1,6 +1,6 @@
 extends Sprite2D
 
-@export var time : float = 20
+@export var time : float = 60
 @onready var seconds = $Seconds
 var curr_time : float
 

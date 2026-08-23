@@ -2,9 +2,8 @@
 
 [ext_resource type="Script" uid="uid://c6phdrts5e4lp" path="res://scripts/start_menu.gd" id="1_fcv5n"]
 [ext_resource type="PackedScene" uid="uid://dnjco0b34ec1h" path="res://scenes/parallax_background.tscn" id="1_ouf4f"]
-[ext_resource type="Texture2D" uid="uid://b27qwpg5gjul6" path="res://assets/sprites/Button.png" id="3_4v6gu"]
+[ext_resource type="PackedScene" uid="uid://ban8sxnp5rs0k" path="res://scenes/brick_button.tscn" id="3_4v6gu"]
 [ext_resource type="FontFile" uid="uid://n74onkhokknh" path="res://assets/fonts/JameGem08_2026-Regular.ttf" id="4_nxjfj"]
-[ext_resource type="Texture2D" uid="uid://cck8ngoc2ae6e" path="res://assets/sprites/ButtonPressed.png" id="5_u4qax"]
 [ext_resource type="Texture2D" uid="uid://dfn6rnas4njwt" path="res://assets/sprites/N65.png" id="6_4v6gu"]
 [ext_resource type="PackedScene" uid="uid://cbclmpycumvqq" path="res://scenes/clock.tscn" id="7_nxjfj"]
 
@@ -31,24 +30,11 @@ metadata/_edit_use_anchors_ = true
 [node name="ExitButton" type="Node2D" parent="." unique_id=534354071]
 position = Vector2(1635, 119)
 
-[node name="TextureButton" type="TextureButton" parent="ExitButton" unique_id=1608097343]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
+[node name="TextureButton" parent="ExitButton" unique_id=1778397480 instance=ExtResource("3_4v6gu")]
 offset_left = -82.0
 offset_top = -97.5
 offset_right = 82.0
 offset_bottom = 97.5
-grow_horizontal = 2
-grow_vertical = 2
-texture_normal = ExtResource("3_4v6gu")
-texture_pressed = ExtResource("3_4v6gu")
-texture_hover = ExtResource("3_4v6gu")
-texture_disabled = ExtResource("3_4v6gu")
-texture_focused = ExtResource("3_4v6gu")
-metadata/_edit_use_anchors_ = true
 
 [node name="E" type="Label" parent="ExitButton" unique_id=1814847631]
 modulate = Color(0, 0, 0, 1)
@@ -81,24 +67,11 @@ text = "XIT"
 [node name="StartButton" type="Node2D" parent="." unique_id=822789339]
 position = Vector2(104, 121)
 
-[node name="TextureButton" type="TextureButton" parent="StartButton" unique_id=1859311573]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -82.0
-offset_top = -97.5
-offset_right = 82.0
-offset_bottom = 97.5
-grow_horizontal = 2
-grow_vertical = 2
-texture_normal = ExtResource("3_4v6gu")
-texture_pressed = ExtResource("5_u4qax")
-texture_hover = ExtResource("3_4v6gu")
-texture_disabled = ExtResource("3_4v6gu")
-texture_focused = ExtResource("3_4v6gu")
-metadata/_edit_use_anchors_ = true
+[node name="StartButton" parent="StartButton" unique_id=412654385 instance=ExtResource("3_4v6gu")]
+offset_left = -83.0
+offset_top = -97.0
+offset_right = 81.0
+offset_bottom = 98.0
 
 [node name="S" type="Label" parent="StartButton" unique_id=1092607493]
 modulate = Color(0, 0, 0, 1)
@@ -128,6 +101,82 @@ theme_override_fonts/font = ExtResource("4_nxjfj")
 theme_override_font_sizes/font_size = 96
 text = "TART"
 
+[node name="Master" type="Node2D" parent="." unique_id=317242457]
+position = Vector2(525, 854)
+scale = Vector2(0.5, 0.5)
+
+[node name="MasterButton" parent="Master" unique_id=122475214 instance=ExtResource("3_4v6gu")]
+offset_left = -83.0
+offset_top = -97.0
+offset_right = 81.0
+offset_bottom = 98.0
+
+[node name="M" type="Label" parent="Master" unique_id=838114905]
+modulate = Color(0, 0, 0, 1)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.0
+offset_top = -32.5
+offset_right = 23.0
+offset_bottom = 32.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_nxjfj")
+theme_override_font_sizes/font_size = 96
+text = "M"
+metadata/_edit_use_anchors_ = true
+
+[node name="aster SWORD mode" type="Label" parent="Master" unique_id=213151403]
+modulate = Color(0, 0, 0, 1)
+offset_left = 75.0
+offset_top = -44.0
+offset_right = 325.0
+offset_bottom = 84.0
+theme_override_fonts/font = ExtResource("4_nxjfj")
+theme_override_font_sizes/font_size = 96
+text = "ASTER SWORD MODE"
+
+[node name="Quick" type="Node2D" parent="." unique_id=593899501]
+position = Vector2(525, 986)
+scale = Vector2(0.5, 0.5)
+
+[node name="QuickButton" parent="Quick" unique_id=103611766 instance=ExtResource("3_4v6gu")]
+offset_left = -83.0
+offset_top = -97.0
+offset_right = 81.0
+offset_bottom = 98.0
+
+[node name="Q" type="Label" parent="Quick" unique_id=435047869]
+modulate = Color(0, 0, 0, 1)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.0
+offset_top = -32.5
+offset_right = 23.0
+offset_bottom = 32.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_nxjfj")
+theme_override_font_sizes/font_size = 96
+text = "Q"
+metadata/_edit_use_anchors_ = true
+
+[node name="QuickAnd" type="Label" parent="Quick" unique_id=1874984278]
+modulate = Color(0, 0, 0, 1)
+offset_left = 76.0
+offset_top = -44.0
+offset_right = 929.0
+offset_bottom = 84.0
+theme_override_fonts/font = ExtResource("4_nxjfj")
+theme_override_font_sizes/font_size = 96
+text = "UICK AND DIRTY"
+
 [node name="ThePen" type="Label" parent="." unique_id=173853343]
 self_modulate = Color(0, 0, 0, 1)
 anchors_preset = 8
@@ -146,24 +195,14 @@ theme_override_font_sizes/font_size = 48
 text = "THE PEN IS MIGHTIER THAN THE"
 metadata/_edit_use_anchors_ = true
 
-[node name="TextureButton" type="TextureButton" parent="ThePen" unique_id=764782771]
+[node name="NoButton" parent="ThePen" unique_id=1178043654 instance=ExtResource("3_4v6gu")]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.12784588
-anchor_top = 6.0076923
-anchor_right = 0.12784588
-anchor_bottom = 6.0076923
-offset_left = -61.0
-offset_top = -216.5
-offset_right = 103.0
-offset_bottom = -21.5
-grow_horizontal = 2
-grow_vertical = 2
-texture_normal = ExtResource("3_4v6gu")
-texture_pressed = ExtResource("5_u4qax")
-texture_hover = ExtResource("3_4v6gu")
-texture_disabled = ExtResource("3_4v6gu")
-texture_focused = ExtResource("3_4v6gu")
+offset_left = -58.0
+offset_top = -211.5
+offset_right = 106.0
+offset_bottom = -16.5
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="S" type="Label" parent="ThePen" unique_id=1555016418]
 modulate = Color(0, 0, 0, 1)
@@ -218,3 +257,5 @@ scale = Vector2(0.75, 0.75)
 [connection signal="mouse_entered" from="ExitButton/TextureButton" to="." method="_on_exit_button_mouse_entered"]
 [connection signal="mouse_exited" from="ExitButton/TextureButton" to="." method="_on_exit_button_mouse_exited"]
 [connection signal="pressed" from="ExitButton/TextureButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="Master/MasterButton" to="." method="_on_master_button_pressed"]
+[connection signal="pressed" from="Quick/QuickButton" to="." method="_on_quick_button_pressed"]

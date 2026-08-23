@@ -1,0 +1,222 @@
+[gd_scene format=3 uid="uid://qyex2uex1ufn"]
+
+[ext_resource type="PackedScene" uid="uid://dnjco0b34ec1h" path="res://scenes/parallax_background.tscn" id="1_0uxlg"]
+[ext_resource type="Texture2D" uid="uid://b27qwpg5gjul6" path="res://assets/sprites/Button.png" id="2_ci31j"]
+[ext_resource type="Script" uid="uid://chj548bfgda1r" path="res://scenes/hover.gd" id="3_0uxlg"]
+[ext_resource type="FontFile" uid="uid://n74onkhokknh" path="res://assets/fonts/JameGem08_2026-Regular.ttf" id="3_cu3jl"]
+[ext_resource type="Texture2D" uid="uid://dfn6rnas4njwt" path="res://assets/sprites/N65.png" id="5_rvywj"]
+[ext_resource type="PackedScene" uid="uid://cbclmpycumvqq" path="res://scenes/clock.tscn" id="6_icjmd"]
+
+[node name="GameLoopMenu" type="Node2D" unique_id=1352290525]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1015791264]
+layer = -10
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=80293969]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+color = Color(0, 0.99607843, 0.99607843, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Parallax2D" parent="." unique_id=599452884 instance=ExtResource("1_0uxlg")]
+
+[node name="ExitButton" type="Node2D" parent="." unique_id=1596989962]
+position = Vector2(1635, 119)
+
+[node name="TextureButton" type="TextureButton" parent="ExitButton" unique_id=7733219]
+anchors_preset = -1
+anchor_left = 0.12784588
+anchor_top = 6.0076923
+anchor_right = 0.12784588
+anchor_bottom = 6.0076923
+offset_left = -82.0
+offset_top = -97.5
+offset_right = 82.0
+offset_bottom = 97.5
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("2_ci31j")
+texture_pressed = ExtResource("2_ci31j")
+texture_hover = ExtResource("2_ci31j")
+texture_disabled = ExtResource("2_ci31j")
+texture_focused = ExtResource("2_ci31j")
+script = ExtResource("3_0uxlg")
+
+[node name="E" type="Label" parent="ExitButton" unique_id=1745681664]
+modulate = Color(0, 0, 0, 1)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.0
+offset_top = -32.5
+offset_right = 23.0
+offset_bottom = 32.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_cu3jl")
+theme_override_font_sizes/font_size = 96
+text = "E"
+metadata/_edit_use_anchors_ = true
+
+[node name="XIT" type="Label" parent="ExitButton" unique_id=1006391538]
+modulate = Color(0, 0, 0, 1)
+offset_left = 75.0
+offset_top = -44.0
+offset_right = 325.0
+offset_bottom = 84.0
+theme_override_fonts/font = ExtResource("3_cu3jl")
+theme_override_font_sizes/font_size = 96
+text = "XIT"
+
+[node name="StartButton" type="Node2D" parent="." unique_id=1389960908]
+position = Vector2(104, 121)
+
+[node name="TextureButton" type="TextureButton" parent="StartButton" unique_id=1074217539]
+anchors_preset = -1
+anchor_left = 0.12784588
+anchor_top = 6.0076923
+anchor_right = 0.12784588
+anchor_bottom = 6.0076923
+offset_left = -82.0
+offset_top = -97.5
+offset_right = 82.0
+offset_bottom = 97.5
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("2_ci31j")
+texture_pressed = ExtResource("2_ci31j")
+texture_hover = ExtResource("2_ci31j")
+texture_disabled = ExtResource("2_ci31j")
+texture_focused = ExtResource("2_ci31j")
+script = ExtResource("3_0uxlg")
+
+[node name="S" type="Label" parent="StartButton" unique_id=1320854590]
+modulate = Color(0, 0, 0, 1)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.0
+offset_top = -32.5
+offset_right = 23.0
+offset_bottom = 32.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_cu3jl")
+theme_override_font_sizes/font_size = 96
+text = "S"
+metadata/_edit_use_anchors_ = true
+
+[node name="TART" type="Label" parent="StartButton" unique_id=1276768610]
+modulate = Color(0, 0, 0, 1)
+offset_left = 75.0
+offset_top = -44.0
+offset_right = 325.0
+offset_bottom = 84.0
+theme_override_fonts/font = ExtResource("3_cu3jl")
+theme_override_font_sizes/font_size = 96
+text = "TART"
+
+[node name="ThePen" type="Label" parent="." unique_id=724192611]
+self_modulate = Color(0, 0, 0, 1)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 355.0
+offset_top = 302.0
+offset_right = 1497.0
+offset_bottom = 367.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_cu3jl")
+theme_override_font_sizes/font_size = 48
+text = "THE PEN IS MIGHTIER THAN THE"
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureButton" type="TextureButton" parent="ThePen" unique_id=1745317210]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.12784588
+anchor_top = 6.0076923
+anchor_right = 0.12784588
+anchor_bottom = 6.0076923
+offset_left = -59.0
+offset_top = -214.5
+offset_right = 105.0
+offset_bottom = -19.5
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("2_ci31j")
+texture_pressed = ExtResource("2_ci31j")
+texture_hover = ExtResource("2_ci31j")
+texture_disabled = ExtResource("2_ci31j")
+texture_focused = ExtResource("2_ci31j")
+script = ExtResource("3_0uxlg")
+
+[node name="S" type="Label" parent="ThePen" unique_id=2090631649]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.81567425
+anchor_top = 8.915384
+anchor_right = 0.81567425
+anchor_bottom = 8.915384
+offset_left = -799.5
+offset_top = -357.5
+offset_right = -730.5
+offset_bottom = -261.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_cu3jl")
+theme_override_font_sizes/font_size = 96
+text = "S"
+
+[node name="WORD" type="Label" parent="ThePen" unique_id=1303766103]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 247.0
+offset_top = 70.0
+offset_right = 1050.0
+offset_bottom = 324.0
+theme_override_fonts/font = ExtResource("3_cu3jl")
+theme_override_font_sizes/font_size = 256
+text = "WORD"
+
+[node name="Time" type="Label" parent="ThePen" unique_id=1753904295]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 620.0
+offset_top = 317.0
+offset_right = 1051.0
+offset_bottom = 445.0
+theme_override_fonts/font = ExtResource("3_cu3jl")
+theme_override_font_sizes/font_size = 64
+text = "TIME IS KEY"
+
+[node name="N65" type="Sprite2D" parent="." unique_id=1936115072]
+texture_filter = 2
+position = Vector2(175, 922)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_rvywj")
+
+[node name="Clock" parent="." unique_id=2000448681 instance=ExtResource("6_icjmd")]
+position = Vector2(1635.0001, 790)
+scale = Vector2(0.75, 0.75)
+
+[connection signal="mouse_entered" from="ExitButton/TextureButton" to="ExitButton/TextureButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="ExitButton/TextureButton" to="ExitButton/TextureButton" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="StartButton/TextureButton" to="StartButton/TextureButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="StartButton/TextureButton" to="StartButton/TextureButton" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="ThePen/TextureButton" to="ThePen/TextureButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="ThePen/TextureButton" to="ThePen/TextureButton" method="_on_mouse_exited"]
