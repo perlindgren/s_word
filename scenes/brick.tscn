@@ -32,3 +32,6 @@ theme_override_font_sizes/font_size = 64
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1606817143]
 shape = SubResource("RectangleShape2D_srqkv")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=2144628960]
+scale = Vector2(0.75, 0.75)

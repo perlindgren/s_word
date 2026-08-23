@@ -20,10 +20,15 @@ var word : String
 @onready var event_type = $EventType
 @onready var event_name = $EventName
 @onready var event_sprite = $EventSprite
+@onready var audio = $Audio
 
 func _ready() :
 	print("main: _ready")
 	Signals.dropped.connect(dropped)
+	
+	#Audio
+	var clips = audio.get_children()
+	clips[GameState.event_nr].playing = true
 	
 	var event = GameState.events[GameState.event_nr]
 	word = event.word

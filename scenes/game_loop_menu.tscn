@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://ohtqsd5ggym3" path="res://assets/sprites/stickers/StickerOutline/CakeSticker.png" id="18_7epo8"]
 [ext_resource type="Texture2D" uid="uid://dlpbj7w4o7y08" path="res://assets/sprites/stickers/StickerOutline/JohnSticker.png" id="19_2v0mc"]
 [ext_resource type="Texture2D" uid="uid://bhoq65j3rfasw" path="res://assets/sprites/stickers/YourDidGoodSticker.png" id="20_yq88f"]
+[ext_resource type="AudioStream" uid="uid://bk7t0tx0t46nt" path="res://assets/audio/StenMusic.wav" id="21_qngwn"]
 
 [sub_resource type="FontVariation" id="FontVariation_0xkhp"]
 base_font = ExtResource("3_cu3jl")
@@ -327,6 +328,11 @@ grow_vertical = 2
 theme_override_fonts/font = SubResource("FontVariation_0xkhp")
 theme_override_font_sizes/font_size = 64
 text = "EVENT #7"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=376396567]
+stream = ExtResource("21_qngwn")
+volume_db = -8.268
+autoplay = true
 
 [connection signal="mouse_entered" from="ExitButton/ExitButton" to="ExitButton/ExitButton" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="ExitButton/ExitButton" to="ExitButton/ExitButton" method="_on_mouse_exited"]

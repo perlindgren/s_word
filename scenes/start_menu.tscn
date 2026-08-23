@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://n74onkhokknh" path="res://assets/fonts/JameGem08_2026-Regular.ttf" id="4_nxjfj"]
 [ext_resource type="Texture2D" uid="uid://dfn6rnas4njwt" path="res://assets/sprites/N65.png" id="6_4v6gu"]
 [ext_resource type="PackedScene" uid="uid://cbclmpycumvqq" path="res://scenes/clock.tscn" id="7_nxjfj"]
+[ext_resource type="AudioStream" uid="uid://bkxmqncfcswff" path="res://assets/audio/start1.wav" id="7_u4qax"]
 
 [node name="StartMenu" type="Node2D" unique_id=849056485]
 script = ExtResource("1_fcv5n")
@@ -253,6 +254,12 @@ texture = ExtResource("6_4v6gu")
 [node name="Clock" parent="." unique_id=2000448681 instance=ExtResource("7_nxjfj")]
 position = Vector2(1635.0001, 790)
 scale = Vector2(0.75, 0.75)
+
+[node name="Clip1" type="AudioStreamPlayer2D" parent="." unique_id=297153275]
+position = Vector2(1635.0001, 790)
+scale = Vector2(0.75, 0.75)
+stream = ExtResource("7_u4qax")
+autoplay = true
 
 [connection signal="mouse_entered" from="ExitButton/TextureButton" to="." method="_on_exit_button_mouse_entered"]
 [connection signal="mouse_exited" from="ExitButton/TextureButton" to="." method="_on_exit_button_mouse_exited"]
