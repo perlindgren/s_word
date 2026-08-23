@@ -3,8 +3,11 @@ extends Node
 @export var master_sword_mode = false
 
 # The cleared challenges
-@export var cleared : Array = [0, 2, 5, 8, 11]
+@export var cleared : Array = [1, 2 ,3]
+@export var failed : Array = [2]
 @export var event_nr : int = 2
+
+const file_name = "user://savegame.save"
 
 class Data:
 	var name : String
@@ -37,8 +40,33 @@ var events : Array[Data] = [
 
 func save() -> void:
 	print("save")
-	pass
+	var json_native = JSON.from_native(cleared, true)
+	var json_string = JSON.stringify(json_native)
+	var json_native2 = JSON.from_native(failed, true)
+	var json_string2 = JSON.stringify(json_native2)
+	print("str ", json_string, json_string2)
+	var save_file = FileAccess.open(file_name, FileAccess.WRITE)
+	save_file.store_line(json_string)
+	save_file.store_line(json_string2)
+	save_file.close()
+	
 
 func load() -> void:
 	print("load")
-	pass
+	var save_file = FileAccess.open(file_name, FileAccess.READ)
+	if !save_file:
+		print("no save file found")
+		return
+	var json_string = save_file.get_line()
+	print("json_string", json_string)
+	var json_native = JSON.parse_string(json_string)
+	cleared = JSON.to_native(json_native, true)
+	print(cleared)
+	json_string = save_file.get_line()
+	json_native = JSON.parse_string(json_string)
+	failed = JSON.to_native(json_native, true)
+	print(failed)
+
+# Project -> Open User Data, to view the stored files
+
+	
