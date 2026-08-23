@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://brpsfj7f21kkw"
+path="res://.godot/imported/klonk swoof.wav-9597bcd01f2aa6d1855d6d94d97c9683.sample"
+
+[deps]
+
+source_file="res://assets/audio/klonk swoof.wav"
+dest_files=["res://.godot/imported/klonk swoof.wav-9597bcd01f2aa6d1855d6d94d97c9683.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
