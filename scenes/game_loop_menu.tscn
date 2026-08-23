@@ -146,85 +146,6 @@ theme_override_fonts/font = ExtResource("3_cu3jl")
 theme_override_font_sizes/font_size = 96
 text = "TART"
 
-[node name="ThePen" type="Label" parent="." unique_id=724192611]
-visible = false
-self_modulate = Color(0, 0, 0, 1)
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 355.0
-offset_top = 302.0
-offset_right = 1497.0
-offset_bottom = 367.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("3_cu3jl")
-theme_override_font_sizes/font_size = 48
-text = "THE PEN IS MIGHTIER THAN THE"
-metadata/_edit_use_anchors_ = true
-
-[node name="TextureButton" type="TextureButton" parent="ThePen" unique_id=1745317210]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.12784588
-anchor_top = 6.0076923
-anchor_right = 0.12784588
-anchor_bottom = 6.0076923
-offset_left = -59.0
-offset_top = -214.5
-offset_right = 105.0
-offset_bottom = -19.5
-grow_horizontal = 2
-grow_vertical = 2
-texture_normal = ExtResource("2_ci31j")
-texture_pressed = ExtResource("2_ci31j")
-texture_hover = ExtResource("2_ci31j")
-texture_disabled = ExtResource("2_ci31j")
-texture_focused = ExtResource("2_ci31j")
-script = ExtResource("3_0uxlg")
-
-[node name="S" type="Label" parent="ThePen" unique_id=2090631649]
-modulate = Color(0, 0, 0, 1)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.81567425
-anchor_top = 8.915384
-anchor_right = 0.81567425
-anchor_bottom = 8.915384
-offset_left = -799.5
-offset_top = -357.5
-offset_right = -730.5
-offset_bottom = -261.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("3_cu3jl")
-theme_override_font_sizes/font_size = 96
-text = "S"
-
-[node name="WORD" type="Label" parent="ThePen" unique_id=1303766103]
-modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = 247.0
-offset_top = 70.0
-offset_right = 1050.0
-offset_bottom = 324.0
-theme_override_fonts/font = ExtResource("3_cu3jl")
-theme_override_font_sizes/font_size = 256
-text = "WORD"
-
-[node name="Time" type="Label" parent="ThePen" unique_id=1753904295]
-modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = 620.0
-offset_top = 317.0
-offset_right = 1051.0
-offset_bottom = 445.0
-theme_override_fonts/font = ExtResource("3_cu3jl")
-theme_override_font_sizes/font_size = 64
-text = "TIME IS KEY"
-
 [node name="N65" type="Sprite2D" parent="." unique_id=1936115072]
 texture_filter = 2
 position = Vector2(175, 922)
@@ -426,5 +347,3 @@ texture = ExtResource("20_yq88f")
 [connection signal="mouse_entered" from="StartButton/StartButton" to="StartButton/StartButton" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="StartButton/StartButton" to="StartButton/StartButton" method="_on_mouse_exited"]
 [connection signal="pressed" from="StartButton/StartButton" to="." method="_on_start_button_pressed"]
-[connection signal="mouse_entered" from="ThePen/TextureButton" to="ThePen/TextureButton" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="ThePen/TextureButton" to="ThePen/TextureButton" method="_on_mouse_exited"]
