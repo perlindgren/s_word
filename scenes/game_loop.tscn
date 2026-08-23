@@ -10,6 +10,17 @@
 [ext_resource type="FontFile" uid="uid://n74onkhokknh" path="res://assets/fonts/JameGem08_2026-Regular.ttf" id="8_e3r00"]
 [ext_resource type="Shape2D" uid="uid://k471w1mbvy4t" path="res://resources/horizontal_wall.tres" id="9_q2i4g"]
 [ext_resource type="Shape2D" uid="uid://bq4u3nylthe40" path="res://resources/vertical_wall.tres" id="10_8fja0"]
+[ext_resource type="Texture2D" uid="uid://cgvkrbfcd2rfn" path="res://assets/sprites/events/Goblin.png" id="10_8hxac"]
+[ext_resource type="Texture2D" uid="uid://c8cwetmpllo4m" path="res://assets/sprites/events/Dwarf.png" id="11_n3gcq"]
+[ext_resource type="Texture2D" uid="uid://41tqgv6pr46o" path="res://assets/sprites/events/Robot.png" id="12_8ujpi"]
+[ext_resource type="Texture2D" uid="uid://b2vmh4xlqpkst" path="res://assets/sprites/events/HouseOnFire.png" id="13_qfh01"]
+[ext_resource type="Texture2D" uid="uid://c1pdx7531wx2h" path="res://assets/sprites/events/Dog.png" id="14_x7yfg"]
+[ext_resource type="Texture2D" uid="uid://dow7qn4tpfldv" path="res://assets/sprites/events/Seagul.png" id="16_f0eww"]
+[ext_resource type="Texture2D" uid="uid://8xdk4vr7l4r5" path="res://assets/sprites/events/Cat.png" id="17_imi7f"]
+[ext_resource type="Texture2D" uid="uid://cjuuvw8wdi3j1" path="res://assets/sprites/events/Pizza.png" id="18_corlk"]
+[ext_resource type="Texture2D" uid="uid://sa1ucatvxkd8" path="res://assets/sprites/events/Fish.png" id="19_nwv4r"]
+[ext_resource type="Texture2D" uid="uid://cfem77mgm4tku" path="res://assets/sprites/events/Cake.png" id="20_0msem"]
+[ext_resource type="Texture2D" uid="uid://6vbpx7srdwqu" path="res://assets/sprites/events/JohnSmith.png" id="21_3yhvp"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_srqkv"]
 shader = ExtResource("4_vo7sv")
@@ -30,10 +41,14 @@ gravity = Vector3(0, 98, 0)
 scale_min = 5.0
 scale_max = 8.0
 
+[sub_resource type="FontVariation" id="FontVariation_fa7up"]
+base_font = ExtResource("8_e3r00")
+spacing_glyph = -4
+spacing_space = -1
+
 [node name="Main" type="Node2D" unique_id=943896723]
 script = ExtResource("1_fa7up")
 brick_rotation_speed = 1.0
-slots_nr = 10
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=394326658]
 layer = -10
@@ -50,18 +65,12 @@ mouse_filter = 2
 color = Color(0, 0.99607843, 0.99607843, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="EventSprite" type="Sprite2D" parent="." unique_id=90555800]
-texture_filter = 1
-position = Vector2(1655, 305)
-scale = Vector2(10, 10)
-texture = ExtResource("2_jmvj6")
-
 [node name="Parallax2D" parent="." unique_id=599452884 instance=ExtResource("3_4dxum")]
 
 [node name="Hourglass" type="Sprite2D" parent="." unique_id=722604717]
 material = SubResource("ShaderMaterial_srqkv")
-position = Vector2(1664, 813)
-scale = Vector2(0.5, 0.5)
+position = Vector2(1825, 913)
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("5_m2jv5")
 script = ExtResource("6_5am0q")
 
@@ -71,7 +80,7 @@ z_index = -1
 scale = Vector2(2, 2)
 amount = 16
 texture = ExtResource("7_arjii")
-lifetime = 2.0
+lifetime = 1.33
 randomness = 0.1
 process_material = SubResource("ParticleProcessMaterial_srqkv")
 
@@ -127,3 +136,90 @@ shape = ExtResource("10_8fja0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Bottom" unique_id=911688766]
 shape = ExtResource("9_q2i4g")
+
+[node name="EventType" type="Label" parent="." unique_id=1894532593]
+modulate = Color(0, 0, 0, 1)
+anchors_preset = -1
+anchor_left = 0.81567425
+anchor_top = 8.915384
+anchor_right = 0.81567425
+anchor_bottom = 8.915384
+offset_left = 1547.0
+offset_top = 8.0
+offset_right = 2168.0
+offset_bottom = 104.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("FontVariation_fa7up")
+theme_override_font_sizes/font_size = 64
+text = "KILL"
+
+[node name="EventName" type="Label" parent="." unique_id=1090028775]
+modulate = Color(0, 0, 0, 1)
+anchors_preset = -1
+anchor_left = 0.81567425
+anchor_top = 8.915384
+anchor_right = 0.81567425
+anchor_bottom = 8.915384
+offset_left = 1395.0
+offset_top = 111.0
+offset_right = 2016.0
+offset_bottom = 244.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("FontVariation_fa7up")
+theme_override_font_sizes/font_size = 64
+text = "GOBLIN
+"
+
+[node name="EventSprite" type="Node2D" parent="." unique_id=297670256]
+position = Vector2(1654.9999, 499.99997)
+scale = Vector2(10, 10)
+
+[node name="Goblin" type="Sprite2D" parent="EventSprite" unique_id=90555800]
+texture_filter = 1
+texture = ExtResource("10_8hxac")
+
+[node name="Dwarf" type="Sprite2D" parent="EventSprite" unique_id=130965075]
+texture_filter = 1
+texture = ExtResource("11_n3gcq")
+
+[node name="Robot" type="Sprite2D" parent="EventSprite" unique_id=1357568150]
+texture_filter = 1
+texture = ExtResource("12_8ujpi")
+
+[node name="House" type="Sprite2D" parent="EventSprite" unique_id=1531253582]
+texture_filter = 1
+texture = ExtResource("13_qfh01")
+
+[node name="Dog" type="Sprite2D" parent="EventSprite" unique_id=436801131]
+texture_filter = 1
+texture = ExtResource("14_x7yfg")
+
+[node name="PillowMan" type="Sprite2D" parent="EventSprite" unique_id=1820793361]
+texture_filter = 1
+texture = ExtResource("2_jmvj6")
+
+[node name="Seagull" type="Sprite2D" parent="EventSprite" unique_id=502597794]
+texture_filter = 1
+texture = ExtResource("16_f0eww")
+
+[node name="Cat" type="Sprite2D" parent="EventSprite" unique_id=1648616200]
+texture_filter = 1
+texture = ExtResource("17_imi7f")
+
+[node name="PizzaMan" type="Sprite2D" parent="EventSprite" unique_id=535660695]
+texture_filter = 1
+texture = ExtResource("18_corlk")
+
+[node name="Fish" type="Sprite2D" parent="EventSprite" unique_id=1413323684]
+texture_filter = 1
+texture = ExtResource("19_nwv4r")
+
+[node name="Cake" type="Sprite2D" parent="EventSprite" unique_id=976551854]
+texture_filter = 1
+texture = ExtResource("20_0msem")
+
+[node name="John" type="Sprite2D" parent="EventSprite" unique_id=812999302]
+texture_filter = 1
+texture = ExtResource("21_3yhvp")

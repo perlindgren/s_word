@@ -11,7 +11,7 @@ func _ready() -> void:
 	Signals.main_menu_start.connect(to_game_loop_menu)
 	Signals.to_start_menu.connect(to_start_menu)
 	Signals.to_game_loop.connect(to_game_loop)
-	
+
 	change_scene(start_menu)
 
 func change_scene(to) -> void:
@@ -31,4 +31,8 @@ func to_start_menu() -> void:
 	
 func to_game_loop() -> void: 
 	print("to_game_menu")
+	change_scene(game_loop)
+
+func new_event() -> void: 
+	print("new_event")
 	change_scene(game_loop)

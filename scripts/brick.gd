@@ -6,6 +6,7 @@ class_name Brick extends Area2D
 var is_dragging: bool = false
 var old_rotation: float 
 var click_offset: Vector2 = Vector2.ZERO
+var char : String
 
 @onready var main : Main = get_node("..")
 @onready var walls_top: Area2D = get_node("../Walls/Top")
@@ -124,12 +125,13 @@ func attempt_drop() -> void:
 			return_to_position(starting_position)
 
 func snap_to_slot(slot: Area2D) -> void:
-	print("snap_to_slot")
+	print("snap_to_slot ", slot.index)
 	current_slot = slot
 	rotation = 0.0
 	slot.current_item = self
 	global_position = slot.global_position
 	starting_position = global_position
+	Signals.dropped.emit(slot.index, char)
 
 func return_to_position(pos: Vector2) -> void:
 	var tween = create_tween()
