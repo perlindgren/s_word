@@ -2,18 +2,31 @@ extends Node2D
 
 @onready var clock = $Clock
 @onready var cleared = $Cleared
+@onready var failed = $Failed
 @onready var next_event = $NextEvent
 @onready var current_event = $CurrentEvent
 
 func _ready() -> void:
 	GameState.load()
+	
+	# Handle stickers for cleared events
 	for c in cleared.get_children():
-		print("c ", c)
+		#print("c ", c)
 		c.visible = false
 		
 	for i in GameState.cleared:
-		print("i ", i)
+		#print("i ", i)
 		var c = cleared.get_child(i)
+		c.visible = true
+	
+	# Handle stickers for failed events
+	for c in failed.get_children():
+		#print("c ", c)
+		c.visible = false
+		
+	for i in GameState.failed:
+		#print("i ", i)
+		var c = failed.get_child(i)
 		c.visible = true
 	
 	print("here ", GameState.events[0].name, GameState.events[0].event, GameState.events[0].word )
