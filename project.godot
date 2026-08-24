@@ -20,6 +20,10 @@ run/max_fps=60
 Signals="*uid://bbi3a84lgvpyn"
 GameState="*uid://cvymrxshxe8ss"
 
+[debug]
+
+gdscript/warnings/unused_signal=0
+
 [display]
 
 window/size/viewport_width=1920
