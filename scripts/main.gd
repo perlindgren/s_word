@@ -72,13 +72,13 @@ func _ready() :
 		brick_instance.modulate = Color(rng.randf_range(brick_color_min, brick_color_max), rng.randf_range(brick_color_min, brick_color_max), rng.randf_range(brick_color_min, brick_color_max), 1.0)
 		brick_instance.rotation = randf() * TAU
 		brick_instance.old_rotation = brick_instance.rotation
-		var char 
+		var char_str : String 
 		if i < n_char:
-			char =  word[i]
+			char_str =  word[i]
 		else:
-			char = String.chr(65 + randi() % 26)
-		brick_instance.get_node("Label").text = char
-		brick_instance.char = char
+			char_str = String.chr(65 + randi() % 26)
+		brick_instance.get_node("Label").text = char_str
+		brick_instance.char_str = char_str	
 		brick_instance.get_node("Label").visible = false # start folded
 		brick_instance.move_speed = Vector2(rng.randf_range(-brick_speed, brick_speed), rng.randf_range(-brick_speed, brick_speed))
 		brick_instance.rotation_speed = rng.randf_range(-brick_rotation_speed, brick_rotation_speed) 
@@ -96,9 +96,9 @@ func _ready() :
 	# print(str("%*.*f" % [5, 2, 60.23]))
 	# print(str("%*.*f" % [5, 2, 3.2]))
 
-func dropped(p: int, char: String) -> void: 
-	print("received drop ", p, " ", char)
-	input[p] = char
+func dropped(p: int, char_str: String) -> void: 
+	print("received drop ", p, " ", char_str)
+	input[p] = char_str
 	print("input ", input, "word", word)
 	if input == word:
 		print("success")

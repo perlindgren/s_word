@@ -1,0 +1,8 @@
+[gd_resource type="FontVariation" format=3 uid="uid://c8mk6s0hoghgw"]
+
+[ext_resource type="FontFile" uid="uid://n74onkhokknh" path="res://assets/fonts/JameGem08_2026-Regular.ttf" id="1_p1y0h"]
+
+[resource]
+base_font = ExtResource("1_p1y0h")
+spacing_glyph = -4
+spacing_space = -1

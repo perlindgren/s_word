@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://chj548bfgda1r" path="res://scenes/hover.gd" id="3_0uxlg"]
 [ext_resource type="FontFile" uid="uid://n74onkhokknh" path="res://assets/fonts/JameGem08_2026-Regular.ttf" id="3_cu3jl"]
 [ext_resource type="Texture2D" uid="uid://dfn6rnas4njwt" path="res://assets/sprites/N65.png" id="5_rvywj"]
+[ext_resource type="FontVariation" uid="uid://c8mk6s0hoghgw" path="res://resources/font_variation.tres" id="6_2uy04"]
 [ext_resource type="PackedScene" uid="uid://cbclmpycumvqq" path="res://scenes/clock.tscn" id="6_icjmd"]
 [ext_resource type="Texture2D" uid="uid://b1f6g44rnipa5" path="res://assets/sprites/stickers/StickerOutline/GoblinSticker.png" id="8_yq88f"]
 [ext_resource type="Texture2D" uid="uid://dffe4n6hdjnp0" path="res://assets/sprites/stickers/StickerOutline/DwarfSticker.png" id="9_qngwn"]
@@ -21,11 +22,6 @@
 [ext_resource type="Texture2D" uid="uid://dlpbj7w4o7y08" path="res://assets/sprites/stickers/StickerOutline/JohnSticker.png" id="19_2v0mc"]
 [ext_resource type="Texture2D" uid="uid://bhoq65j3rfasw" path="res://assets/sprites/stickers/YourDidGoodSticker.png" id="20_yq88f"]
 [ext_resource type="AudioStream" uid="uid://bk7t0tx0t46nt" path="res://assets/audio/StenMusic.wav" id="21_qngwn"]
-
-[sub_resource type="FontVariation" id="FontVariation_0xkhp"]
-base_font = ExtResource("3_cu3jl")
-spacing_glyph = -4
-spacing_space = -1
 
 [node name="GameLoopMenu" type="Node2D" unique_id=1352290525]
 script = ExtResource("1_0xkhp")
@@ -90,10 +86,10 @@ metadata/_edit_use_anchors_ = true
 [node name="XIT" type="Label" parent="ExitButton" unique_id=1006391538]
 modulate = Color(0, 0, 0, 1)
 offset_left = 75.0
-offset_top = -44.0
+offset_top = -39.0
 offset_right = 325.0
-offset_bottom = 84.0
-theme_override_fonts/font = ExtResource("3_cu3jl")
+offset_bottom = 89.0
+theme_override_fonts/font = ExtResource("6_2uy04")
 theme_override_font_sizes/font_size = 96
 text = "XIT"
 
@@ -140,10 +136,10 @@ metadata/_edit_use_anchors_ = true
 [node name="TART" type="Label" parent="StartButton" unique_id=1276768610]
 modulate = Color(0, 0, 0, 1)
 offset_left = 75.0
-offset_top = -44.0
-offset_right = 325.0
-offset_bottom = 84.0
-theme_override_fonts/font = ExtResource("3_cu3jl")
+offset_top = -42.0
+offset_right = 352.0
+offset_bottom = 86.0
+theme_override_fonts/font = ExtResource("6_2uy04")
 theme_override_font_sizes/font_size = 96
 text = "TART"
 
@@ -308,7 +304,7 @@ offset_right = 1993.0
 offset_bottom = 1030.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = SubResource("FontVariation_0xkhp")
+theme_override_fonts/font = ExtResource("6_2uy04")
 theme_override_font_sizes/font_size = 64
 text = "MINUTES UNTIL"
 
@@ -325,7 +321,7 @@ offset_right = 851.0
 offset_bottom = 270.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = SubResource("FontVariation_0xkhp")
+theme_override_fonts/font = ExtResource("6_2uy04")
 theme_override_font_sizes/font_size = 64
 text = "EVENT #7"
 
@@ -377,12 +373,47 @@ metadata/_edit_use_anchors_ = true
 [node name="ESET" type="Label" parent="ResetButton" unique_id=973237177]
 modulate = Color(0, 0, 0, 1)
 offset_left = 75.0
-offset_top = -44.0
-offset_right = 325.0
-offset_bottom = 84.0
-theme_override_fonts/font = ExtResource("3_cu3jl")
+offset_top = -39.0
+offset_right = 346.0
+offset_bottom = 89.0
+theme_override_fonts/font = ExtResource("6_2uy04")
 theme_override_font_sizes/font_size = 96
 text = "ESET"
+
+[node name="All" type="Label" parent="ResetButton" unique_id=1563757014]
+modulate = Color(0, 0, 0, 1)
+anchors_preset = -1
+anchor_left = 0.81567425
+anchor_top = 8.915384
+anchor_right = 0.81567425
+anchor_bottom = 8.915384
+offset_left = -19.0
+offset_top = 98.0
+offset_right = 602.0
+offset_bottom = 194.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("6_2uy04")
+theme_override_font_sizes/font_size = 64
+text = "ALL"
+
+[node name="Events" type="Label" parent="ResetButton" unique_id=790345655]
+modulate = Color(0, 0, 0, 1)
+anchors_preset = -1
+anchor_left = 0.81567425
+anchor_top = 8.915384
+anchor_right = 0.81567425
+anchor_bottom = 8.915384
+offset_left = 10.0
+offset_top = 177.0
+offset_right = 631.0
+offset_bottom = 310.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("6_2uy04")
+theme_override_font_sizes/font_size = 64
+text = "EVENTS
+"
 
 [connection signal="mouse_entered" from="ExitButton/ExitButton" to="ExitButton/ExitButton" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="ExitButton/ExitButton" to="ExitButton/ExitButton" method="_on_mouse_exited"]

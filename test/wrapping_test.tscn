@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://3d6q5an617km"]
+
+[ext_resource type="Script" uid="uid://d1g7qqiuvstbw" path="res://test/wrapping_test.gd" id="1_lh7xd"]
+
+[node name="WrappingTest" type="Node2D" unique_id=605408648]
+script = ExtResource("1_lh7xd")

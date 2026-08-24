@@ -58,10 +58,10 @@ func _process(_delta) -> void:
 		s *= 60	
 	clock.s = s
 	
-	var seconds: int = fmod(s, 60)
-	var minutes: int = fmod(s/60, 60)
-	var hours: int = fmod(s/(60 * 60), 12)
-	GameState.event_nr = hours - 1
+	var seconds: int = int(fmod(s, 60))
+	var minutes: int = int(fmod(s/60, 60))
+	var hours: int = int(fmod(s/(60 * 60), 12))
+	GameState.event_nr = (12 + hours - 1) % 12
 	
 	if minutes == 0 && seconds == 0:
 		print("new challenge ", hours)
