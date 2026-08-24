@@ -35,12 +35,22 @@ func _on_start_button_pressed() -> void:
 	print("_on_start_button_pressed, emit to_game_loop")
 	Signals.to_game_loop.emit()
 
-
 func _on_exit_button_pressed() -> void:
 	print("_on_exit_button_pressed, emit to_start_menu")
 	Signals.to_start_menu.emit()
 	
-	
+func _on_reset_button_pressed() -> void:
+	print("_on_reset_button_pressed, emit to_game_loop_menu")
+	GameState.cleared = []
+	GameState.failed = []
+	GameState.save()
+	Signals.to_game_loop_menu.emit()
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_cancel"):
+		print("_unhandled_input ui_cancel, emit to_start_menue")
+		Signals.to_start_menu.emit()
+
 func _process(_delta) -> void:
 	var local_time_dict = Time.get_datetime_dict_from_system()
 	var s = local_time_dict.hour * 3600 + local_time_dict.minute * 60 + local_time_dict.second

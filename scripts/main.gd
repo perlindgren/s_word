@@ -105,3 +105,8 @@ func dropped(p: int, char: String) -> void:
 		GameState.cleared.push_back(GameState.event_nr)
 		GameState.save()
 		Signals.to_game_loop_menu.emit()
+		
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_cancel"):
+		print("_unhandled_input ui_cancel, emit to_game_loop_menue")
+		Signals.to_game_loop_menu.emit()
