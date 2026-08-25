@@ -1,5 +1,6 @@
 extends Node2D
 
+@onready var intro_menu = preload("res://scenes/intro_menu.tscn")
 @onready var start_menu = preload("res://scenes/start_menu.tscn")
 @onready var game_loop_menu = preload("res://scenes/game_loop_menu.tscn")
 @onready var game_loop = preload("res://scenes/game_loop.tscn")
@@ -11,7 +12,7 @@ func _ready() -> void:
 	Signals.to_start_menu.connect(to_start_menu)
 	Signals.to_game_loop_menu.connect(to_game_loop_menu)
 	Signals.to_game_loop.connect(to_game_loop)
-	change_scene(start_menu)
+	change_scene(intro_menu)
 
 func change_scene(to) -> void:
 	if current_child_scene:

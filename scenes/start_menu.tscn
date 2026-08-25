@@ -231,7 +231,7 @@ offset_left = 247.0
 offset_top = 70.0
 offset_right = 1050.0
 offset_bottom = 324.0
-theme_override_fonts/font = ExtResource("4_nxjfj")
+theme_override_fonts/font = ExtResource("5_u4qax")
 theme_override_font_sizes/font_size = 256
 text = "WORD"
 

@@ -1,0 +1,285 @@
+[gd_scene format=3 uid="uid://6flyd8imk5ef"]
+
+[ext_resource type="Script" uid="uid://k8kdi7nxl66x" path="res://scripts/start_intro.gd" id="1_gm3nt"]
+[ext_resource type="PackedScene" uid="uid://dnjco0b34ec1h" path="res://scenes/parallax_background.tscn" id="2_k0p57"]
+[ext_resource type="PackedScene" uid="uid://ban8sxnp5rs0k" path="res://scenes/brick_button.tscn" id="3_yauhl"]
+[ext_resource type="FontFile" uid="uid://n74onkhokknh" path="res://assets/fonts/JameGem08_2026-Regular.ttf" id="4_jjb1e"]
+[ext_resource type="FontVariation" uid="uid://c8mk6s0hoghgw" path="res://resources/font_variation.tres" id="5_6287d"]
+[ext_resource type="AudioStream" uid="uid://bwmicjowd0662" path="res://assets/audio/key_click.wav" id="7_ejjsb"]
+[ext_resource type="AudioStream" uid="uid://b6gpjhh31fpxc" path="res://assets/audio/what_is_art.wav" id="7_pyfs2"]
+[ext_resource type="AudioStream" uid="uid://cdq16m3wcp4ps" path="res://assets/audio/are_games_art.wav" id="8_ccmsk"]
+[ext_resource type="AudioStream" uid="uid://cegb3m763u5r4" path="res://assets/audio/we_at_n65.wav" id="9_u3yrv"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5uub5"]
+load_path = "res://.godot/imported/N65.png-23ec3e0eecb7430b5c4e4a67b92e795f.ctex"
+
+[node name="IntroMenu" type="Node2D" unique_id=849056485]
+script = ExtResource("1_gm3nt")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1247312201]
+layer = -10
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=798824956]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+color = Color(0, 0.99607843, 0.99607843, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Parallax2D" parent="." unique_id=599452884 instance=ExtResource("2_k0p57")]
+
+[node name="N65" type="Sprite2D" parent="." unique_id=1160338200]
+position = Vector2(-37, -107)
+scale = Vector2(0.5, 0.5)
+texture = SubResource("CompressedTexture2D_5uub5")
+centered = false
+
+[node name="ThePen" type="RichTextLabel" parent="." unique_id=717374464]
+self_modulate = Color(0, 0, 0, 1)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 355.0
+offset_top = 302.0
+offset_right = 1497.0
+offset_bottom = 367.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("5_6287d")
+theme_override_font_sizes/normal_font_size = 48
+text = "THE PEN IS MIGHTIER THAN THE"
+metadata/_edit_use_anchors_ = true
+
+[node name="SWORD" type="Node2D" parent="." unique_id=1880412989]
+position = Vector2(487, 524)
+
+[node name="WORD" type="RichTextLabel" parent="SWORD" unique_id=706180505]
+modulate = Color(0, 0, 0, 1)
+offset_left = 115.0
+offset_top = -152.0
+offset_right = 918.0
+offset_bottom = 102.0
+theme_override_fonts/normal_font = ExtResource("5_6287d")
+theme_override_font_sizes/normal_font_size = 256
+text = "WORD"
+
+[node name="NoButton" parent="SWORD" unique_id=1178043654 instance=ExtResource("3_yauhl")]
+offset_left = -44.0
+offset_top = -43.0
+offset_right = 120.0
+offset_bottom = 152.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="S" type="Label" parent="SWORD/NoButton" unique_id=1555016418]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.81567425
+anchor_top = 8.915384
+anchor_right = 0.81567425
+anchor_bottom = 8.915384
+offset_left = -89.77057
+offset_top = -1695.4999
+offset_right = -20.770569
+offset_bottom = -1599.4999
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_jjb1e")
+theme_override_font_sizes/font_size = 96
+text = "S"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=305378890]
+stream = ExtResource("7_ejjsb")
+
+[node name="TIME" type="RichTextLabel" parent="." unique_id=1575637294]
+modulate = Color(0, 0, 0, 1)
+offset_left = 975.0
+offset_top = 619.0
+offset_right = 1406.0
+offset_bottom = 747.0
+theme_override_fonts/normal_font = ExtResource("5_6287d")
+theme_override_font_sizes/normal_font_size = 64
+text = "TIME IS KEY"
+
+[node name="StartButton" type="Node2D" parent="." unique_id=1011355808]
+position = Vector2(104, 121)
+
+[node name="StartButton" parent="StartButton" unique_id=1778397480 instance=ExtResource("3_yauhl")]
+offset_left = -83.0
+offset_top = -97.0
+offset_right = 81.0
+offset_bottom = 98.0
+
+[node name="S" type="Label" parent="StartButton" unique_id=2146174210]
+modulate = Color(0, 0, 0, 1)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.0
+offset_top = -32.5
+offset_right = 23.0
+offset_bottom = 32.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_jjb1e")
+theme_override_font_sizes/font_size = 96
+text = "S"
+metadata/_edit_use_anchors_ = true
+
+[node name="TART" type="Label" parent="StartButton" unique_id=1143288601]
+modulate = Color(0, 0, 0, 1)
+offset_left = 75.0
+offset_top = -42.0
+offset_right = 352.0
+offset_bottom = 86.0
+theme_override_fonts/font = ExtResource("5_6287d")
+theme_override_font_sizes/font_size = 96
+text = "TART"
+
+[node name="DecodeButton" type="Node2D" parent="." unique_id=267640772]
+position = Vector2(1555, 655)
+
+[node name="DecodeButton" parent="DecodeButton" unique_id=866345418 instance=ExtResource("3_yauhl")]
+offset_left = -83.0
+offset_top = -97.0
+offset_right = 81.0
+offset_bottom = 98.0
+
+[node name="D" type="Label" parent="DecodeButton" unique_id=1747877775]
+modulate = Color(0, 0, 0, 1)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.0
+offset_top = -32.5
+offset_right = 23.0
+offset_bottom = 32.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_jjb1e")
+theme_override_font_sizes/font_size = 96
+text = "D"
+metadata/_edit_use_anchors_ = true
+
+[node name="ECODE" type="Label" parent="DecodeButton" unique_id=1126244544]
+modulate = Color(0, 0, 0, 1)
+offset_left = 74.0
+offset_top = -28.0
+offset_right = 351.0
+offset_bottom = 100.0
+theme_override_fonts/font = ExtResource("5_6287d")
+theme_override_font_sizes/font_size = 64
+text = "ECODE"
+
+[node name="TransmitButton" type="Node2D" parent="." unique_id=188985785]
+position = Vector2(885, 963)
+
+[node name="TransmitButton" parent="TransmitButton" unique_id=1799886031 instance=ExtResource("3_yauhl")]
+offset_left = -83.0
+offset_top = -97.0
+offset_right = 81.0
+offset_bottom = 98.0
+
+[node name="T" type="Label" parent="TransmitButton" unique_id=1949444552]
+modulate = Color(0, 0, 0, 1)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.0
+offset_top = -32.5
+offset_right = 23.0
+offset_bottom = 32.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_jjb1e")
+theme_override_font_sizes/font_size = 96
+text = "T"
+metadata/_edit_use_anchors_ = true
+
+[node name="RANSMIT" type="Label" parent="TransmitButton" unique_id=1608812128]
+modulate = Color(0, 0, 0, 1)
+offset_left = 74.0
+offset_top = -28.0
+offset_right = 351.0
+offset_bottom = 100.0
+theme_override_fonts/font = ExtResource("5_6287d")
+theme_override_font_sizes/font_size = 64
+text = "RANSMIT"
+
+[node name="WhatIsArt" type="Label" parent="." unique_id=1478168188]
+anchors_preset = -1
+anchor_left = 0.81567425
+anchor_top = 8.915384
+anchor_right = 0.81567425
+anchor_bottom = 8.915384
+offset_left = 647.0
+offset_top = 600.0
+offset_right = 1377.0
+offset_bottom = 795.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_jjb1e")
+theme_override_font_sizes/font_size = 96
+text = "What Is Art?
+"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="WhatIsArt" unique_id=1721732368]
+stream = ExtResource("7_pyfs2")
+
+[node name="AreGamesArt" type="Label" parent="." unique_id=1636738862]
+anchors_preset = -1
+anchor_left = 0.81567425
+anchor_top = 8.915384
+anchor_right = 0.81567425
+anchor_bottom = 8.915384
+offset_left = 508.0
+offset_top = 602.0
+offset_right = 1376.0
+offset_bottom = 797.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_jjb1e")
+theme_override_font_sizes/font_size = 96
+text = "Are Games Art ?
+"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="AreGamesArt" unique_id=1252298387]
+stream = ExtResource("8_ccmsk")
+
+[node name="WeAtN65" type="Label" parent="." unique_id=1189840521]
+anchors_preset = -1
+anchor_left = 0.81567425
+anchor_top = 8.915384
+anchor_right = 0.81567425
+anchor_bottom = 8.915384
+offset_left = 105.0
+offset_top = 599.0
+offset_right = 1378.0
+offset_bottom = 794.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_jjb1e")
+theme_override_font_sizes/font_size = 96
+text = "We At N65 Believe So!
+"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="WeAtN65" unique_id=16862404]
+stream = ExtResource("9_u3yrv")
+
+[connection signal="pressed" from="StartButton/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="DecodeButton/DecodeButton" to="." method="_on_decode_button_pressed"]
+[connection signal="pressed" from="TransmitButton/TransmitButton" to="." method="_on_transmit_button_pressed"]
