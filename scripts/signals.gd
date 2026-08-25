@@ -4,6 +4,7 @@ extends Node
 # Project->GDScript->Unused Signal IGNORE
 
 # Schene transitions
+signal to_intro_menu
 signal to_start_menu
 signal to_game_loop_menu
 signal to_game_loop

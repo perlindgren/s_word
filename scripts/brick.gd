@@ -9,10 +9,17 @@ var click_offset: Vector2 = Vector2.ZERO
 var char_str : String
 
 @onready var main : Main = get_node("..")
-@onready var walls_top: Area2D = get_node("../Walls/Top")
-@onready var walls_left: Area2D = get_node("../Walls/Left")
-@onready var walls_right: Area2D = get_node("../Walls/Left")
-@onready var walls_bottom: Area2D = get_node("../Walls/Left")
+
+@onready var walls_top: Area2D = get_node("../Walls/Top") as Area2D
+@onready var walls_left: Area2D = get_node("../Walls/Left") as Area2D
+@onready var walls_right: Area2D = get_node("../Walls/Right") as Area2D
+@onready var walls_bottom: Area2D = get_node("../Walls/Bottom") as Area2D
+
+@onready var swoof: AudioStreamPlayer = $Swoof
+@onready var swoof2: AudioStreamPlayer = $Swoof2
+@onready var klonk: AudioStreamPlayer = $Klonk
+@onready var end: AudioStreamPlayer = $End
+@onready var klick: AudioStreamPlayer = $Klick
 
 @onready var starting_position: Vector2 = global_position
 # Keeps track of the slot this item currently lives in
@@ -28,14 +35,21 @@ func _physics_process(delta: float) -> void:
 			var overlapping_areas = get_overlapping_areas()
 			for area in overlapping_areas:
 				if area.is_in_group("bricks_and_borders"):
-					# print(self, "collision with ", area)
-					match area:
-						[walls_top, walls_bottom]:
-							move_speed.y = -move_speed.y
-						[walls_left, walls_right]:
-							move_speed.x = -move_speed.x
-						_: 
-							move_speed = -move_speed
+					#print(self, "collision with ", area)
+					#print("top", walls_top)
+					#print("bottom", walls_bottom)
+					#print("left", walls_left)
+					#print("right", walls_right)
+					
+					if is_same(area, walls_top) or is_same(area, walls_bottom):
+						move_speed.y = -move_speed.y
+						print("top or bottom")
+					elif is_same(area, walls_left) or is_same(area, walls_right):
+						move_speed.x = -move_speed.x
+						print("left or right")
+					else: 
+						move_speed = -move_speed
+						print("none")
 					rotation_speed = clampf(-rotation_speed * 1.1, -main.brick_max_rotation_speed, main.brick_max_rotation_speed) 
 					position += 2 * move_speed * delta
 					
@@ -50,6 +64,7 @@ func _input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int) -> vo
 	if event is InputEventMouseButton and event.pressed:
 		match event.button_index:
 			MOUSE_BUTTON_LEFT: 
+				klick.play()
 				is_dragging = true
 				click_offset = get_global_mouse_position() - global_position
 				starting_position = global_position
@@ -57,6 +72,7 @@ func _input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int) -> vo
 				z_index = 10 
 			MOUSE_BUTTON_RIGHT:
 				print("flip")
+				swoof2.play()
 				var label = get_node("Label")
 				var tween = create_tween()
 				await tween.tween_property(self, "scale", Vector2(0.0, -1.0), 0.25).finished
@@ -110,6 +126,7 @@ func attempt_drop() -> void:
 			
 			snap_to_slot(target_slot)
 	else:
+		swoof.play()
 		print("drop at arbitrary position, current slot", current_slot, ", position ", position)
 		var rect = Rect2(main.brick_area_pos, main.brick_area_size)
 		print("rect ", rect)
@@ -126,6 +143,8 @@ func attempt_drop() -> void:
 
 func snap_to_slot(slot: Area2D) -> void:
 	print("snap_to_slot ", slot.index)
+	klonk.play()
+	
 	current_slot = slot
 	rotation = 0.0
 	slot.current_item = self

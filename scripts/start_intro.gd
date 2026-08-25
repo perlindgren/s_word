@@ -10,8 +10,10 @@ extends Node2D
 @onready var decode_button = $DecodeButton
 @onready var transmit_button = $TransmitButton
 @onready var what_is_art = [$WhatIsArt, $AreGamesArt, $WeAtN65]
+@onready var circle : Circle = $Circle
+@onready var sten = $Sten
 
-# @export var text_to_show: String = "THE PEN IS MIGHTIER THAN THE"
+
 @export var n65_duration: float = 5.0
 @export var display_speed: float = 0.1 # Time in seconds per character
 @export var s_word_tween_time: float = 3
@@ -24,6 +26,8 @@ var nr_bounce : int = 0
 var time_last_visible_chars = 0
 var decode : int = 0
 
+var activity : bool
+
 # What is art? Are games art? We at N65 think so!
 func _ready() -> void:
 	the_pen.visible = false
@@ -32,15 +36,12 @@ func _ready() -> void:
 	start_button.visible = false
 	decode_button.visible = false
 	transmit_button.visible = false
+	circle.active = false
 	
 	for i in range(0,3):
 		what_is_art[i].visible = false
-		
+
 	await get_tree().create_timer(3).timeout 
-		
-	# wait here until transmissions are finished
-	#while decode < 4:
-		#pass
 		
 	the_pen.visible_characters = 0
 	time.visible_characters = 0
@@ -63,6 +64,8 @@ func _ready() -> void:
 	tween = create_tween()
 	await tween.tween_method(on_bounce_step, -165, 524.0, s_word_tween_time).set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT).finished
 	
+	await get_tree().create_timer(3).timeout 
+	
 	time.visible = true
 	total_chars = time.get_total_character_count()
 	duration = total_chars * display_speed
@@ -72,6 +75,13 @@ func _ready() -> void:
 	
 	start_button.visible = true
 	transmit_button.visible = true
+	sten.play()
+	
+	while true:
+		activity = false
+		await get_tree().create_timer(20.0).timeout
+		if !activity:
+			Signals.to_intro_menu.emit()
 	
 var my_time: float = 0
 func _process(delta: float) -> void:
@@ -112,20 +122,28 @@ func _on_start_button_pressed() -> void:
 
 
 func _on_decode_button_pressed() -> void:
+	activity = true
 	print("_on_decode_button_pressed")
 	if decode < 4:
 		what_is_art[decode - 1].visible = true
 		decode_button.visible = false
 
 func _on_transmit_button_pressed() -> void:
+	activity = true
 	print("_on_transmit_button_pressed")
 	if decode < 3:
 		decode += 1
 		decode_button.visible = true
 		transmit_button.visible = false
 		what_is_art[decode - 1].get_child(0).play()
+		circle.transmit()
 		await what_is_art[decode - 1].get_child(0).finished
+		circle.stop()
 		if decode < 3:
 			transmit_button.visible = true
 		decode_button.visible = false
 			
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_cancel"):
+		print("_unhandled_input ui_cancel, emit to_game_loop_menue")
+		Signals.to_intro_menu.emit()

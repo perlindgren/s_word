@@ -6,8 +6,10 @@
 [ext_resource type="FontFile" uid="uid://n74onkhokknh" path="res://assets/fonts/JameGem08_2026-Regular.ttf" id="4_nxjfj"]
 [ext_resource type="FontVariation" uid="uid://c8mk6s0hoghgw" path="res://resources/font_variation.tres" id="5_u4qax"]
 [ext_resource type="Texture2D" uid="uid://dfn6rnas4njwt" path="res://assets/sprites/N65.png" id="6_4v6gu"]
+[ext_resource type="Texture2D" uid="uid://b27qwpg5gjul6" path="res://assets/sprites/Button.png" id="6_e58y3"]
 [ext_resource type="PackedScene" uid="uid://cbclmpycumvqq" path="res://scenes/clock.tscn" id="7_nxjfj"]
 [ext_resource type="AudioStream" uid="uid://bkxmqncfcswff" path="res://assets/audio/start1.wav" id="7_u4qax"]
+[ext_resource type="AudioStream" uid="uid://dwms2bvdg28by" path="res://assets/audio/Start2.wav" id="9_5byqq"]
 
 [node name="StartMenu" type="Node2D" unique_id=849056485]
 script = ExtResource("1_fcv5n")
@@ -197,14 +199,22 @@ theme_override_font_sizes/font_size = 48
 text = "THE PEN IS MIGHTIER THAN THE"
 metadata/_edit_use_anchors_ = true
 
-[node name="NoButton" parent="ThePen" unique_id=1178043654 instance=ExtResource("3_4v6gu")]
+[node name="NoButton" type="TextureButton" parent="ThePen" unique_id=1178043654]
 layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.12784588
+anchor_top = 6.0076923
+anchor_right = 0.12784588
+anchor_bottom = 6.0076923
 offset_left = -58.0
 offset_top = -211.5
 offset_right = 106.0
 offset_bottom = -16.5
-grow_horizontal = 1
-grow_vertical = 1
+texture_normal = ExtResource("6_e58y3")
+texture_pressed = ExtResource("6_e58y3")
+texture_hover = ExtResource("6_e58y3")
+texture_disabled = ExtResource("6_e58y3")
+texture_focused = ExtResource("6_e58y3")
 
 [node name="S" type="Label" parent="ThePen" unique_id=1555016418]
 modulate = Color(0, 0, 0, 1)
@@ -256,11 +266,13 @@ texture = ExtResource("6_4v6gu")
 position = Vector2(1635.0001, 790)
 scale = Vector2(0.75, 0.75)
 
-[node name="Clip1" type="AudioStreamPlayer2D" parent="." unique_id=297153275]
-position = Vector2(1635.0001, 790)
-scale = Vector2(0.75, 0.75)
+[node name="Start1" type="AudioStreamPlayer" parent="." unique_id=122141917]
 stream = ExtResource("7_u4qax")
-autoplay = true
+volume_db = -2.0
+
+[node name="Start2" type="AudioStreamPlayer" parent="." unique_id=1964775587]
+stream = ExtResource("9_5byqq")
+volume_db = -1.0
 
 [connection signal="mouse_entered" from="ExitButton/TextureButton" to="." method="_on_exit_button_mouse_entered"]
 [connection signal="mouse_exited" from="ExitButton/TextureButton" to="." method="_on_exit_button_mouse_exited"]

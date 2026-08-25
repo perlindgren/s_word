@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ban8sxnp5rs0k"]
 
 [ext_resource type="Texture2D" uid="uid://b27qwpg5gjul6" path="res://assets/sprites/Button.png" id="1_0t0f4"]
-[ext_resource type="Script" uid="uid://chj548bfgda1r" path="res://scenes/hover.gd" id="2_adf77"]
+[ext_resource type="Script" uid="uid://chj548bfgda1r" path="res://scripts/hover.gd" id="2_adf77"]
 
 [node name="TextureButton" type="TextureButton" unique_id=1778397480]
 anchors_preset = -1

@@ -10,6 +10,8 @@
 [ext_resource type="AudioStream" uid="uid://b6gpjhh31fpxc" path="res://assets/audio/what_is_art.wav" id="7_pyfs2"]
 [ext_resource type="AudioStream" uid="uid://cdq16m3wcp4ps" path="res://assets/audio/are_games_art.wav" id="8_ccmsk"]
 [ext_resource type="AudioStream" uid="uid://cegb3m763u5r4" path="res://assets/audio/we_at_n65.wav" id="9_u3yrv"]
+[ext_resource type="Script" uid="uid://dso6lncpqdkal" path="res://scripts/circle.gd" id="11_u3yrv"]
+[ext_resource type="AudioStream" uid="uid://bk7t0tx0t46nt" path="res://assets/audio/StenMusic.wav" id="12_w7kr8"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5uub5"]
 load_path = "res://.godot/imported/N65.png-23ec3e0eecb7430b5c4e4a67b92e795f.ctex"
@@ -288,6 +290,14 @@ text = "We At N65 Believe So!
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="WeAtN65" unique_id=16862404]
 stream = ExtResource("9_u3yrv")
+
+[node name="Circle" type="Node2D" parent="." unique_id=600353192]
+position = Vector2(1357, 710)
+script = ExtResource("11_u3yrv")
+
+[node name="Sten" type="AudioStreamPlayer" parent="." unique_id=433141194]
+stream = ExtResource("12_w7kr8")
+volume_db = -8.268
 
 [connection signal="pressed" from="StartButton/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="DecodeButton/DecodeButton" to="." method="_on_decode_button_pressed"]

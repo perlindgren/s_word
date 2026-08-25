@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dnjco0b34ec1h" path="res://scenes/parallax_background.tscn" id="1_0uxlg"]
 [ext_resource type="Script" uid="uid://ca1573dqhefr7" path="res://scripts/game_loop_menu.gd" id="1_0xkhp"]
 [ext_resource type="Texture2D" uid="uid://b27qwpg5gjul6" path="res://assets/sprites/Button.png" id="2_ci31j"]
-[ext_resource type="Script" uid="uid://chj548bfgda1r" path="res://scenes/hover.gd" id="3_0uxlg"]
+[ext_resource type="Script" uid="uid://chj548bfgda1r" path="res://scripts/hover.gd" id="3_0uxlg"]
 [ext_resource type="FontFile" uid="uid://n74onkhokknh" path="res://assets/fonts/JameGem08_2026-Regular.ttf" id="3_cu3jl"]
 [ext_resource type="Texture2D" uid="uid://dfn6rnas4njwt" path="res://assets/sprites/N65.png" id="5_rvywj"]
 [ext_resource type="FontVariation" uid="uid://c8mk6s0hoghgw" path="res://resources/font_variation.tres" id="6_2uy04"]
@@ -325,7 +325,7 @@ theme_override_fonts/font = ExtResource("6_2uy04")
 theme_override_font_sizes/font_size = 64
 text = "EVENT #7"
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=376396567]
+[node name="Sten" type="AudioStreamPlayer" parent="." unique_id=2064764326]
 stream = ExtResource("21_qngwn")
 volume_db = -8.268
 autoplay = true
