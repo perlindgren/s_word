@@ -31,7 +31,6 @@ metadata/_edit_use_anchors_ = true
 [node name="Parallax2D" parent="." unique_id=599452884 instance=ExtResource("2_k0p57")]
 
 [node name="N65" type="Sprite2D" parent="." unique_id=1160338200]
-visible = false
 position = Vector2(0, -100)
 scale = Vector2(0.5, 0.5)
 texture = SubResource("CompressedTexture2D_5uub5")
@@ -56,7 +55,6 @@ text = "THE PEN IS MIGHTIER THAN THE"
 metadata/_edit_use_anchors_ = true
 
 [node name="SWORD" type="Node2D" parent="." unique_id=1880412989]
-visible = false
 position = Vector2(487, 524)
 
 [node name="WORD" type="Label" parent="SWORD" unique_id=1119210352]
