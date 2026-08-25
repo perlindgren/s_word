@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://k8kdi7nxl66x" path="res://scripts/start_intro.gd" id="1_gm3nt"]
 [ext_resource type="PackedScene" uid="uid://dnjco0b34ec1h" path="res://scenes/parallax_background.tscn" id="2_k0p57"]
 [ext_resource type="PackedScene" uid="uid://ban8sxnp5rs0k" path="res://scenes/brick_button.tscn" id="3_yauhl"]
+[ext_resource type="Texture2D" uid="uid://b27qwpg5gjul6" path="res://assets/sprites/Button.png" id="4_ccmsk"]
 [ext_resource type="FontFile" uid="uid://n74onkhokknh" path="res://assets/fonts/JameGem08_2026-Regular.ttf" id="4_jjb1e"]
 [ext_resource type="FontVariation" uid="uid://c8mk6s0hoghgw" path="res://resources/font_variation.tres" id="5_6287d"]
 [ext_resource type="AudioStream" uid="uid://bwmicjowd0662" path="res://assets/audio/key_click.wav" id="7_ejjsb"]
@@ -70,13 +71,21 @@ theme_override_fonts/normal_font = ExtResource("5_6287d")
 theme_override_font_sizes/normal_font_size = 256
 text = "WORD"
 
-[node name="NoButton" parent="SWORD" unique_id=1178043654 instance=ExtResource("3_yauhl")]
+[node name="NoButton" type="TextureButton" parent="SWORD" unique_id=1178043654]
+anchors_preset = -1
+anchor_left = 0.12784588
+anchor_top = 6.0076923
+anchor_right = 0.12784588
+anchor_bottom = 6.0076923
 offset_left = -44.0
 offset_top = -43.0
 offset_right = 120.0
 offset_bottom = 152.0
-grow_horizontal = 1
-grow_vertical = 1
+texture_normal = ExtResource("4_ccmsk")
+texture_pressed = ExtResource("4_ccmsk")
+texture_hover = ExtResource("4_ccmsk")
+texture_disabled = ExtResource("4_ccmsk")
+texture_focused = ExtResource("4_ccmsk")
 
 [node name="S" type="Label" parent="SWORD/NoButton" unique_id=1555016418]
 modulate = Color(0, 0, 0, 1)
@@ -147,7 +156,7 @@ theme_override_font_sizes/font_size = 96
 text = "TART"
 
 [node name="DecodeButton" type="Node2D" parent="." unique_id=267640772]
-position = Vector2(1555, 655)
+position = Vector2(900, 963)
 
 [node name="DecodeButton" parent="DecodeButton" unique_id=866345418 instance=ExtResource("3_yauhl")]
 offset_left = -83.0
@@ -184,7 +193,7 @@ theme_override_font_sizes/font_size = 64
 text = "ECODE"
 
 [node name="TransmitButton" type="Node2D" parent="." unique_id=188985785]
-position = Vector2(885, 963)
+position = Vector2(900, 963)
 
 [node name="TransmitButton" parent="TransmitButton" unique_id=1799886031 instance=ExtResource("3_yauhl")]
 offset_left = -83.0

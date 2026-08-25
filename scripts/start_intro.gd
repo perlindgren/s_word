@@ -31,9 +31,12 @@ func _ready() -> void:
 	time.visible = false
 	start_button.visible = false
 	decode_button.visible = false
+	transmit_button.visible = false
 	
 	for i in range(0,3):
 		what_is_art[i].visible = false
+		
+	await get_tree().create_timer(3).timeout 
 		
 	# wait here until transmissions are finished
 	#while decode < 4:
@@ -68,6 +71,7 @@ func _ready() -> void:
 	await tween.tween_property(time, "visible_characters", total_chars, duration).finished
 	
 	start_button.visible = true
+	transmit_button.visible = true
 	
 var my_time: float = 0
 func _process(delta: float) -> void:
@@ -116,9 +120,12 @@ func _on_decode_button_pressed() -> void:
 func _on_transmit_button_pressed() -> void:
 	print("_on_transmit_button_pressed")
 	if decode < 3:
-		decode_button.visible = true
-		what_is_art[decode].get_child(0).play()
 		decode += 1
-		if decode == 3:
-			transmit_button.visible = false
+		decode_button.visible = true
+		transmit_button.visible = false
+		what_is_art[decode - 1].get_child(0).play()
+		await what_is_art[decode - 1].get_child(0).finished
+		if decode < 3:
+			transmit_button.visible = true
+		decode_button.visible = false
 			
