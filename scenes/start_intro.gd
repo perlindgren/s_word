@@ -9,8 +9,11 @@ extends Node2D
 @export var n65_duration: float = 5.0
 @export var display_speed: float = 0.1 # Time in seconds per character
 @export var s_word_tween_time: float = 3
+@export var s_word_y : float = 524.0
 
 var last_visible_chars = 0
+var last_value: float = 0.0
+var last_direction: bool = true # down
 
 func _ready() -> void:
 	the_pen.modulate = Color.TRANSPARENT
@@ -31,10 +34,10 @@ func _ready() -> void:
 	s_word.position.y = -165
 	s_word.modulate = Color.WHITE
 	
-	# 524
+	# Bounce the sWORD to land on positoin.y 524.
 	tween = create_tween()
-	await tween.tween_property(s_word, "position:y", 524, s_word_tween_time).set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT).finished
-	
+	#await tween.tween_property(s_word, "position:y", 524, s_word_tween_time).set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT).finished
+	await tween.tween_method(on_bounce_step, -165, 524.0, s_word_tween_time).set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT).finished
 	
 func _process(_delta: float) -> void:
 	# Detect exactly when a new character is revealed on screen
@@ -43,3 +46,13 @@ func _process(_delta: float) -> void:
 		
 	# Keep track of the current character state
 	last_visible_chars = the_pen.visible_characters
+
+func on_bounce_step(current_value: float) -> void:
+	s_word.position.y = current_value
+	var direction = false if current_value > last_value else true
+		
+	if direction and direction != last_direction: 
+		audio_player.play()
+	
+	last_value = current_value
+	last_direction = direction
