@@ -1,0 +1,99 @@
+[gd_scene format=3 uid="uid://6flyd8imk5ef"]
+
+[ext_resource type="Script" uid="uid://k8kdi7nxl66x" path="res://scenes/start_intro.gd" id="1_gm3nt"]
+[ext_resource type="PackedScene" uid="uid://dnjco0b34ec1h" path="res://scenes/parallax_background.tscn" id="2_k0p57"]
+[ext_resource type="PackedScene" uid="uid://ban8sxnp5rs0k" path="res://scenes/brick_button.tscn" id="3_yauhl"]
+[ext_resource type="FontFile" uid="uid://n74onkhokknh" path="res://assets/fonts/JameGem08_2026-Regular.ttf" id="4_jjb1e"]
+[ext_resource type="FontVariation" uid="uid://c8mk6s0hoghgw" path="res://resources/font_variation.tres" id="5_6287d"]
+[ext_resource type="AudioStream" uid="uid://bwmicjowd0662" path="res://assets/audio/key_click.wav" id="7_ejjsb"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5uub5"]
+load_path = "res://.godot/imported/N65.png-23ec3e0eecb7430b5c4e4a67b92e795f.ctex"
+
+[node name="Intro" type="Node2D" unique_id=849056485]
+script = ExtResource("1_gm3nt")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1247312201]
+layer = -10
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=798824956]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+color = Color(0, 0.99607843, 0.99607843, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Parallax2D" parent="." unique_id=599452884 instance=ExtResource("2_k0p57")]
+
+[node name="N65" type="Sprite2D" parent="." unique_id=1160338200]
+visible = false
+position = Vector2(0, -100)
+scale = Vector2(0.5, 0.5)
+texture = SubResource("CompressedTexture2D_5uub5")
+centered = false
+
+[node name="ThePen" type="RichTextLabel" parent="." unique_id=717374464]
+self_modulate = Color(0, 0, 0, 1)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 355.0
+offset_top = 302.0
+offset_right = 1497.0
+offset_bottom = 367.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("5_6287d")
+theme_override_font_sizes/normal_font_size = 48
+text = "THE PEN IS MIGHTIER THAN THE"
+metadata/_edit_use_anchors_ = true
+
+[node name="SWORD" type="Node2D" parent="." unique_id=1880412989]
+visible = false
+position = Vector2(487, 524)
+
+[node name="WORD" type="Label" parent="SWORD" unique_id=1119210352]
+modulate = Color(0, 0, 0, 1)
+offset_left = 115.0
+offset_top = -152.0
+offset_right = 918.0
+offset_bottom = 102.0
+theme_override_fonts/font = ExtResource("4_jjb1e")
+theme_override_font_sizes/font_size = 256
+text = "WORD"
+
+[node name="NoButton" parent="SWORD" unique_id=1178043654 instance=ExtResource("3_yauhl")]
+offset_left = -44.0
+offset_top = -43.0
+offset_right = 120.0
+offset_bottom = 152.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="S" type="Label" parent="SWORD/NoButton" unique_id=1555016418]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.81567425
+anchor_top = 8.915384
+anchor_right = 0.81567425
+anchor_bottom = 8.915384
+offset_left = -89.77057
+offset_top = -1695.4999
+offset_right = -20.770569
+offset_bottom = -1599.4999
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_jjb1e")
+theme_override_font_sizes/font_size = 96
+text = "S"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1551249705]
+stream = ExtResource("7_ejjsb")
