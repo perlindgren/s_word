@@ -34,6 +34,18 @@
 [ext_resource type="AudioStream" uid="uid://dxc1tjj80865e" path="res://assets/audio/10.wav" id="31_u7kfx"]
 [ext_resource type="AudioStream" uid="uid://e2u4qdu1ysb" path="res://assets/audio/11.wav" id="32_01gyt"]
 [ext_resource type="AudioStream" uid="uid://bpygbp0bqo160" path="res://assets/audio/12.wav" id="33_0s6fk"]
+[ext_resource type="Texture2D" uid="uid://b1f6g44rnipa5" path="res://assets/sprites/stickers/StickerOutline/GoblinSticker.png" id="35_7bx6x"]
+[ext_resource type="Texture2D" uid="uid://dffe4n6hdjnp0" path="res://assets/sprites/stickers/StickerOutline/DwarfSticker.png" id="36_jmw5v"]
+[ext_resource type="Texture2D" uid="uid://dq4rw7uehqbxi" path="res://assets/sprites/stickers/StickerOutline/RobotSticker.png" id="37_1ys27"]
+[ext_resource type="Texture2D" uid="uid://ddft27tto3nyy" path="res://assets/sprites/stickers/StickerOutline/HouseOnFireSticker.png" id="38_3rs7a"]
+[ext_resource type="Texture2D" uid="uid://dr315cnfwcgku" path="res://assets/sprites/stickers/StickerOutline/DogSticker.png" id="39_oyo4o"]
+[ext_resource type="Texture2D" uid="uid://bukw2yfml0spy" path="res://assets/sprites/stickers/StickerOutline/PillowmanSticker.png" id="40_v3qf6"]
+[ext_resource type="Texture2D" uid="uid://p8gx6jme30ex" path="res://assets/sprites/stickers/StickerOutline/SeagullSticker.png" id="41_xj2sy"]
+[ext_resource type="Texture2D" uid="uid://d3ew6x6rywegj" path="res://assets/sprites/stickers/StickerOutline/CatSticker.png" id="42_aahn3"]
+[ext_resource type="Texture2D" uid="uid://crs2ls1t0fwuf" path="res://assets/sprites/stickers/StickerOutline/PizzaSticker.png" id="43_g0snt"]
+[ext_resource type="Texture2D" uid="uid://ex4w1ek8tcei" path="res://assets/sprites/stickers/StickerOutline/FishSticker.png" id="44_rn5e2"]
+[ext_resource type="Texture2D" uid="uid://ohtqsd5ggym3" path="res://assets/sprites/stickers/StickerOutline/CakeSticker.png" id="45_uuoh8"]
+[ext_resource type="Texture2D" uid="uid://dlpbj7w4o7y08" path="res://assets/sprites/stickers/StickerOutline/JohnSticker.png" id="46_8fta3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_srqkv"]
 shader = ExtResource("4_vo7sv")
@@ -138,6 +150,7 @@ shape = ExtResource("10_8fja0")
 position = Vector2(-687, -410)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Left" unique_id=416461170]
+position = Vector2(8, -2)
 shape = ExtResource("10_8fja0")
 
 [node name="Bottom" type="Area2D" parent="Walls" unique_id=641987870 groups=["bricks_and_borders"]]
@@ -281,3 +294,73 @@ volume_db = -1.0
 [node name="12" type="AudioStreamPlayer" parent="Audio" unique_id=756572389]
 stream = ExtResource("33_0s6fk")
 volume_db = -1.0
+
+[node name="Cleared" type="Node2D" parent="." unique_id=954040438]
+visible = false
+position = Vector2(0, -48)
+
+[node name="Goblin" type="Sprite2D" parent="Cleared" unique_id=1349126557]
+position = Vector2(1217, 202.00003)
+rotation = 0.8150688
+scale = Vector2(6.5, 6.5)
+texture = ExtResource("35_7bx6x")
+
+[node name="Dwarf" type="Sprite2D" parent="Cleared" unique_id=1431899053]
+position = Vector2(1372, 349)
+scale = Vector2(8, 8)
+texture = ExtResource("36_jmw5v")
+
+[node name="Robot" type="Sprite2D" parent="Cleared" unique_id=827231119]
+position = Vector2(1446, 593.99994)
+rotation = -0.58119464
+scale = Vector2(8, 8)
+texture = ExtResource("37_1ys27")
+
+[node name="HouseOnFire" type="Sprite2D" parent="Cleared" unique_id=1565110158]
+position = Vector2(1396.0001, 805.00006)
+scale = Vector2(6, 6)
+texture = ExtResource("38_3rs7a")
+
+[node name="Dog" type="Sprite2D" parent="Cleared" unique_id=1911528040]
+position = Vector2(1244, 928)
+scale = Vector2(8, 8)
+texture = ExtResource("39_oyo4o")
+
+[node name="Plillowman" type="Sprite2D" parent="Cleared" unique_id=1087174342]
+position = Vector2(1013.00006, 1008)
+rotation = 1.1623893
+scale = Vector2(5, 5)
+texture = ExtResource("40_v3qf6")
+
+[node name="Seagul" type="Sprite2D" parent="Cleared" unique_id=954714813]
+position = Vector2(786.00006, 1002.99994)
+scale = Vector2(5, 5)
+texture = ExtResource("41_xj2sy")
+
+[node name="Cat" type="Sprite2D" parent="Cleared" unique_id=129348878]
+position = Vector2(626.00006, 878)
+rotation = 0.58119464
+scale = Vector2(9, 9)
+texture = ExtResource("42_aahn3")
+
+[node name="Pizza" type="Sprite2D" parent="Cleared" unique_id=422458896]
+position = Vector2(506.99997, 655)
+scale = Vector2(7, 7)
+texture = ExtResource("43_g0snt")
+
+[node name="Fish" type="Sprite2D" parent="Cleared" unique_id=1697024915]
+position = Vector2(506.99997, 405)
+rotation = 0.4660029
+scale = Vector2(6.5, 6.5)
+texture = ExtResource("44_rn5e2")
+
+[node name="Cake" type="Sprite2D" parent="Cleared" unique_id=1580648024]
+position = Vector2(708.99994, 185.00002)
+rotation = 0.58119464
+scale = Vector2(6, 6)
+texture = ExtResource("45_uuoh8")
+
+[node name="JohnSmith" type="Sprite2D" parent="Cleared" unique_id=325419712]
+position = Vector2(926.00006, 172)
+scale = Vector2(6, 6)
+texture = ExtResource("46_8fta3")

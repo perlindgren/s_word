@@ -5,6 +5,7 @@ extends Node2D
 @onready var failed = $Failed
 @onready var next_event = $NextEvent
 @onready var current_event = $CurrentEvent
+@onready var swoof = $Swoof
 
 func _ready() -> void:
 	GameState.load()
@@ -33,6 +34,12 @@ func _ready() -> void:
 	
 func _on_start_button_pressed() -> void:
 	print("_on_start_button_pressed, emit to_game_loop")
+	to_game_loop()
+
+func to_game_loop() -> void:
+	swoof.play()
+	await swoof.finished
+	await get_tree().create_timer(1.0).timeout
 	Signals.to_game_loop.emit()
 
 func _on_exit_button_pressed() -> void:
@@ -65,7 +72,7 @@ func _process(_delta) -> void:
 	
 	if minutes == 0 && seconds == 0:
 		print("new challenge ", hours)
-		Signals.to_game_loop.emit()
+		to_game_loop()
 	
 	next_event.text = "MINUTES UNTIL\nNEXT EVENT " + str(60 - minutes) 
 	current_event.text = "EVENT # " + str(GameState.event_nr + 1) 

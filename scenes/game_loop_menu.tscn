@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://dlpbj7w4o7y08" path="res://assets/sprites/stickers/StickerOutline/JohnSticker.png" id="19_2v0mc"]
 [ext_resource type="Texture2D" uid="uid://bhoq65j3rfasw" path="res://assets/sprites/stickers/YourDidGoodSticker.png" id="20_yq88f"]
 [ext_resource type="AudioStream" uid="uid://bk7t0tx0t46nt" path="res://assets/audio/StenMusic.wav" id="21_qngwn"]
+[ext_resource type="AudioStream" uid="uid://cvh1m7dc4dmx8" path="res://assets/audio/swoof.wav" id="23_u16os"]
 
 [node name="GameLoopMenu" type="Node2D" unique_id=1352290525]
 script = ExtResource("1_0xkhp")
@@ -414,6 +415,9 @@ theme_override_fonts/font = ExtResource("6_2uy04")
 theme_override_font_sizes/font_size = 64
 text = "EVENTS
 "
+
+[node name="Swoof" type="AudioStreamPlayer" parent="." unique_id=1568023492]
+stream = ExtResource("23_u16os")
 
 [connection signal="mouse_entered" from="ExitButton/ExitButton" to="ExitButton/ExitButton" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="ExitButton/ExitButton" to="ExitButton/ExitButton" method="_on_mouse_exited"]

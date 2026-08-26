@@ -21,6 +21,7 @@ var word : String
 @onready var event_name = $EventName
 @onready var event_sprite = $EventSprite
 @onready var audio = $Audio
+@onready var cleared = $Cleared
 
 func _ready() :
 	print("main: _ready")
@@ -102,9 +103,20 @@ func dropped(p: int, char_str: String) -> void:
 	print("input ", input, "word", word)
 	if input == word:
 		print("success")
+		var event = cleared.get_children()[GameState.event_nr]
+		
+		var tween = create_tween().set_parallel(true)
+		tween.tween_property(event_sprite, "scale", Vector2(40,40), 1)
+		tween.tween_property(event_sprite, "rotation", TAU, 1)
+		tween.chain().tween_property(event_sprite, "scale", Vector2.ZERO,1)
+		tween.tween_property(event_sprite, "rotation", -TAU, 1)
+		tween.tween_property(event_sprite, "position", event.position, 1)
+		
+		await get_tree().create_timer(2.0).timeout				
 		GameState.cleared.push_back(GameState.event_nr)
 		GameState.save()
 		Signals.to_game_loop_menu.emit()
+		
 		
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):

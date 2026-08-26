@@ -10,10 +10,10 @@ var char_str : String
 
 @onready var main : Main = get_node("..")
 
-@onready var walls_top: Area2D = get_node("../Walls/Top") as Area2D
-@onready var walls_left: Area2D = get_node("../Walls/Left") as Area2D
-@onready var walls_right: Area2D = get_node("../Walls/Right") as Area2D
-@onready var walls_bottom: Area2D = get_node("../Walls/Bottom") as Area2D
+@onready var walls_top: Area2D = get_node("../Walls/Top") 
+@onready var walls_left: Area2D = get_node("../Walls/Left") 
+@onready var walls_right: Area2D = get_node("../Walls/Right")
+@onready var walls_bottom: Area2D = get_node("../Walls/Bottom") 
 
 @onready var swoof: AudioStreamPlayer = $Swoof
 @onready var swoof2: AudioStreamPlayer = $Swoof2

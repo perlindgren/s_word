@@ -24,13 +24,13 @@ class Data:
 		flipped = f
 
 var events : Array[Data] = [
-	Data.new("Goblin", "Kill", "SWORD", 0, 0),
+	Data.new("Goblin", "Likes", "SWORD", 0, 0),
 	Data.new("Dwarf", "Wants", "GOLD", 1, 0.2),
 	Data.new("Robot", "Feed", "OIL", 2, 0.3),
 	Data.new("House On Fire", "Help", "WATER", 3, 0.4),
 	Data.new("Dog", "Feed", "BONE", 4, 0.5),
 	Data.new("Pillow Man", "Wants", "BLANKET", 5, 0.6),
-	Data.new("Seagull with\nGun", "Feed", "FRIES", 6, 0.7),
+	Data.new("Seagull with\nBubble Gun", "Feed", "FRIES", 6, 0.7),
 	Data.new("Cat", "Feed", "CATNIP", 6, 0.8),
 	Data.new("Pizza Man", "Wants", "TOMATO", 7, 0.9),
 	Data.new("Fish", "Wants", "AQUARIUM", 7, 1.0),
