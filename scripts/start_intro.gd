@@ -64,7 +64,7 @@ func _ready() -> void:
 	tween = create_tween()
 	await tween.tween_method(on_bounce_step, -165, 524.0, s_word_tween_time).set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT).finished
 	
-	await get_tree().create_timer(3).timeout 
+	await get_tree().create_timer(2).timeout 
 	
 	time.visible = true
 	total_chars = time.get_total_character_count()

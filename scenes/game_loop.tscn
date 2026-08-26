@@ -46,6 +46,10 @@
 [ext_resource type="Texture2D" uid="uid://ex4w1ek8tcei" path="res://assets/sprites/stickers/StickerOutline/FishSticker.png" id="44_rn5e2"]
 [ext_resource type="Texture2D" uid="uid://ohtqsd5ggym3" path="res://assets/sprites/stickers/StickerOutline/CakeSticker.png" id="45_uuoh8"]
 [ext_resource type="Texture2D" uid="uid://dlpbj7w4o7y08" path="res://assets/sprites/stickers/StickerOutline/JohnSticker.png" id="46_8fta3"]
+[ext_resource type="Texture2D" uid="uid://bhoq65j3rfasw" path="res://assets/sprites/stickers/YourDidGoodSticker.png" id="47_3rs7a"]
+[ext_resource type="AudioStream" uid="uid://dtrnekh687clf" path="res://assets/audio/end.wav" id="47_jmw5v"]
+[ext_resource type="AudioStream" uid="uid://brpsfj7f21kkw" path="res://assets/audio/klonk swoof.wav" id="48_1ys27"]
+[ext_resource type="AudioStream" uid="uid://cvh1m7dc4dmx8" path="res://assets/audio/swoof.wav" id="50_oyo4o"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_srqkv"]
 shader = ExtResource("4_vo7sv")
@@ -364,3 +368,18 @@ texture = ExtResource("45_uuoh8")
 position = Vector2(926.00006, 172)
 scale = Vector2(6, 6)
 texture = ExtResource("46_8fta3")
+
+[node name="YourDidIt" type="Sprite2D" parent="." unique_id=2091049162]
+position = Vector2(1639, 906)
+rotation = 0.8150688
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("47_3rs7a")
+
+[node name="End" type="AudioStreamPlayer" parent="." unique_id=1750161352]
+stream = ExtResource("47_jmw5v")
+
+[node name="Klonk" type="AudioStreamPlayer" parent="." unique_id=692483883]
+stream = ExtResource("48_1ys27")
+
+[node name="Swoof" type="AudioStreamPlayer" parent="." unique_id=1116695805]
+stream = ExtResource("50_oyo4o")

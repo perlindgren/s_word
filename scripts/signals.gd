@@ -10,3 +10,4 @@ signal to_game_loop_menu
 signal to_game_loop
 
 signal dropped(p: int, s: String)
+signal time_expired

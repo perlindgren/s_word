@@ -15,6 +15,7 @@ func _ready() -> void:
 	Signals.to_game_loop.connect(to_game_loop)
 	change_scene(intro_menu)
 	#change_scene(game_loop_menu)
+	#change_scene(start_menu)
 
 func change_scene(to) -> void:
 	if current_child_scene:

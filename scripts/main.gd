@@ -22,10 +22,17 @@ var word : String
 @onready var event_sprite = $EventSprite
 @onready var audio = $Audio
 @onready var cleared = $Cleared
+@onready var your_did_it = $YourDidIt
+@onready var end = $End
+@onready var klonk = $Klonk
+@onready var swoof = $Swoof
 
 func _ready() :
 	print("main: _ready")
 	Signals.dropped.connect(dropped)
+	Signals.time_expired.connect(time_expired)
+	
+	your_did_it.visible = false
 	
 	#Audio
 	var clips = audio.get_children()
@@ -103,20 +110,44 @@ func dropped(p: int, char_str: String) -> void:
 	print("input ", input, "word", word)
 	if input == word:
 		print("success")
-		var event = cleared.get_children()[GameState.event_nr]
+		klonk.play()
+		await tween_sprite(event_sprite)
 		
-		var tween = create_tween().set_parallel(true)
-		tween.tween_property(event_sprite, "scale", Vector2(40,40), 1).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
-		tween.tween_property(event_sprite, "rotation", TAU, 1).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
-		tween.chain().tween_property(event_sprite, "scale", Vector2.ZERO,1).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
-		tween.tween_property(event_sprite, "rotation", -TAU, 1).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
-		tween.tween_property(event_sprite, "position", event.position, 1).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
-		
-		await get_tree().create_timer(2.0).timeout				
-		GameState.cleared.push_back(GameState.event_nr)
-		GameState.save()
+		if !GameState.cleared.has(GameState.event_nr):				
+			GameState.cleared.push_back(GameState.event_nr)
+			if GameState.cleared.size() == 12:
+				end.play()
+				await end.finished
+				GameState.cleared = []
+				GameState.failed = []
+			GameState.save()
+			
 		Signals.to_game_loop_menu.emit()
 		
+# Called by Hourglass when time runs out
+func time_expired() -> void:
+	print("time is up")
+	swoof.play()
+	your_did_it.visible = true
+	await tween_sprite(your_did_it)
+	
+	if !GameState.failed.has(GameState.event_nr):
+		GameState.failed.push_back(GameState.event_nr)
+	GameState.save()
+	
+	Signals.to_game_loop_menu.emit()
+	
+func tween_sprite(sprite) -> void:
+	var to_pos = cleared.get_children()[GameState.event_nr].position
+	var tween = create_tween().set_parallel(true)
+	tween.tween_property(sprite, "scale", Vector2(40,40), 1).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
+	tween.tween_property(sprite, "rotation", TAU, 1).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
+	tween.chain().tween_property(sprite, "scale", Vector2.ZERO,1).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
+	tween.tween_property(sprite, "rotation", -TAU, 1).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
+	tween.tween_property(sprite, "position", to_pos, 1).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
+	await tween.finished
+	
+	
 		
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
