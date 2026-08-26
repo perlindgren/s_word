@@ -12,6 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://cegb3m763u5r4" path="res://assets/audio/we_at_n65.wav" id="9_u3yrv"]
 [ext_resource type="Script" uid="uid://dso6lncpqdkal" path="res://scripts/circle.gd" id="11_u3yrv"]
 [ext_resource type="AudioStream" uid="uid://bk7t0tx0t46nt" path="res://assets/audio/StenMusic.wav" id="12_w7kr8"]
+[ext_resource type="Texture2D" uid="uid://c87g4esapisul" path="res://assets/sprites/qr-code2.png" id="13_sf578"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5uub5"]
 load_path = "res://.godot/imported/N65.png-23ec3e0eecb7430b5c4e4a67b92e795f.ctex"
@@ -298,6 +299,11 @@ script = ExtResource("11_u3yrv")
 [node name="Sten" type="AudioStreamPlayer" parent="." unique_id=433141194]
 stream = ExtResource("12_w7kr8")
 volume_db = -8.268
+
+[node name="QrCode2" type="Sprite2D" parent="." unique_id=1598596908]
+position = Vector2(123, 963)
+scale = Vector2(0.175, 0.167)
+texture = ExtResource("13_sf578")
 
 [connection signal="pressed" from="StartButton/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="DecodeButton/DecodeButton" to="." method="_on_decode_button_pressed"]

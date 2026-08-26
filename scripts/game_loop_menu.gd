@@ -5,7 +5,7 @@ extends Node2D
 @onready var failed = $Failed
 @onready var next_event = $NextEvent
 @onready var current_event = $CurrentEvent
-@onready var swoof = $Swoof
+@onready var dice = $Dice
 
 func _ready() -> void:
 	GameState.load()
@@ -37,9 +37,9 @@ func _on_start_button_pressed() -> void:
 	to_game_loop()
 
 func to_game_loop() -> void:
-	swoof.play()
-	await swoof.finished
-	await get_tree().create_timer(1.0).timeout
+	dice.play()
+	await dice.finished
+	# await get_tree().create_timer(1.0).timeout
 	Signals.to_game_loop.emit()
 
 func _on_exit_button_pressed() -> void:

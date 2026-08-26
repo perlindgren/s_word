@@ -22,7 +22,8 @@
 [ext_resource type="Texture2D" uid="uid://dlpbj7w4o7y08" path="res://assets/sprites/stickers/StickerOutline/JohnSticker.png" id="19_2v0mc"]
 [ext_resource type="Texture2D" uid="uid://bhoq65j3rfasw" path="res://assets/sprites/stickers/YourDidGoodSticker.png" id="20_yq88f"]
 [ext_resource type="AudioStream" uid="uid://bk7t0tx0t46nt" path="res://assets/audio/StenMusic.wav" id="21_qngwn"]
-[ext_resource type="AudioStream" uid="uid://cvh1m7dc4dmx8" path="res://assets/audio/swoof.wav" id="23_u16os"]
+[ext_resource type="AudioStream" uid="uid://o7i0mdwnfn2a" path="res://assets/audio/ScrambleRollindDice.wav" id="23_iyxtv"]
+[ext_resource type="Texture2D" uid="uid://c87g4esapisul" path="res://assets/sprites/qr-code2.png" id="24_iyxtv"]
 
 [node name="GameLoopMenu" type="Node2D" unique_id=1352290525]
 script = ExtResource("1_0xkhp")
@@ -145,6 +146,7 @@ theme_override_font_sizes/font_size = 96
 text = "TART"
 
 [node name="N65" type="Sprite2D" parent="." unique_id=1936115072]
+visible = false
 texture_filter = 2
 position = Vector2(175, 922)
 scale = Vector2(0.08, 0.08)
@@ -416,8 +418,13 @@ theme_override_font_sizes/font_size = 64
 text = "EVENTS
 "
 
-[node name="Swoof" type="AudioStreamPlayer" parent="." unique_id=1568023492]
-stream = ExtResource("23_u16os")
+[node name="Dice" type="AudioStreamPlayer" parent="." unique_id=1568023492]
+stream = ExtResource("23_iyxtv")
+
+[node name="QrCode2" type="Sprite2D" parent="." unique_id=1873690145]
+position = Vector2(123, 963)
+scale = Vector2(0.175, 0.167)
+texture = ExtResource("24_iyxtv")
 
 [connection signal="mouse_entered" from="ExitButton/ExitButton" to="ExitButton/ExitButton" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="ExitButton/ExitButton" to="ExitButton/ExitButton" method="_on_mouse_exited"]

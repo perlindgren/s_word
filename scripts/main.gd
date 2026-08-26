@@ -106,11 +106,11 @@ func dropped(p: int, char_str: String) -> void:
 		var event = cleared.get_children()[GameState.event_nr]
 		
 		var tween = create_tween().set_parallel(true)
-		tween.tween_property(event_sprite, "scale", Vector2(40,40), 1)
-		tween.tween_property(event_sprite, "rotation", TAU, 1)
-		tween.chain().tween_property(event_sprite, "scale", Vector2.ZERO,1)
-		tween.tween_property(event_sprite, "rotation", -TAU, 1)
-		tween.tween_property(event_sprite, "position", event.position, 1)
+		tween.tween_property(event_sprite, "scale", Vector2(40,40), 1).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
+		tween.tween_property(event_sprite, "rotation", TAU, 1).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
+		tween.chain().tween_property(event_sprite, "scale", Vector2.ZERO,1).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
+		tween.tween_property(event_sprite, "rotation", -TAU, 1).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
+		tween.tween_property(event_sprite, "position", event.position, 1).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
 		
 		await get_tree().create_timer(2.0).timeout				
 		GameState.cleared.push_back(GameState.event_nr)
