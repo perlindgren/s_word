@@ -30,6 +30,9 @@ var activity : bool
 
 # What is art? Are games art? We at N65 think so!
 func _ready() -> void:
+	# Enable for debugging purpose
+	_on_start_button_pressed() 
+	
 	the_pen.visible = false
 	s_word.visible = false
 	time.visible = false
@@ -114,7 +117,6 @@ func on_bounce_step(current_value: float) -> void:
 		nr_bounce += 1
 	last_value = current_value
 	last_direction = direction
-
 
 func _on_start_button_pressed() -> void:
 	print("_on_start_button_pressed")

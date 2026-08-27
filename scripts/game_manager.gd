@@ -18,7 +18,7 @@ func _ready() -> void:
 	change_scene(intro_menu)
 	
 	# Used to test the start menu
-	#change_scene(start_menu)
+	# change_scene(start_menu)
 	
 	# Used to test the game loop menu
 	
