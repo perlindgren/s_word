@@ -59,11 +59,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		Signals.to_start_menu.emit()
 
 func _process(_delta) -> void:
-	var local_time_dict = Time.get_datetime_dict_from_system()
-	var s = local_time_dict.hour * 3600 + local_time_dict.minute * 60 + local_time_dict.second
-	if !GameState.master_sword_mode:
-		s *= 60	
-	clock.s = s
+	var s = clock.s_state
 	
 	var seconds: int = int(fmod(s, 60))
 	var minutes: int = int(fmod(s/60, 60))

@@ -13,12 +13,20 @@ func _ready() -> void:
 	Signals.to_start_menu.connect(to_start_menu)
 	Signals.to_game_loop_menu.connect(to_game_loop_menu)
 	Signals.to_game_loop.connect(to_game_loop)
-	change_scene(intro_menu)
+	
+	# Uses in production, 
+	#change_scene(intro_menu)
+	
+	# Used to test the start menu
+	change_scene(start_menu)
+	
+	# Used to test the game loop menu
+	
 	#change_scene(game_loop_menu)
-	#change_scene(start_menu)
+	
 	# Used to test the game loop
 	# GameState.event_nr = 1 # the event to test (starts from 0)
-	#change_scene(game_loop)
+	# change_scene(game_loop)
 	
 func change_scene(to) -> void:
 	if current_child_scene:
