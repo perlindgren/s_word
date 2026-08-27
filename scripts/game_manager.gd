@@ -16,7 +16,10 @@ func _ready() -> void:
 	change_scene(intro_menu)
 	#change_scene(game_loop_menu)
 	#change_scene(start_menu)
-
+	# Used to test the game loop
+	# GameState.event_nr = 1 # the event to test (starts from 0)
+	#change_scene(game_loop)
+	
 func change_scene(to) -> void:
 	if current_child_scene:
 		current_child_scene.queue_free()

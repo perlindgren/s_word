@@ -10,32 +10,54 @@ extends Node
 const file_name = "user://savegame.save"
 
 class Data:
-	var name : String
-	var event : String
+	var text : String
 	var word : String
 	var extra_chars : int
 	var flipped : float
 	
-	func _init(n: String, e: String, w: String, ex: int, f: float):
-		name = n
-		event = e
+	func _init(t: String, w: String, ex: int, f: float):
+		text = t
 		word = w
 		extra_chars = ex
 		flipped = f
 
 var events : Array[Data] = [
-	Data.new("Goblin", "Likes", "SWORD", 0, 0),
-	Data.new("Dwarf", "Wants", "GOLD", 1, 0.2),
-	Data.new("Robot", "Feed", "OIL", 2, 0.3),
-	Data.new("House On Fire", "Help", "WATER", 3, 0.4),
-	Data.new("Dog", "Feed", "BONE", 4, 0.5),
-	Data.new("Pillow Man", "Wants", "BLANKET", 5, 0.6),
-	Data.new("Seagull with\nBubble Gun", "Feed", "FRIES", 6, 0.7),
-	Data.new("Cat", "Feed", "CATNIP", 6, 0.8),
-	Data.new("Pizza Man", "Wants", "TOMATO", 7, 0.9),
-	Data.new("Fish", "Wants", "AQUARIUM", 7, 1.0),
-	Data.new("Cake", "Needs", "BIRTHDAY", 8, 1.0),
-	Data.new("John Smith", "Wants", "SMARTPHONE", 8, 1.0)
+	Data.new(
+		"Goblin\nDislikes", 
+		"SWORD", 0, 0),
+	Data.new(
+		"Dwarfs\nwant", 
+		"GOLD", 1, 0.2),
+	Data.new(
+		"Feed\nRobot", 
+		"OIL", 2, 0.3),
+	Data.new(
+		"Help\nHouse On Fire", 
+		"WATER", 3, 0.4),
+	Data.new(
+		"Feed\nDog", 
+		"BONE", 4, 0.5),
+	Data.new(
+		"Pillow Man\nWants", 
+		"BLANKET", 5, 0.6),
+	Data.new(
+		"Feed\nSeagull with\nBubble Gun", 
+		"FRIES", 6, 0.7),
+	Data.new(
+		"Feed\nCat", 
+		"CATNIP", 6, 0.8),
+	Data.new(
+		"Pizza Man\nNeeds", 
+		"TOMATO", 7, 0.9),
+	Data.new(
+		"Fish\nWants", 
+		"AQUARIUM", 7, 1.0),
+	Data.new(
+		"Cake\nStarts the", 
+		"BIRTHDAY", 8, 1.0),
+	Data.new(
+		"John Smith\nReally Wants\nA NEW", 
+		"SMARTPHONE", 8, 1.0)
 ]
 
 func save() -> void:
@@ -49,7 +71,6 @@ func save() -> void:
 	save_file.store_line(json_string)
 	save_file.store_line(json_string2)
 	save_file.close()
-	
 
 func load() -> void:
 	print("load")

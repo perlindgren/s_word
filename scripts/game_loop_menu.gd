@@ -30,7 +30,7 @@ func _ready() -> void:
 		var c = failed.get_child(i)
 		c.visible = true
 	
-	print("here ", GameState.events[0].name, GameState.events[0].event, GameState.events[0].word )
+	print("Text ", GameState.events[0].text, ", word", GameState.events[0].word )
 	
 func _on_start_button_pressed() -> void:
 	print("_on_start_button_pressed, emit to_game_loop")

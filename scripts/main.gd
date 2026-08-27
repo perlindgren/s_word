@@ -17,8 +17,7 @@ var rng = RandomNumberGenerator.new()
 var input : String
 var word : String
 
-@onready var event_type = $EventType
-@onready var event_name = $EventName
+@onready var event_text = $EventText
 @onready var event_sprite = $EventSprite
 @onready var audio = $Audio
 @onready var cleared = $Cleared
@@ -42,9 +41,8 @@ func _ready() :
 	word = event.word
 	var n_char = event.word.length()
 	var bricks_nr = n_char + event.extra_chars
-	print("event: ", event.name, " ", event.event, " ", word, " ", n_char)
-	event_type.text = event.event
-	event_name.text = event.name
+	print("event: ", event.text, ", word ", word, "n_char ", n_char, "bricks_nr", bricks_nr)
+	event_text.text = event.text
 	
 	input = "                    ".left(n_char)
 	print("input", input, input.length())

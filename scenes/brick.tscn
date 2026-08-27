@@ -43,12 +43,16 @@ stream = ExtResource("4_d02mp")
 
 [node name="Klonk" type="AudioStreamPlayer" parent="." unique_id=1349040898]
 stream = ExtResource("5_tj0p1")
+volume_db = -3.0
 
 [node name="Swoof2" type="AudioStreamPlayer" parent="." unique_id=370297609]
 stream = ExtResource("6_ihofc")
+volume_db = -3.0
 
 [node name="Swoof" type="AudioStreamPlayer" parent="." unique_id=350436558]
 stream = ExtResource("7_x0mpf")
+volume_db = -3.0
 
 [node name="Klick" type="AudioStreamPlayer" parent="." unique_id=317612742]
 stream = ExtResource("8_tj0p1")
+volume_db = -3.0

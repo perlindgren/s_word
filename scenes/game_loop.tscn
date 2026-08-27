@@ -8,7 +8,6 @@
 [ext_resource type="Script" uid="uid://c3tku83g2yeiy" path="res://scripts/hourglass.gd" id="6_5am0q"]
 [ext_resource type="FontVariation" uid="uid://c8mk6s0hoghgw" path="res://resources/font_variation.tres" id="7_6wnpo"]
 [ext_resource type="Texture2D" uid="uid://d3i7y4cwcia12" path="res://assets/sprites/dot.png" id="7_arjii"]
-[ext_resource type="FontFile" uid="uid://n74onkhokknh" path="res://assets/fonts/JameGem08_2026-Regular.ttf" id="8_e3r00"]
 [ext_resource type="Shape2D" uid="uid://k471w1mbvy4t" path="res://resources/horizontal_wall.tres" id="9_q2i4g"]
 [ext_resource type="Shape2D" uid="uid://bq4u3nylthe40" path="res://resources/vertical_wall.tres" id="10_8fja0"]
 [ext_resource type="Texture2D" uid="uid://cgvkrbfcd2rfn" path="res://assets/sprites/events/Goblin.png" id="10_8hxac"]
@@ -69,11 +68,6 @@ angular_velocity_max = 99.999985
 gravity = Vector3(0, 98, 0)
 scale_min = 5.0
 scale_max = 8.0
-
-[sub_resource type="FontVariation" id="FontVariation_fa7up"]
-base_font = ExtResource("8_e3r00")
-spacing_glyph = -4
-spacing_space = -1
 
 [node name="Main" type="Node2D" unique_id=943896723]
 script = ExtResource("1_fa7up")
@@ -162,40 +156,25 @@ shape = ExtResource("10_8fja0")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Bottom" unique_id=911688766]
 shape = ExtResource("9_q2i4g")
 
-[node name="EventType" type="Label" parent="." unique_id=1894532593]
+[node name="EventText" type="Label" parent="." unique_id=1090028775]
 modulate = Color(0, 0, 0, 1)
 anchors_preset = -1
 anchor_left = 0.81567425
 anchor_top = 8.915384
 anchor_right = 0.81567425
 anchor_bottom = 8.915384
-offset_left = 1547.0
-offset_top = 8.0
-offset_right = 2168.0
-offset_bottom = 104.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = SubResource("FontVariation_fa7up")
-theme_override_font_sizes/font_size = 64
-text = "KILL"
-
-[node name="EventName" type="Label" parent="." unique_id=1090028775]
-modulate = Color(0, 0, 0, 1)
-anchors_preset = -1
-anchor_left = 0.81567425
-anchor_top = 8.915384
-anchor_right = 0.81567425
-anchor_bottom = 8.915384
-offset_left = 1395.0
-offset_top = 111.0
-offset_right = 2016.0
-offset_bottom = 244.0
+offset_left = 1394.0
+offset_top = 46.0
+offset_right = 1885.0
+offset_bottom = 252.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("7_6wnpo")
 theme_override_font_sizes/font_size = 64
 text = "GOBLIN
 "
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="EventSprite" type="Node2D" parent="." unique_id=297670256]
 position = Vector2(1654.9999, 499.99997)
