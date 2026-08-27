@@ -6,6 +6,7 @@ extends Node
 @export var cleared : Array = []
 @export var failed : Array = []
 @export var event_nr : int = 0
+@export var s_offset : float = 0
 
 const file_name = "user://savegame.save"
 
@@ -90,4 +91,14 @@ func load() -> void:
 
 # Project -> Open User Data, to view the stored files
 
+# Time related global functions
+func compute_s() -> float:
+	var local_time_dict = Time.get_datetime_dict_from_system()
+	var s = local_time_dict.hour * 3600 + local_time_dict.minute * 60 + local_time_dict.second
+	s = s if master_sword_mode else 60 * s
+	return fmod(s_offset + s, 12 * 3600)
 	
+func clock_init() -> void:
+	master_sword_mode = false
+	s_offset = 0
+	s_offset = 3600 - compute_s()

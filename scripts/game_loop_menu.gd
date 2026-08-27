@@ -8,6 +8,7 @@ extends Node2D
 @onready var dice = $Dice
 
 func _ready() -> void:
+	print("game_loop_menu")
 	GameState.load()
 	
 	# Handle stickers for cleared events
@@ -30,13 +31,14 @@ func _ready() -> void:
 		var c = failed.get_child(i)
 		c.visible = true
 	
-	print("Text ", GameState.events[0].text, ", word", GameState.events[0].word )
+	print("Text ", GameState.events[0].text, ", word", GameState.events[0].word)
 	
 func _on_start_button_pressed() -> void:
 	print("_on_start_button_pressed, emit to_game_loop")
 	to_game_loop()
 
 func to_game_loop() -> void:
+	print("to_game_loop")
 	dice.play()
 	await dice.finished
 	# await get_tree().create_timer(1.0).timeout
@@ -62,13 +64,15 @@ func _process(_delta) -> void:
 	var s = clock.s_state
 	
 	var seconds: int = int(fmod(s, 60))
-	var minutes: int = int(fmod(s/60, 60))
-	var hours: int = int(fmod(s/(60 * 60), 12))
+	var minutes: int = int(fmod(s / 60, 60))
+	var hours: int = int(fmod(s / (60 * 60), 12))
 	GameState.event_nr = (12 + hours - 1) % 12
+	
+	print("s ", seconds, " m ", minutes, " h ", hours)
 	
 	if minutes == 0 && seconds == 0:
 		print("new challenge ", hours)
 		to_game_loop()
 	
-	next_event.text = "MINUTES UNTIL\nNEXT EVENT " + str(60 - minutes) 
-	current_event.text = "EVENT # " + str(GameState.event_nr + 1) 
+	next_event.text = "MINUTES UNTIL\nNEXT EVENT " + str(60 - minutes)
+	current_event.text = "EVENT # " + str(GameState.event_nr + 1)

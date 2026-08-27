@@ -118,8 +118,8 @@ func on_bounce_step(current_value: float) -> void:
 
 func _on_start_button_pressed() -> void:
 	print("_on_start_button_pressed")
+	GameState.clock_init()
 	Signals.to_start_menu.emit()
-
 
 func _on_decode_button_pressed() -> void:
 	activity = true

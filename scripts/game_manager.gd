@@ -5,7 +5,7 @@ extends Node2D
 @onready var game_loop_menu = preload("res://scenes/game_loop_menu.tscn")
 @onready var game_loop = preload("res://scenes/game_loop.tscn")
 
-var current_child_scene : Node = null
+var current_child_scene: Node = null
 
 func _ready() -> void:
 	# Connect signals
@@ -15,10 +15,10 @@ func _ready() -> void:
 	Signals.to_game_loop.connect(to_game_loop)
 	
 	# Uses in production, 
-	#change_scene(intro_menu)
+	change_scene(intro_menu)
 	
 	# Used to test the start menu
-	change_scene(start_menu)
+	#change_scene(start_menu)
 	
 	# Used to test the game loop menu
 	
@@ -35,18 +35,18 @@ func change_scene(to) -> void:
 	current_child_scene = to.instantiate()
 	add_child(current_child_scene)
 
-func to_intro_menu() -> void: 
+func to_intro_menu() -> void:
 	print("to_start_menu")
 	change_scene(intro_menu)
 	
-func to_start_menu() -> void: 
+func to_start_menu() -> void:
 	print("to_start_menu")
 	change_scene(start_menu)
 
-func to_game_loop_menu() -> void: 
+func to_game_loop_menu() -> void:
 	print("to_game_loop_menu")
 	change_scene(game_loop_menu)
 	
-func to_game_loop() -> void: 
-	print("to_game_menu")
+func to_game_loop() -> void:
+	print("to_game_loop")
 	change_scene(game_loop)
