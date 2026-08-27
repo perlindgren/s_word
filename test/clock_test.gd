@@ -2,16 +2,19 @@ extends Node2D
 
 @onready var clock : Clock = $Clock
 
-var sec: int = 0
+#var sec: int = 0
 
 func _ready() -> void:
-	
-	var tween = create_tween()
-	tween.tween_method(
-		func(s:float):
-			clock.s = s
-	, 0.0, 3600.0, 4
-	).set_trans(Tween.TRANS_QUINT).set_ease(Tween.EASE_IN_OUT)
+	print("_on_start_button_pressed")
+	GameState.clock_init()
+	print(GameState.s_offset)
+	clock.set_state()
+	#var tween = create_tween()
+	#tween.tween_method(
+		#func(s:float):
+			#clock.s = s
+	#, 0.0, 3600.0, 4
+	#).set_trans(Tween.TRANS_QUINT).set_ease(Tween.EASE_IN_OUT)
 	
 	
 	#clock.s = 0

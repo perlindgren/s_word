@@ -14,7 +14,7 @@ func _ready() -> void:
 	Signals.to_game_loop_menu.connect(to_game_loop_menu)
 	Signals.to_game_loop.connect(to_game_loop)
 	
-	# Uses in production, 
+	# Used in production 
 	change_scene(intro_menu)
 	
 	# Used to test the start menu
@@ -22,7 +22,7 @@ func _ready() -> void:
 	
 	# Used to test the game loop menu
 	
-	#change_scene(game_loop_menu)
+	# change_scene(game_loop_menu)
 	
 	# Used to test the game loop
 	# GameState.event_nr = 1 # the event to test (starts from 0)

@@ -7,12 +7,12 @@ class_name StartMenu extends Node2D
 @onready var start1 = $Start1
 @onready var start2 = $Start2
 @onready var clock : Clock = $Clock
+@onready var time : Label = $Time
 
 var tween: Tween = null
 
 func _ready() -> void:
-	set_state()
-	
+	set_time()
 	start1.play()
 	await start1.finished
 	await get_tree().create_timer(5.0).timeout
@@ -33,21 +33,23 @@ func _on_start_button_pressed() -> void:
 func _on_master_button_pressed() -> void:
 	print("master")
 	GameState.master_sword_mode = true
-	set_state()
+	GameState.s_offset = 0
+	set_time()
+	clock.set_state()
 
 func _on_quick_button_pressed() -> void:
 	print("quick")
 	GameState.master_sword_mode = false
-	set_state()
-	
-func set_state() -> void:
-	if GameState.master_sword_mode:
-		master.modulate = Color.WHITE
-		quick.modulate = Color(1,1,1, 0.25)
-	else:
-		quick.modulate = Color.WHITE
-		master.modulate = Color(1,1,1, 0.25)
+	GameState.clock_init()
+	set_time()
 	clock.set_state()
+	
+func set_time() -> void:
+	if GameState.master_sword_mode:
+		time.text = "REAL TIME"
+	else:
+		time.text = "60x TIME"
+	
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):

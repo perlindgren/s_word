@@ -101,4 +101,4 @@ func compute_s() -> float:
 func clock_init() -> void:
 	master_sword_mode = false
 	s_offset = 0
-	s_offset = 3600 - compute_s() # one hour in 
+	s_offset = 3600 - compute_s() # 1 o'clock to match event 1

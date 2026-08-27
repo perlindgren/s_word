@@ -30,8 +30,9 @@ var activity : bool
 
 # What is art? Are games art? We at N65 think so!
 func _ready() -> void:
+	print("start_intro: _ready")
 	# Enable for debugging purpose
-	_on_start_button_pressed() 
+	# _on_start_button_pressed() 
 	
 	the_pen.visible = false
 	s_word.visible = false
@@ -41,6 +42,7 @@ func _ready() -> void:
 	transmit_button.visible = false
 	circle.active = false
 	
+	# N65 Splash screen
 	for i in range(0,3):
 		what_is_art[i].visible = false
 
@@ -52,9 +54,11 @@ func _ready() -> void:
 	var total_chars = the_pen.get_total_character_count()
 	var duration = total_chars * display_speed
 	
+	# N65 fade out
 	var tween = create_tween()
 	await tween.tween_property(n65, "modulate:a", 0.1, n65_duration).set_ease(Tween.EASE_IN_OUT).finished
 	
+	# The pen type writer
 	the_pen.visible = true
 	
 	tween = create_tween()
@@ -69,6 +73,7 @@ func _ready() -> void:
 	
 	await get_tree().create_timer(2).timeout 
 	
+	# Time is Key
 	time.visible = true
 	total_chars = time.get_total_character_count()
 	duration = total_chars * display_speed
@@ -76,6 +81,7 @@ func _ready() -> void:
 	tween = create_tween()
 	await tween.tween_property(time, "visible_characters", total_chars, duration).finished
 	
+	# Idle period awaint user Start/Transmit/Decode
 	start_button.visible = true
 	transmit_button.visible = true
 	sten.play()

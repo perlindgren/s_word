@@ -4,8 +4,8 @@ class_name Clock extends Node2D
 @onready var minutes = $Minutes
 @onready var hours = $Hours
 
-var s_state : float = 0
-var tween : Tween = null
+var s_state: float = 0
+var tween: Tween = null
 
 func _ready() -> void:
 	s_state = GameState.compute_s()
@@ -14,21 +14,21 @@ func _ready() -> void:
 
 func _process(_delta) -> void:
 	if !tween:
-		s_state = GameState.compute_s() 
-		print("_process", s_state)
-	seconds.rotation = fmod(TAU * s_state/60 + 0.06, TAU)
-	minutes.rotation = fmod(TAU * s_state/3600, TAU)
-	hours.rotation = fmod(TAU * s_state/(12 * 3600), TAU)
+		s_state = GameState.compute_s()
+		# print("_process", s_state)
+	seconds.rotation = fmod(TAU * s_state / 60 + 0.06, TAU)
+	minutes.rotation = fmod(TAU * s_state / 3600, TAU)
+	hours.rotation = fmod(TAU * s_state / (12 * 3600), TAU)
 
 func set_state() -> void:
 	print("set_state ", s_state)
-	var to_s = GameState.compute_s() + 4 # + 4 if GameState.master_sword_mode else 4 * 60
-	print("to_s ", to_s) 
+	var to_s = GameState.compute_s() + 4.0 if GameState.master_sword_mode else 4.0 * 60.0 + 3600.0
+	print("to_s ", to_s)
 	
-	tween =create_tween()
+	tween = create_tween()
 	await tween.tween_method(
-		func(sec:float):
+		func(sec: float):
 			s_state = sec
 	, s_state, to_s, 4
-	).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_IN_OUT).finished	
+	).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_IN_OUT).finished
 	tween = null

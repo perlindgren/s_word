@@ -39,10 +39,12 @@ func _on_start_button_pressed() -> void:
 
 func to_game_loop() -> void:
 	print("to_game_loop")
-	dice.play()
-	await dice.finished
-	# await get_tree().create_timer(1.0).timeout
-	Signals.to_game_loop.emit()
+	
+	# Check that we are not in a transition already
+	if !dice.playing:
+		dice.play()
+		await dice.finished
+		Signals.to_game_loop.emit()
 
 func _on_exit_button_pressed() -> void:
 	print("_on_exit_button_pressed, emit to_start_menu")
@@ -68,7 +70,7 @@ func _process(_delta) -> void:
 	var hours: int = int(fmod(s / (60 * 60), 12))
 	GameState.event_nr = (12 + hours - 1) % 12
 	
-	print("s ", seconds, " m ", minutes, " h ", hours)
+	# print("s ", seconds, " m ", minutes, " h ", hours)
 	
 	if minutes == 0 && seconds == 0:
 		print("new challenge ", hours)
