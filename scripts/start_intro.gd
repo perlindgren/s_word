@@ -10,23 +10,23 @@ extends Node2D
 @onready var decode_button = $DecodeButton
 @onready var transmit_button = $TransmitButton
 @onready var what_is_art = [$WhatIsArt, $AreGamesArt, $WeAtN65]
-@onready var circle : Circle = $Circle
+@onready var circle: Circle = $Circle
 @onready var sten = $Sten
 
 
 @export var n65_duration: float = 5.0
 @export var display_speed: float = 0.1 # Time in seconds per character
 @export var s_word_tween_time: float = 3
-@export var s_word_y : float = 524.0
+@export var s_word_y: float = 524.0
 
 var last_visible_chars = 0
 var last_value: float = 0.0
 var last_direction: bool = true # down
-var nr_bounce : int = 0
+var nr_bounce: int = 0
 var time_last_visible_chars = 0
-var decode : int = 0
+var decode: int = 0
 
-var activity : bool
+var activity: bool
 
 # What is art? Are games art? We at N65 think so!
 func _ready() -> void:
@@ -43,10 +43,10 @@ func _ready() -> void:
 	circle.active = false
 	
 	# N65 Splash screen
-	for i in range(0,3):
+	for i in range(0, 3):
 		what_is_art[i].visible = false
 
-	await get_tree().create_timer(3).timeout 
+	await get_tree().create_timer(3).timeout
 		
 	the_pen.visible_characters = 0
 	time.visible_characters = 0
@@ -71,7 +71,7 @@ func _ready() -> void:
 	tween = create_tween()
 	await tween.tween_method(on_bounce_step, -165, 524.0, s_word_tween_time).set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT).finished
 	
-	await get_tree().create_timer(2).timeout 
+	await get_tree().create_timer(2).timeout
 	
 	# Time is Key
 	time.visible = true
@@ -97,10 +97,10 @@ func _process(delta: float) -> void:
 	# Detect exactly when a new character is revealed on screen
 	if the_pen.visible_characters > last_visible_chars or time.visible_characters > time_last_visible_chars:
 		audio_player.play()
-		print("audio play ", time.visible_characters)
+		# print("audio play ", time.visible_characters)
 		
 	# Keep track of the current character state
-	last_visible_chars = the_pen.visible_characters 
+	last_visible_chars = the_pen.visible_characters
 	time_last_visible_chars = time.visible_characters
 	
 	my_time += delta
@@ -116,7 +116,7 @@ func on_bounce_step(current_value: float) -> void:
 	s_word.position.y = current_value
 	var direction = false if current_value > last_value else true
 		
-	if direction and direction != last_direction: 
+	if direction and direction != last_direction:
 		audio_player.play()
 		print("bounce")
 		word.visible_characters = nr_bounce

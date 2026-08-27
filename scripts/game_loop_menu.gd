@@ -6,10 +6,16 @@ extends Node2D
 @onready var next_event = $NextEvent
 @onready var current_event = $CurrentEvent
 @onready var dice = $Dice
+@onready var time : Label = $Time
 
 func _ready() -> void:
 	print("game_loop_menu")
 	GameState.load()
+	
+	if GameState.master_sword_mode:
+		time.text = "REAL TIME"
+	else:
+		time.text = "60x TIME"
 	
 	# Handle stickers for cleared events
 	for c in cleared.get_children():

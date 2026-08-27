@@ -32,6 +32,7 @@ window/size/mode=4
 window/size/resizable=false
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+mouse_cursor/custom_image="uid://bkag61j8emtht"
 
 [global_group]
 

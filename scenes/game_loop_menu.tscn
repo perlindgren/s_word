@@ -426,6 +426,18 @@ position = Vector2(123, 963)
 scale = Vector2(0.175, 0.167)
 texture = ExtResource("24_iyxtv")
 
+[node name="Time" type="Label" parent="." unique_id=227102670]
+modulate = Color(0, 0, 0, 1)
+offset_left = 1497.0
+offset_top = 804.0
+offset_right = 1956.0
+offset_bottom = 932.0
+theme_override_fonts/font = ExtResource("6_2uy04")
+theme_override_font_sizes/font_size = 64
+text = "60x TIME"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="mouse_entered" from="ExitButton/ExitButton" to="ExitButton/ExitButton" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="ExitButton/ExitButton" to="ExitButton/ExitButton" method="_on_mouse_exited"]
 [connection signal="pressed" from="ExitButton/ExitButton" to="." method="_on_exit_button_pressed"]
