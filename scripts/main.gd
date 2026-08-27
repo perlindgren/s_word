@@ -17,6 +17,7 @@ var rng = RandomNumberGenerator.new()
 var input : String
 var word : String
 
+@onready var hourglass = $Hourglass
 @onready var event_text = $EventText
 @onready var event_sprite = $EventSprite
 @onready var audio = $Audio
@@ -111,15 +112,16 @@ func dropped(p: int, char_str: String) -> void:
 		klonk.play()
 		await tween_sprite(event_sprite)
 		
-		if !GameState.cleared.has(GameState.event_nr):				
+		if !GameState.cleared.has(GameState.event_nr):
 			GameState.cleared.push_back(GameState.event_nr)
-			if GameState.cleared.size() == 12:
-				end.play()
-				await end.finished
-				GameState.cleared = []
-				GameState.failed = []
-			GameState.save()
 			
+		if GameState.cleared.size() == 12:
+			hourglass.curr_time = -1 # will prevent time_expired
+			end.play()
+			await end.finished
+			GameState.cleared = []
+			GameState.failed = []
+		GameState.save()
 		Signals.to_game_loop_menu.emit()
 		
 # Called by Hourglass when time runs out
@@ -145,8 +147,6 @@ func tween_sprite(sprite) -> void:
 	tween.tween_property(sprite, "position", to_pos, 1).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
 	await tween.finished
 	
-	
-		
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
 		print("_unhandled_input ui_cancel, emit to_game_loop_menue")
