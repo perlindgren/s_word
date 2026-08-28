@@ -15,7 +15,7 @@ func _ready() -> void:
 	if GameState.master_sword_mode:
 		time.text = "REAL TIME"
 	else:
-		time.text = "60x TIME"
+		time.text = "60x SPEEDUP"
 	
 	# Handle stickers for cleared events
 	for c in cleared.get_children():

@@ -433,8 +433,8 @@ offset_top = 804.0
 offset_right = 1956.0
 offset_bottom = 932.0
 theme_override_fonts/font = ExtResource("6_2uy04")
-theme_override_font_sizes/font_size = 64
-text = "60x TIME"
+theme_override_font_sizes/font_size = 48
+text = "60X SPEEDUP"
 horizontal_alignment = 1
 vertical_alignment = 1
 

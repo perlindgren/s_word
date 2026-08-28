@@ -48,7 +48,7 @@ func set_time() -> void:
 	if GameState.master_sword_mode:
 		time.text = "REAL TIME"
 	else:
-		time.text = "60x TIME"
+		time.text = "60x SPEEDUP"
 	
 
 func _unhandled_input(event: InputEvent) -> void:
